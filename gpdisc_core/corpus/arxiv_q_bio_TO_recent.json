@@ -1,0 +1,253 @@
+{
+  "source": "arXiv Quantitative Biology - Tissues and Organs (q-bio.TO)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "tissue_engineering",
+    "organ_modeling",
+    "developmental_biology",
+    "organogenesis"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.14263v1",
+      "title": "A deep learning framework for glomeruli segmentation with boundary attention",
+      "authors": [
+        "Behnaz Elhaminia",
+        "Catherine King",
+        "Jiaqi Lv",
+        "Lorraine Harper",
+        "Paul Moss"
+      ],
+      "date": "2026-04-15",
+      "abstract": "Accurate detection and segmentation of glomeruli in kidney tissue are essential for diagnostic applications. Traditional deep learning methods primarily rely on semantic segmentation, which often fails to precisely delineate adjacent glomeruli. To address this challenge, we propose a novel glomerulus detection and segmentation model that emphasises boundary separation. Leveraging pathology foundation models, the proposed U-Net-based architecture incorporates a specialised attention decoder desig",
+      "categories": [
+        "q-bio.TO",
+        "cs.CV",
+        "cs.LG"
+      ]
+    },
+    {
+      "id": "2604.14259v1",
+      "title": "Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay",
+      "authors": [
+        "Qianyu Chen",
+        "Shujian Yu"
+      ],
+      "date": "2026-04-15",
+      "abstract": "Functional magnetic resonance imaging (fMRI) is widely used for studying and diagnosing brain disorders, with functional connectivity (FC) matrices providing powerful representations of large-scale neural interactions. However, existing diagnostic models are trained either on a single site or under full multi-site access, making them unsuitable for real-world scenarios where clinical data arrive sequentially from different institutions. This results in limited generalization and severe catastrop",
+      "categories": [
+        "q-bio.TO",
+        "cs.LG",
+        "eess.IV"
+      ]
+    },
+    {
+      "id": "2604.10476v1",
+      "title": "The Dynamic Origin of Kleiber's Law",
+      "authors": [
+        "Riccardo Marchesi"
+      ],
+      "date": "2026-04-12",
+      "abstract": "The ubiquitous $3/4$ metabolic scaling exponent, known as Kleiber's law, has long been attributed to the minimization of viscous dissipation within fractal transport networks. In this paper, we invert this standard narrative, demonstrating that Kleiber's law is fundamentally a signature of pulsatile wave physics rather than steady-state geometry. By coupling local branching optimization to global allometry, we derive the exact generalized metabolic exponent $\u03b2= d\u03b1/(2d+\u03b1)$, which strictly maps lo",
+      "categories": [
+        "physics.bio-ph",
+        "q-bio.QM",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2604.08600v1",
+      "title": "Gaze2Report: Radiology Report Generation via Visual-Gaze Prompt Tuning of LLMs",
+      "authors": [
+        "Aishik Konwer",
+        "Moinak Bhattacharya",
+        "Prateek Prasanna"
+      ],
+      "date": "2026-04-07",
+      "abstract": "Existing deep learning methods for radiology report generation enhance diagnostic efficiency but often overlook physician-informed medical priors. This leads to a suboptimal alignment between the structured explanations and disease manifestations. Eye gaze data provides critical insights into a radiologist's visual attention, enhancing the relevance and interpretability of extracted features while aligning with human decision-making processes. However, despite its promising potential, the integr",
+      "categories": [
+        "q-bio.TO",
+        "eess.IV"
+      ]
+    },
+    {
+      "id": "2604.05573v1",
+      "title": "Haematocrit and Shear Rate Modulate Local Cell-free Layer Thickness and Platelet Margination in Blood Flow Along a Sinusoidal Wall",
+      "authors": [
+        "Eleonora Pero",
+        "Giovanna Tomaiuolo",
+        "Stefano Guido",
+        "Claire Denham",
+        "Timm Krueger"
+      ],
+      "date": "2026-04-07",
+      "abstract": "The geometry of blood vessels strongly affects hemostasis and thrombosis through red blood cell (RBC) dynamics and platelet margination. Growing platelet aggregates, in turn, reshape the local vessel wall topography, leading to a strongly coupled system. However, it is not well understood how surface heterogeneities alter local hemodynamics and platelet margination, thereby driving further aggregate growth. This study investigates how hematocrit (Ht) and shear rate affect RBC dynamics, cell-free",
+      "categories": [
+        "physics.flu-dyn",
+        "physics.bio-ph",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.20848v1",
+      "title": "GOLDMARK: Governed Outcome-Linked Diagnostic Model Assessment Reference Kit",
+      "authors": [
+        "Chad Vanderbilt",
+        "Gabriele Campanella",
+        "Siddharth Singi",
+        "Swaraj Nanda",
+        "Jie-Fu Chen"
+      ],
+      "date": "2026-03-21",
+      "abstract": "Computational biomarkers (CBs) are histopathology-derived patterns extracted from hematoxylin-eosin (H&E) whole-slide images (WSIs) using artificial intelligence (AI) to predict therapeutic response or prognosis. Recently, slide-level multiple-instance learning (MIL) with pathology foundation models (PFMs) has become the standard baseline for CB development. While these methods have improved predictive performance, computational pathology lacks standardized intermediate data formats, provenance ",
+      "categories": [
+        "cs.CV",
+        "cs.CE",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.19723v1",
+      "title": "Modelling the passive and active response of skeletal muscles within the adapted Voigt representation framework",
+      "authors": [
+        "Sara Galasso",
+        "Giulio G. Giusteri"
+      ],
+      "date": "2026-03-20",
+      "abstract": "We present a constitutive model for the passive and active response of skeletal muscles. At variance with more classical approaches, the model is developed exploiting adapted Voigt representations of strain and stress tensors within the context of nonlinear Cauchy elasticity. This framework allows us to identify non-trivial stress-strain relations in a rather direct way from experimental data, enhancing the mechanical interpretability of the material functions that describe the tissue response a",
+      "categories": [
+        "cond-mat.soft",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.17601v1",
+      "title": "An optimal control approach to nonlinear wave speed selection in reaction-diffusion equations",
+      "authors": [
+        "Rebecca M. Crossley",
+        "Carles Falco",
+        "Ruth E. Baker"
+      ],
+      "date": "2026-03-18",
+      "abstract": "Travelling wave solutions of reaction-diffusion equations are widely used to model the spatial spread of populations and other phenomena in biology and physics. In this article, we reinterpret the classical variational principle approach through an optimal control formulation, in order to obtain a lower bound on the invasion speed of travelling wave solutions in systems of nonlinear partial differential equations. We begin by analysing single-species models, where the evolution of the density is",
+      "categories": [
+        "math.AP",
+        "math.OC",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.16801v1",
+      "title": "A low-data, low-cost, and open-source workflow for 3D printing lithographs for digital accessibility of microscopy images",
+      "authors": [
+        "Robert Faulkner",
+        "Natalia Gonzalez-Vazquez",
+        "Victoria Gamez",
+        "Karly E. Cohen",
+        "Gunther Richter"
+      ],
+      "date": "2026-03-17",
+      "abstract": "Describe an animal without using the verb look. Can you effectively provide an alternative method for interpreting complex microscopy images while preserving the length scale? The world is filled with features too small for our eyes to see: the setae on a gecko's feet, the cuticles covering a rat's whisker, or the fuzziness of a bat's wing. Furthermore, these structures are non-homogeneous, often shifting from stiff to soft. We provide a workflow for producing low-data, low-cost, and open-source",
+      "categories": [
+        "cs.GR",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.15339v1",
+      "title": "The Neuroscience of Transformers",
+      "authors": [
+        "Peter Koenig",
+        "Mario Negrello"
+      ],
+      "date": "2026-03-16",
+      "abstract": "Neuroscience has long informed the development of artificial neural networks, but the success of modern architectures invites, in turn, the converse: can modern networks teach us lessons about brain function? Here, we examine the structure of the cortical column and propose that the transformer provides a natural computational analogy for multiple elements of cortical microcircuit organization. Rather than claiming a literal implementation of transformer equations in cortex, we develop a hypothe",
+      "categories": [
+        "q-bio.NC",
+        "q-bio.SC",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.15171v1",
+      "title": "A mechanical bifurcation constrains the evolution of cell sheet folding in the family Volvocaceae",
+      "authors": [
+        "Valens Tribet",
+        "Pierre A. Haas"
+      ],
+      "date": "2026-03-16",
+      "abstract": "The processes of morphogenesis that give rise to the shapes of organs and organisms during development are often driven by mechanical instabilities. Can such mechanical bifurcations also drive or constrain the evolution of these processes in the first place? We discover an instance of these constraints in the green algae of the family Volvocaceae. During their development, their bowl-shaped embryonic cell sheet turns itself inside out. This inversion is driven by a simple wave of cell wedging in",
+      "categories": [
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.14691v3",
+      "title": "A Unified Variational Principle for Branching Transport Networks: Wave Impedance, Viscous Flow, and Tissue Metabolism",
+      "authors": [
+        "Riccardo Marchesi"
+      ],
+      "date": "2026-03-16",
+      "abstract": "The branching geometry of biological transport networks is characterized by a diameter scaling exponent $\u03b1$. Two structural attractors compete: impedance matching ($\u03b1\\sim 2$) for pulsatile flow and viscous-metabolic minimization ($\u03b1= 3$) for steady flow. Neither predicts the empirically observed $\u03b1_{\\mathrm{exp}} = 2.70 \\pm 0.20$ in mammalian arterial trees. Incorporating sub-linear vessel-wall scaling $h(r) \\propto r^p$ ($p = 0.77$) into a three-term metabolic cost rigorously breaks Murray's cu",
+      "categories": [
+        "physics.bio-ph",
+        "cond-mat.soft",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.11234v2",
+      "title": "Biology and Physics",
+      "authors": [
+        "Stuart A. Newman",
+        "Sahotra Sarkar"
+      ],
+      "date": "2026-03-11",
+      "abstract": "This article frames the relation between biology and physics by characterizing the former as a subdiscipline rather than a special case of the latter. To do this, we posit biological physics as the science of living matter in contrast to classic biophysics, the study of organismal properties by physical techniques. At the scale of the individual cell, living matter is nonunitary, i.e., not composed of aggregated subunits, and has features (e.g., intracellular organizational arrangements and biom",
+      "categories": [
+        "physics.bio-ph",
+        "cond-mat.soft",
+        "q-bio.TO"
+      ]
+    },
+    {
+      "id": "2603.12281v1",
+      "title": "Artificial intelligence applications in Parkinson's disease via retinal imaging",
+      "authors": [
+        "Ali Jafarizadeh",
+        "Hamidreza Ashayeri",
+        "Hadi Vahedi",
+        "Parsa Khalafi",
+        "Mirsaeed Abdollahi"
+      ],
+      "date": "2026-03-04",
+      "abstract": "Parkinson's disease (PD) is projected to increase substantially due to population aging, making early diagnosis increasingly important, as timely detection may delay progression and reduce long-term complications. Retinal microvasculature has emerged as a promising anatomical biomarker of neurodegeneration, and when combined with artificial intelligence AI, retinal imaging may provide an advanced, noninvasive, and cost-effective screening strategy for PD. This study evaluated the evidence from t",
+      "categories": [
+        "q-bio.TO",
+        "eess.IV"
+      ]
+    },
+    {
+      "id": "2603.16894v1",
+      "title": "Less Is More in Chemotherapy of Breast Cancer",
+      "authors": [
+        "Fatemeh Ansarizadeh",
+        "Tonghua Zhang"
+      ],
+      "date": "2026-03-03",
+      "abstract": "This study presents a mathematical model that captures the interactions among tumor cells, healthy cells, and immune cells in a tumor-bearing host, with a specific focus on breast cancer. Incorporating the concept of delay, the model consists of four differential equations to analyze these cellular dynamics. The findings demonstrate the superior efficacy of metronomic chemotherapy compared to the maximum tolerated dose (MTD) method and underscore the necessity of adjunct therapies. Oscillatory t",
+      "categories": [
+        "q-bio.QM",
+        "q-bio.TO"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 370,
+    "date_range": "2025-09-17 to 2026-04-15",
+    "avg_authors_per_paper": 3.7
+  }
+}

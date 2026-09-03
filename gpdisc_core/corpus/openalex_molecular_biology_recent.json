@@ -1,0 +1,439 @@
+{
+  "source": "OpenAlex - Molecular Biology",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "dna_replication",
+    "transcription",
+    "translation",
+    "gene_expression",
+    "molecular_genetics"
+  ],
+  "key_papers": [
+    {
+      "id": "W7128616586",
+      "title": "The role of dimethylguanidino valeric acid (DMGV)-related metabolic pathways in carbohydrate and lipid metabolism",
+      "authors": [
+        "Yueyuan Han"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Metabolic pathway",
+        "Metabolic syndrome",
+        "Biochemistry",
+        "Lipid metabolism",
+        "Chemistry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128616586"
+    },
+    {
+      "id": "W7128533177",
+      "title": "The biological consequences and clinical implications of extracellular histone binding to coagulation Factors I and II",
+      "authors": [
+        "Jun Xiang Yong"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Chemistry",
+        "Coagulation",
+        "Extracellular",
+        "Histone",
+        "Cell biology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128533177"
+    },
+    {
+      "id": "W7128611475",
+      "title": "New Polymeric Colour Developer for Thermally Activated Colour Changing Materials",
+      "authors": [
+        "Sarah Pitman"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Materials science",
+        "Composite material",
+        "Nanotechnology",
+        "Polymer",
+        "Engineering drawing"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128611475"
+    },
+    {
+      "id": "W7128523884",
+      "title": "Source of hAPPI-ness: Development of a Headspace Atmospheric Pressure Photoionisation (hAPPI) Mass Spectrometry Technique",
+      "authors": [
+        "Adam Haworth-Duff"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Mass spectrometry",
+        "Atmospheric pressure",
+        "Materials science",
+        "Analytical Chemistry (journal)",
+        "Chemistry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128523884"
+    },
+    {
+      "id": "W7128521376",
+      "title": "Investigating the ability of statin-mediated ERK5 activation to protect cardiac microvascular endothelial cells and cardiomyocytes against the adverse effects of doxorubicin.",
+      "authors": [
+        "Shrouq Almaghrabi"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Adverse effect",
+        "Medicine",
+        "Endothelium",
+        "Endothelial stem cell",
+        "Cell biology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128521376"
+    },
+    {
+      "id": "W7127976729",
+      "title": "Dynamic Mitochondrial Protein Succinylation Induced by Nutritional Intervention with Omega-3 Polyunsaturated Fatty Acids Elicits Growth Inhibition and Lethality in Prostate Cancer Cells",
+      "authors": [
+        "Yifan Jiang"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Succinylation",
+        "Mitochondrion",
+        "Cell biology",
+        "Biology",
+        "SDHA"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127976729"
+    },
+    {
+      "id": "W7128613060",
+      "title": "Characterizing the two-component regulatory system (TCS) LytSR in Group B Streptococcus",
+      "authors": [
+        "Fahad Mashwal"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Biology",
+        "Streptococcus",
+        "Group (periodic table)",
+        "Genetics",
+        "Microbiology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128613060"
+    },
+    {
+      "id": "W7128616453",
+      "title": "Studies Towards the Synthesis of the Hasubanan Alkaloids",
+      "authors": [
+        "Davide Sella"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Chemistry",
+        "Yield (engineering)",
+        "Stereochemistry",
+        "Computer science",
+        "Feature (linguistics)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128616453"
+    },
+    {
+      "id": "W7128547177",
+      "title": "Chemical shift imaging with chemical gradients: efficient, one-shot analytical methods to determine pH-dependent physical properties of Active Pharmaceutical Ingredients",
+      "authors": [
+        "Krzysztof Baj"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Active ingredient",
+        "Materials science",
+        "Chemical imaging",
+        "Chemistry",
+        "Pharmaceutical technology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128547177"
+    },
+    {
+      "id": "W7128640851",
+      "title": "Transition metal decoration of Ti oxide supported Ni-based catalysts for low temperature CO2 methanation",
+      "authors": [
+        "Mingxing Cheng"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Methanation",
+        "Catalysis",
+        "Transition metal",
+        "Materials science",
+        "Oxide"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128640851"
+    },
+    {
+      "id": "W7128480541",
+      "title": "Millimeter-scale Physical Disturbances at the Soil-Water Interfaces Alter Carbon Dioxide and Methane Emission",
+      "authors": [
+        "Hao Liu"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Carbon dioxide",
+        "Methane",
+        "Environmental science",
+        "Chemistry",
+        "Environmental chemistry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128480541"
+    },
+    {
+      "id": "W7128645309",
+      "title": "Probing \u03b1-carboxysome biogenesis and modularity with bacterial microcompartment counterparts",
+      "authors": [
+        "Ping Chang"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Biogenesis",
+        "Biology",
+        "Organelle",
+        "Modularity (biology)",
+        "Cell biology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128645309"
+    },
+    {
+      "id": "W7128635503",
+      "title": "Evaluations of Antibacterial and Antibiofilm Properties of Antibiotics Teixobactins",
+      "authors": [
+        "Tsz Ying To"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Antibiotics",
+        "Chemistry",
+        "Antibacterial agent",
+        "Microbiology",
+        "Biofilm"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128635503"
+    },
+    {
+      "id": "W7127989244",
+      "title": "Process-structure-function relationships for supramolecular materials discovery",
+      "authors": [
+        "Nicholas Watson"
+      ],
+      "date": "2028-01-01",
+      "abstract": "",
+      "year": 2028,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Nanotechnology",
+        "Materials science",
+        "Supramolecular chemistry",
+        "Chemistry",
+        "Feature (linguistics)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127989244"
+    },
+    {
+      "id": "W7125410077",
+      "title": "Polyunsaturated fatty acids mediate the antitumor effects of fasting by inducing lipid peroxidation and ferroptosis in breast cancer",
+      "authors": [
+        "Marzia Santamaria"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open Research Online (The Open University)",
+      "concepts": [
+        "Polyunsaturated fatty acid",
+        "Docosahexaenoic acid",
+        "Arachidonic acid",
+        "Lipid peroxidation",
+        "Lipolysis"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7125410077"
+    },
+    {
+      "id": "W7153172382",
+      "title": "Development and characterization of non-genotoxic topoisomerase II catalytic inhibitors for cancer therapy",
+      "authors": [
+        "Graciella Rosellinny"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "cIRcle (University of British Columbia)",
+      "concepts": [
+        "Cancer therapy",
+        "Chemistry",
+        "Topoisomerase",
+        "Cancer",
+        "Enzyme"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7153172382"
+    },
+    {
+      "id": "W7115003884",
+      "title": "A lectin-based magnetic CRISPR screening protocol permits rapid discovery of genes regulating cell-surface glycosylation",
+      "authors": [
+        "Kim, Jimmy (Jongyoon)"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open Collections",
+      "concepts": [
+        "Computational biology",
+        "CRISPR",
+        "Gene",
+        "Biology",
+        "Protocol (science)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7115003884"
+    },
+    {
+      "id": "W7126163546",
+      "title": "Density functional theory driven compound design and reactivity analysis",
+      "authors": [
+        "Devin Oscar Klapatiuk"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Density functional theory",
+        "Reactivity (psychology)",
+        "Chemistry",
+        "Materials science",
+        "Thermodynamics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7126163546"
+    },
+    {
+      "id": "W7128604966",
+      "title": "The 1:1 Se:Cd Molar Ratio: Unlocking Detoxification of Cd across plant-animal systems",
+      "authors": [
+        "Wenyao Shi"
+      ],
+      "date": "2028-01-01",
+      "abstract": "",
+      "year": 2028,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Chemistry",
+        "Detoxification (alternative medicine)",
+        "Molar",
+        "Biochemistry",
+        "Molar ratio"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128604966"
+    },
+    {
+      "id": "W7128384993",
+      "title": "Single Molecule Conductance and Surface Electrochemical Characterisation of Molecular Monolayers",
+      "authors": [
+        "Rasha Moner S Alradade"
+      ],
+      "date": "2028-01-01",
+      "abstract": "",
+      "year": 2028,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Monolayer",
+        "Conductance",
+        "Materials science",
+        "Molecule",
+        "Electrochemistry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128384993"
+    }
+  ],
+  "statistics": {
+    "total_authors": 231,
+    "avg_citations": 0.0,
+    "avg_authors_per_paper": 2.31
+  }
+}

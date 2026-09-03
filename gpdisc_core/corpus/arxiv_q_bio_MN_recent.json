@@ -1,0 +1,238 @@
+{
+  "source": "arXiv Quantitative Biology - Molecular Networks (q-bio.MN)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "gene_regulatory_networks",
+    "protein_interaction_networks",
+    "metabolic_networks",
+    "signaling_networks"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.18185v1",
+      "title": "Noise-Driven Differentiation via Gene Frustration and Epigenetic Fixation",
+      "authors": [
+        "Davey Plugers",
+        "Kunihiko Kaneko"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Gene expression in cells is stochastic, yet differentiation is robust. We propose a mechanism in which frustrated genes with weakly stable intermediate expression undergo noise-driven switching between basins of attraction, followed by irreversible fate fixation through slow epigenetic feedback. Regulatory interactions amplify effective noise and promote differentiation. We derive analytic expression for the logarithmic dependence of differentiation time on noise strength and input-dependent cel",
+      "categories": [
+        "physics.bio-ph",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.15716v1",
+      "title": "Mathematical modeling of biochemical signal propagation in many-stage enzymatic pathways",
+      "authors": [
+        "Chathranee Jayathilaka",
+        "Mark B. Flegg"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Biochemical signalling cascades transduce extracellular stimuli into cellular responses through sequences of discrete, node-to-node activations. While signal fidelity depends critically on local interaction kinetics, the mechanisms governing information propagation in realistic, highly variable kinetic contexts remain poorly understood. In this paper, we develop a mathematical framework for travelling waves in canonical feed-forward pathways governed by nonlinear Michaelis-Menten-type kinetics. ",
+      "categories": [
+        "math.DS",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.14592v1",
+      "title": "Absolute Concentration Robustness of Non-Redundant Zero-One Networks with Conservation Laws",
+      "authors": [
+        "Xinyi Si",
+        "Xiaoxian Tang"
+      ],
+      "date": "2026-04-16",
+      "abstract": "Absolute concentration robustness (ACR) means the concentration of certain species stays the same in all the steady states. In this work, we study how conservation laws might effect non-vacuous ACR in reaction networks. The goal is to show whether non-vacuous ACR can be preserved or precluded by adding species that depend on the existing species. We have the following two main results. (i) For networks with conservation laws, we prove a criterion: for a nondegenerate network, augmenting it with ",
+      "categories": [
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.09403v1",
+      "title": "Efficient Shapley values computation for Boolean network models of gene regulation",
+      "authors": [
+        "Giang Pham",
+        "Silvia Giulia Galfr\u00e8",
+        "Paolo Milazzo"
+      ],
+      "date": "2026-04-10",
+      "abstract": "Identifying dynamically influential nodes in biological networks is a central problem in systems biology, particularly for prioritizing intervention targets in gene regulatory networks. In this paper, we propose a Shapley-value-based framework for assessing the importance of nodes in a Boolean network with respect to a given target node. The framework comprises two complementary measures: the Knock-out and the Knock-in Shapley values. Moreover, we present a propagation-based method that enables ",
+      "categories": [
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.07848v1",
+      "title": "Information-Theoretic Requirements for Gradient-Based Task Affinity Estimation in Multi-Task Learning",
+      "authors": [
+        "Jasper Zhang",
+        "Bryan Cheng"
+      ],
+      "date": "2026-04-09",
+      "abstract": "Multi-task learning shows strikingly inconsistent results -- sometimes joint training helps substantially, sometimes it actively harms performance -- yet the field lacks a principled framework for predicting these outcomes. We identify a fundamental but unstated assumption underlying gradient-based task analysis: tasks must share training instances for gradient conflicts to reveal genuine relationships. When tasks are measured on the same inputs, gradient alignment reflects shared mechanistic st",
+      "categories": [
+        "cs.LG",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.07124v1",
+      "title": "A modular approach to achieve multistationarity using AND-gates",
+      "authors": [
+        "Alan Veliz-Cuba",
+        "Zeyu Wang"
+      ],
+      "date": "2026-04-08",
+      "abstract": "Systems of differential equations have been used to model biological systems such as gene and neural networks. A problem of particular interest is to understand the number of stable steady states. Here we propose conjunctive networks (systems of differential equations equations created using AND gates) to achieve any desired number of stable steady states. Our approach uses combinatorial tools to predict the number of stable steady states from the structure of the wiring diagram. Furthermore, AN",
+      "categories": [
+        "q-bio.MN",
+        "eess.SY",
+        "math.DS"
+      ]
+    },
+    {
+      "id": "2604.06558v1",
+      "title": "When Does Context Help? A Systematic Study of Target-Conditional Molecular Property Prediction",
+      "authors": [
+        "Bryan Cheng",
+        "Jasper Zhang"
+      ],
+      "date": "2026-04-08",
+      "abstract": "We present the first systematic study of when target context helps molecular property prediction, evaluating context conditioning across 10 diverse protein families, 4 fusion architectures, data regimes spanning 67-9,409 training compounds, and both temporal and random evaluation splits. Using NestDrug, a FiLM-based architecture that conditions molecular representations on target identity, we characterize both success and failure modes with three principal findings. First, fusion architecture do",
+      "categories": [
+        "cs.LG",
+        "q-bio.BM",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.04285v1",
+      "title": "Amplification at Equilibrium: Structural and Thermodynamic Limitations, and Implementation",
+      "authors": [
+        "Hamidreza Akef",
+        "Chia-Yu Sung",
+        "Aneesh Vanguri",
+        "David Soloveichik"
+      ],
+      "date": "2026-04-05",
+      "abstract": "Amplifying weak molecular signals is essential in both natural and engineered biochemical systems. While most amplification schemes operate out of equilibrium, relying on kinetic barriers and fuel-driven cascades, it is also possible to amplify at thermodynamic equilibrium by shifting the energy landscape upon addition of an analyte. Equilibrium amplification is appealing because, in principle, it can remain indefinitely in the untriggered state. In this work, we establish fundamental structural",
+      "categories": [
+        "q-bio.MN",
+        "cs.ET",
+        "physics.bio-ph"
+      ]
+    },
+    {
+      "id": "2604.02511v1",
+      "title": "Re-analysis of the Human Transcription Factor Atlas Recovers TF-Specific Signatures from Pooled Single-Cell Screens with Missing Controls",
+      "authors": [
+        "Arka Jain",
+        "Umesh Sharma"
+      ],
+      "date": "2026-04-02",
+      "abstract": "Public pooled single-cell perturbation atlases are valuable resources for studying transcription factor (TF) function, but downstream re-analysis can be limited by incomplete deposited metadata and missing internal controls. Here we re-analyze the human TF Atlas dataset (GSE216481), a MORF-based pooled overexpression screen spanning 3,550 TF open reading frames and 254,519 cells, with a reproducible pipeline for quality control, MORF barcode demultiplexing, per-TF differential expression, and fu",
+      "categories": [
+        "cs.LG",
+        "q-bio.GN",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.01018v1",
+      "title": "A Bilevel Integer Programming Approach for the Synchronous Attractor Control Problem",
+      "authors": [
+        "Kyungduk Moon",
+        "Kangbok Lee",
+        "Lo\u00efc Paulev\u00e9"
+      ],
+      "date": "2026-04-01",
+      "abstract": "Boolean networks are dynamical models of disease development in which the activation levels of genes are represented by binary variables. Given a Boolean network, controls represent mutations or medical treatments that fix the activation levels of selected genes so that all states in every attractor (i.e., long-term recurrent states) satisfy a desired phenotype. Our goal is to enumerate all minimal controls, identifying critical gene subsets in disease development and therapy. This problem has a",
+      "categories": [
+        "math.OC",
+        "cs.DM",
+        "math.DS"
+      ]
+    },
+    {
+      "id": "2604.00871v1",
+      "title": "Analytical characterisation of the Mi- and To-phases in HeMiTo dynamics: exponential growth and logistic saturation of toxic prion-like proteins",
+      "authors": [
+        "Johannes G. Borgqvist"
+      ],
+      "date": "2026-04-01",
+      "abstract": "Prion-like propagation of misfolded proteins is a key mechanism underlying the progression of neurodegenerative diseases such as Alzheimer's disease. In previous work, we introduced the HeMiTo framework, describing these prion-like dynamics for a class of heterodimer models in terms of three phases: the healthy (He), mixed (Mi), and toxic (To) phases. While the He-phase was characterised analytically, the Mi-phase was described numerically and the To-phase was inferred from linear stability argu",
+      "categories": [
+        "q-bio.QM",
+        "math.DS",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2604.00756v1",
+      "title": "Stochastic ordering tools for continuous-time Markov chains and applications to reaction network models",
+      "authors": [
+        "Daniele Cappelletti",
+        "Giulio Cuniberti",
+        "Paola Siri"
+      ],
+      "date": "2026-04-01",
+      "abstract": "Stochastic reaction networks are mathematical models with a wide range of applications in biochemistry, ecology, and epidemiology, and are often complex to analyze. Except for some special cases, it is generally difficult to predict how the abundances of all considered species evolve over time. A possible approach to address this issue is to develop tools to compare the model under study with a similar one whose behavior is better understood. The main contribution of our work is to provide direc",
+      "categories": [
+        "math.PR",
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2603.29546v1",
+      "title": "Sampling from the Solution Space and Metabolic Environments of Genome-Scale Metabolic Models",
+      "authors": [
+        "Haris Zafeiropoulos",
+        "Daniel Rios Garza"
+      ],
+      "date": "2026-03-31",
+      "abstract": "Flux sampling is an analysis that, based on a distribution, picks randomly an efficient number of points from the solution space of a metabolic model. Unlike most constraint-based analyses, flux sampling does not require an objective function to optimize, allowing for the exploration of the whole spectrum of the phenotypes a species can exhibit. However, sampling can also be restricted to a subspace where a chosen objective reaches at least a specified fraction of its optimum. This targeted appr",
+      "categories": [
+        "q-bio.MN",
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2603.26530v1",
+      "title": "Control of genes by self-organizing multicellular interaction networks",
+      "authors": [
+        "Kyle R. Allison"
+      ],
+      "date": "2026-03-27",
+      "abstract": "Multicellular self-organization drives development in biological organisms, yet a comprehensive theory is lacking as basic properties of cells can complicate common approaches. Framing such properties by dynamic graphs led to new theoretical propositions for multicellular self-organization in Escherichia coli. Here, corresponding ideas are developed from biologically-general first principles. The resulting perspective could aid both experimental and computational approaches to multicellular biol",
+      "categories": [
+        "q-bio.MN"
+      ]
+    },
+    {
+      "id": "2603.20321v1",
+      "title": "GIP-RAG: An Evidence-Grounded Retrieval-Augmented Framework for Interpretable Gene Interaction and Pathway Impact Analysis",
+      "authors": [
+        "Fujian Jia",
+        "Jiwen Gu",
+        "Cheng Lu",
+        "Dezhi Zhao",
+        "Mengjiang Huang"
+      ],
+      "date": "2026-03-19",
+      "abstract": "Understanding mechanistic relationships among genes and their impacts on biological pathways is essential for elucidating disease mechanisms and advancing precision medicine. Despite the availability of extensive molecular interaction and pathway data in public databases, integrating heterogeneous knowledge sources and enabling interpretable multi-step reasoning across biological networks remain challenging.   We present GIP-RAG (Gene Interaction Prediction through Retrieval-Augmented Generation",
+      "categories": [
+        "q-bio.MN",
+        "cs.AI",
+        "cs.CL"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 282,
+    "date_range": "2025-11-18 to 2026-04-20",
+    "avg_authors_per_paper": 2.82
+  }
+}

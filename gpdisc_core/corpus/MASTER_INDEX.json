@@ -1,0 +1,151 @@
+{
+  "corpus_name": "BIODISC Biology Training Corpus",
+  "version": "1.0.0",
+  "generated_date": "2026-04-22",
+  "description": "Comprehensive corpus of recent biology research papers for training BIODISC system",
+  "summary": {
+    "total_papers": 1300,
+    "sources": {
+      "arXiv_q-bio": {
+        "description": "arXiv Quantitative Biology preprints",
+        "categories": [
+          "q-bio.BM (Biomolecules)",
+          "q-bio.CB (Cell Behavior)",
+          "q-bio.GN (Genomics)",
+          "q-bio.MN (Molecular Networks)",
+          "q-bio.NC (Neurons and Cognition)",
+          "q-bio.PE (Populations and Evolution)",
+          "q-bio.QM (Quantitative Methods)",
+          "q-bio.TO (Tissues and Organs)"
+        ],
+        "papers_count": 800,
+        "files": [
+          "arxiv_qbio_biomolecules_recent.json",
+          "arxiv_q_bio_CB_recent.json",
+          "arxiv_q_bio_GN_recent.json",
+          "arxiv_q_bio_MN_recent.json",
+          "arxiv_q_bio_NC_recent.json",
+          "arxiv_q_bio_PE_recent.json",
+          "arxiv_q_bio_QM_recent.json",
+          "arxiv_q_bio_TO_recent.json"
+        ]
+      },
+      "OpenAlex": {
+        "description": "OpenAlex biology papers (lower quality - mixed relevance)",
+        "categories": [
+          "Molecular Biology",
+          "Cell Biology",
+          "Biophysics",
+          "Computational Biology",
+          "Genomics"
+        ],
+        "papers_count": 500,
+        "note": "OpenAlex results have variable relevance due to concept-based filtering"
+      }
+    },
+    "primary_corpus": {
+      "recommended_source": "arXiv_q-bio",
+      "reason": "High relevance, focused biology content, recent papers (2026), proper categorization",
+      "papers_count": 800
+    }
+  },
+  "domain_coverage": {
+    "molecular_biology": {
+      "papers": 100,
+      "topics": ["dna_replication", "transcription", "translation", "gene_expression", "molecular_genetics"],
+      "sources": ["arXiv q-bio.BM", "arXiv q-bio.MN"]
+    },
+    "biochemistry": {
+      "papers": 100,
+      "topics": ["enzymes", "metabolism", "protein_structure", "molecular_interactions"],
+      "sources": ["arXiv q-bio.BM"]
+    },
+    "genetics": {
+      "papers": 100,
+      "topics": ["genetic_variation", "gene_regulation", "heritability", "genetic_mapping"],
+      "sources": ["arXiv q-bio.GN", "arXiv q-bio.PE"]
+    },
+    "cell_biology": {
+      "papers": 100,
+      "topics": ["cell_structure", "cell_signaling", "organelles", "cell_cycle"],
+      "sources": ["arXiv q-bio.CB"]
+    },
+    "biophysics": {
+      "papers": 100,
+      "topics": ["molecular_mechanics", "single_molecule", "biophysical_chemistry"],
+      "sources": ["arXiv q-bio.BM", "arXiv q-bio.QM"]
+    },
+    "bioinformatics": {
+      "papers": 100,
+      "topics": ["sequence_analysis", "structural_prediction", "algorithms"],
+      "sources": ["arXiv q-bio.GN", "arXiv q-bio.QM"]
+    },
+    "computational_biology": {
+      "papers": 100,
+      "topics": ["modeling", "simulation", "data_analysis"],
+      "sources": ["arXiv q-bio.QM", "arXiv q-bio.GN"]
+    },
+    "genomics": {
+      "papers": 100,
+      "topics": ["genome_analysis", "sequencing", "transcriptomics", "epigenomics"],
+      "sources": ["arXiv q-bio.GN"]
+    },
+    "proteomics": {
+      "papers": 100,
+      "topics": ["protein_structure", "protein_interactions", "mass_spectrometry"],
+      "sources": ["arXiv q-bio.BM"]
+    },
+    "systems_biology": {
+      "papers": 100,
+      "topics": ["pathway_analysis", "network_biology", "integrative_analysis"],
+      "sources": ["arXiv q-bio.MN"]
+    }
+  },
+  "key_topics_covered": [
+    "Protein structure prediction (AlphaFold, OpenFold)",
+    "Molecular generation with LLMs",
+    "CRISPR gene editing",
+    "Single-cell sequencing analysis",
+    "Quantum machine learning for biology",
+    "Bayesian inference for genomics",
+    "DNA language models",
+    "Antibody design",
+    "Gene regulatory networks",
+    "Metabolic pathway analysis"
+  ],
+  "recent_highlights": {
+    "hottest_topics": [
+      "Large Language Models for biology",
+      "AI-driven protein design",
+      "Single-cell analysis",
+      "Quantum computing applications in biology",
+      "Gene editing (CRISPR) applications"
+    ],
+    "notable_papers": [
+      "ConforNets: Latents-Based Conformational Control in OpenFold3",
+      "How Creative Are Large Language Models in Generating Molecules?",
+      "Quantum AI for Cancer Diagnostic Biomarker Discovery",
+      "EvoLen: Evolution-Guided Tokenization for DNA Language Model",
+      "oxo-call: Documentation-grounded Bioinformatics CLI Generation"
+    ]
+  },
+  "usage_recommendations": {
+    "for_training": {
+      "use_primary_corpus": "arXiv q-bio papers (800 papers)",
+      "filter_by_domain": "Use domain_coverage mapping to select relevant papers",
+      "recent_papers_only": "All papers from 2026 ensure cutting-edge content"
+    },
+    "for_knowledge_base": {
+      "extract_entities": "Proteins, genes, pathways mentioned in papers",
+      "build_relations": "Citation networks, co-authorship",
+      "create_ontology": "Map concepts to BIODISC domain structure"
+    }
+  },
+  "next_steps": [
+    "Extract named entities from papers (genes, proteins, pathways)",
+    "Build citation network between papers",
+    "Create domain-specific knowledge graphs",
+    "Train embeddings on biology corpus",
+    "Integrate with MORK Ontology"
+  ]
+}

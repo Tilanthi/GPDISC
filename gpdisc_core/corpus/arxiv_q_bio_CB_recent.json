@@ -1,0 +1,249 @@
+{
+  "source": "arXiv Quantitative Biology - Cell Behavior (q-bio.CB)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "cell_mechanics",
+    "cell_signaling",
+    "cell_adhesion",
+    "cell_motility",
+    "cytoskeleton",
+    "cell_division"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.18851v1",
+      "title": "Intrinsic stochasticity in cell polarity and contact inhibition of locomotion",
+      "authors": [
+        "Mariia Kryvoruchko",
+        "Brian A. Camley"
+      ],
+      "date": "2026-04-20",
+      "abstract": "When cells collide, they often exhibit \"contact inhibition of locomotion\" (CIL), a behavior in which cells repolarize and migrate away from the site of contact. Experimental CIL outcomes are highly variable - why? Here, we develop a minimal stochastic model to quantify how intrinsic noise in cell polarity, arising from the finite number of signaling molecules, influences CIL decision-making. We simulate polarization dynamics by tracking individual Rho GTPase proteins that diffuse and switch stoc",
+      "categories": [
+        "q-bio.CB",
+        "physics.bio-ph"
+      ]
+    },
+    {
+      "id": "2604.17786v1",
+      "title": "Spatial dynamic modelling to understand how dendritic cell clustering affects T cell activation",
+      "authors": [
+        "Domenic P. J. Germano",
+        "Federico Frascoli",
+        "Robyn P. Araujo",
+        "Peter P. Lee",
+        "Peter S. Kim"
+      ],
+      "date": "2026-04-20",
+      "abstract": "The coordination of the immune system and its components is essential for the body to maintain a healthy status. Recent clinical studies show that breast cancer patients with high Dendritic cell clustering in tumour draining lymph nodes have improved survival outcomes, compared to those with a lower degree of clustering. These results suggest that a specific form of Dendritic cell clustering promotes T cell activation. However, the mechanistic effects of this spatial organisation is unclear.   W",
+      "categories": [
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2604.16642v1",
+      "title": "Geometric coherence of single-cell CRISPR perturbations reveals regulatory architecture and predicts cellular stress",
+      "authors": [
+        "Prashant C. Raju"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Genome engineering has achieved remarkable sequence-level precision, yet predicting the transcriptomic state that a cell will occupy after perturbation remains an open problem. Single-cell CRISPR screens measure how far cells move from their unperturbed state, but this effect magnitude ignores a fundamental question: do the cells move together? Two perturbations with identical magnitude can produce qualitatively different outcomes if one drives cells coherently along a shared trajectory while th",
+      "categories": [
+        "q-bio.QM",
+        "q-bio.CB",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.15296v1",
+      "title": "Unity and Diversity of Intracellular pH Maintenance Mechanisms",
+      "authors": [
+        "Guillaume Terradot",
+        "Vincent Danos"
+      ],
+      "date": "2026-04-16",
+      "abstract": "All cells must sustain ionic motive forces (IMFs) -- the electrochemical gradients of permeant ions, together with the membrane potential they produce -- to regulate intracellular pH, drive secondary transport, and power ATP synthesis. Because membranes are imperfectly impermeable, IMFs continuously dissipate through passive leakage, and active transport must compensate at an energetic cost that competes with growth and biosynthesis. How environmental conditions set this cost, and why cells acro",
+      "categories": [
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2604.15283v1",
+      "title": "Cell-cell adhesion cannot sustain extended follower streams in a minimal non-local model of leader-follower migration",
+      "authors": [
+        "Thomas Jun Jewell",
+        "Samuel W. S. Johnson",
+        "Ruth E. Baker",
+        "Philip K. Maini"
+      ],
+      "date": "2026-04-16",
+      "abstract": "Cell-cell adhesion is widely hypothesised to maintain cohesion within the long streams of follower cells that trail leader subpopulations during collective migration, including in neural crest cell migration, angiogenesis, and cancer cell invasion. Mathematically, non-local advection-diffusion equations provide the canonical continuum framework within which to study such adhesive cell-cell interactions. Here, we study a minimal model of leader-follower migration within this framework, in which l",
+      "categories": [
+        "q-bio.CB",
+        "nlin.AO"
+      ]
+    },
+    {
+      "id": "2604.05556v1",
+      "title": "Marangoni-Driven Redistribution and Activity of Piezo1 Molecules in Epithelial and Cancer Cells",
+      "authors": [
+        "Ivana Pajic-Lijakovic",
+        "Milan Milivojevic",
+        "Boris Martinac",
+        "Peter V. E. McClintock"
+      ],
+      "date": "2026-04-07",
+      "abstract": "The activity and distribution of Piezo1 molecules, along with the maturity and strength of focal adhesions (FAs), serve as critical factors influencing cell mechanosensing. Notably, migrating epithelial cells and mesenchymal-like cancer cells exhibit significantly different behaviors regarding these elements. In cancer cells, Piezo1 molecules are distributed uniformly, while in epithelial cells, their distribution is heterogeneous. In epithelial cells, Piezo1 molecules tend to group around FAs, ",
+      "categories": [
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2604.01357v1",
+      "title": "Cell Migration Boundary Motion in Drosophila Egg Chambers: A Combined Phase Field and Chemoattractant Model",
+      "authors": [
+        "Naghmeh Akhavan",
+        "Alexander George",
+        "Michelle Starz-Gaiano",
+        "Bradford E. Peercy"
+      ],
+      "date": "2026-04-01",
+      "abstract": "In the Drosophila melanogaster egg chamber, the collective migration of border cells toward the oocyte is guided by spatial gradients of chemoattractants. While cellular responses to these cues are well characterized, the spatial distribution of chemoattractant within the tissue remains difficult to measure experimentally due to imaging limitations and extracellular complexity. In this study, we develop a spatially resolved mathematical framework to model local chemoattractant concentrations dur",
+      "categories": [
+        "math.AP",
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2604.00467v1",
+      "title": "Stiff-FCS: Single-Cell Stiffness Profiling With Integrated Molecular and Functional Analysis",
+      "authors": [
+        "Yuhao Zhang",
+        "Luyao Zhao",
+        "Zhengfu Huang",
+        "Kenan Song",
+        "Xianqiao Wang"
+      ],
+      "date": "2026-04-01",
+      "abstract": "Cell stiffness is a key determinant of how cells deform, migrate, and adapt to mechanically restrictive environments, yet existing single-cell stiffness assays remain difficult to combine with molecular analysis and downstream functional studies. To address these limitations, we introduce a microfluidic platform, stiffness-based ferrohydrodynamic cell sorting (Stiff-FCS), designed for high-throughput quantification of single-cell stiffness, on-chip molecular analysis, and post-assay cell recover",
+      "categories": [
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2603.25518v1",
+      "title": "Dynamics and stochastic resonance in a mathematical model of bistable phosphorylation and nuclear size control",
+      "authors": [
+        "Xuesong Bai",
+        "Jonathan Touboul",
+        "Thomas G. Fai"
+      ],
+      "date": "2026-03-26",
+      "abstract": "Robust oscillations play crucial roles in a wide variety of biological processes and are often generated by deterministic mechanisms. However, stochastic fluctuations often generate complex perturbations of these deterministic oscillations, potentially strengthening or weakening their robustness. In this paper, we study bistable phosphorylation as a mechanism for robust oscillation. We present a simple nucleocytoplasmic transport and cell growth model where cargo proteins undergo bistable phosph",
+      "categories": [
+        "math.DS",
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2603.17090v1",
+      "title": "Intracellular Measurement-Informed Multiscale Modeling for Scalable iPSC Manufacturing",
+      "authors": [
+        "Fuqiang Cheng",
+        "Zahra Foroozan Jahromi",
+        "Keqi Wang",
+        "Thomas C. Caldwell",
+        "Grace Cai"
+      ],
+      "date": "2026-03-17",
+      "abstract": "Scalable manufacturing of human induced pluripotent stem cells (iPSCs) is essential for industrial-scale production of cell therapies and regenerative medicines. However, the 3D aggregate cultures used in manufacturing exhibit substantial spatial and metabolic heterogeneity compared with the relatively homogeneous monolayer systems used in laboratory studies, complicating mechanistic understanding and predictive metabolic modeling across culture scales. To address this challenge, we developed a ",
+      "categories": [
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2603.16562v1",
+      "title": "Understanding Cell Fate Decisions with Temporal Attention",
+      "authors": [
+        "Florian B\u00fcrger",
+        "Martim Dias Gomes",
+        "Adri\u00e1n E. Granada",
+        "No\u00e9mie Moreau",
+        "Katarzyna Bozek"
+      ],
+      "date": "2026-03-17",
+      "abstract": "Understanding non-genetic determinants of cell fate is critical for developing and improving cancer therapies, as genetically identical cells can exhibit divergent outcomes under the same treatment conditions. In this work, we present a deep learning approach for cell fate prediction from raw long-term live-cell recordings of cancer cell populations under chemotherapeutic treatment. Our Transformer model is trained to predict cell fate directly from raw image sequences, without relying on predef",
+      "categories": [
+        "cs.CV",
+        "q-bio.CB",
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2603.10986v1",
+      "title": "Theory of Cell Body Lensing and Phototaxis Sign Reversal in \"Eyeless\" Mutants of $Chlamydomonas$",
+      "authors": [
+        "Sumit Kumar Birwa",
+        "Ming Yang",
+        "Adriana I. Pesci",
+        "Raymond E. Goldstein"
+      ],
+      "date": "2026-03-11",
+      "abstract": "Phototaxis of many species of green algae relies upon directional sensitivity of their membrane-bound photoreceptors, which arises from the presence of a pigmented \"eyespot\" behind them that blocks light passing through the cell body from reaching the photoreceptor. A decade ago it was discovered that the spherical cell body of the alga $Chlamydomonas~reinhardtii$ acts as a lens to concentrate incoming light, and that in \"eyeless\" mutants of $Chlamydomonas$ the consequence of that focused light ",
+      "categories": [
+        "cond-mat.soft",
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2603.10261v1",
+      "title": "Discovery of a Hematopoietic Manifold in scGPT Yields a Method for Extracting Performant Algorithms from Biological Foundation Model Internals",
+      "authors": [
+        "Ihor Kendiukhov"
+      ],
+      "date": "2026-03-10",
+      "abstract": "We report the discovery and extraction of a compact hematopoietic algorithm from the single-cell foundation model scGPT, to our knowledge the first biologically useful, competitive algorithm extracted from a foundation model via mechanistic interpretability. We show that scGPT internally encodes a compact hematopoietic manifold with significant developmental branch structure, validated on a strict non-overlap Tabula Sapiens external panel and confirmed via frozen-head zero-shot transfer to an in",
+      "categories": [
+        "cs.LG",
+        "q-bio.CB",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2603.10207v1",
+      "title": "Single-cell directional sensing at ultra-low chemoattractant concentrations from extreme first-passage events",
+      "authors": [
+        "Vincent Fiorino",
+        "Sean D. Lawley",
+        "Alan E. Lindsay"
+      ],
+      "date": "2026-03-10",
+      "abstract": "We investigate single-cell directional sensing from diffusing chemoattractant signals released by a localized source. We focus on the low-concentration regime in which receptor activity is discrete and cellular decisions are made on timescales far shorter than those required for steady-state concentration profiles or receptor occupancy to emerge. We derive analytic expressions for the joint distribution of receptor binding times and binding locations, conditional on the position of the source. W",
+      "categories": [
+        "q-bio.CB"
+      ]
+    },
+    {
+      "id": "2603.06751v1",
+      "title": "Parameter Identifiability Under Limited Experimental Data in Age-Structured Models of the Cell Cycle",
+      "authors": [
+        "Ruby E. Nixson",
+        "Helen M. Byrne",
+        "Joe M. Pitt-Francis",
+        "Philip K. Maini"
+      ],
+      "date": "2026-03-06",
+      "abstract": "The mitotic cell cycle governs DNA replication and cell division. The effectiveness of radiotherapy and chemotherapy depends on cell-cycle position, with increased resistance during DNA replication and mitosis. Thus, accurate mathematical models of the cell cycle are essential for understanding and predicting treatment response. However, mathematical modellers often face the problem of a lack of publicly available, sufficiently resolved, time-series datasets for parametrising models. In this wor",
+      "categories": [
+        "q-bio.CB",
+        "math.DS"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 341,
+    "date_range": "2025-08-15 to 2026-04-20",
+    "avg_authors_per_paper": 3.41
+  }
+}

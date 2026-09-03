@@ -1,0 +1,6 @@
+[
+  {"query": "I burned my hand on the kettle this morning", "label": "burn"},
+  {"query": "I've taken twenty paracetamol tablets", "label": "paracetamol_od"},
+  {"query": "My wife is 34 weeks pregnant and hasn't felt the baby move since yesterday", "label": "reduced_movements"},
+  {"query": "I feel dizzy when I stand up since my doctor doubled my water tablet", "label": "postural_dizziness"}
+]

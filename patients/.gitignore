@@ -1,0 +1,18 @@
+# GPDISC Patient Data - NEVER COMMIT TO GIT
+
+# Ignore all patient data files
+*.json
+
+# Ignore any encrypted patient data
+encrypted/
+
+# Ignore backups
+*.bak
+*.backup
+
+# Ignore logs
+*.log
+
+# But keep README and .gitignore
+!README.md
+!.gitignore

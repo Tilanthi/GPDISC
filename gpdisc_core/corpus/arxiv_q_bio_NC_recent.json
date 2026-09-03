@@ -1,0 +1,247 @@
+{
+  "source": "arXiv Quantitative Biology - Neurons and Cognition (q-bio.NC)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "neural_networks",
+    "computational_neuroscience",
+    "brain_modeling",
+    "cognitive_models"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.19662v1",
+      "title": "Modelling time-order effects in haptic perception with a Bayesian dynamical framework",
+      "authors": [
+        "Gast\u00f3n Avetta",
+        "Jose Lobera",
+        "Juan Jos\u00e9 Z\u00e1rate",
+        "In\u00e9s Samengo",
+        "Dami\u00e1n G. Hern\u00e1ndez"
+      ],
+      "date": "2026-04-21",
+      "abstract": "Perceptual judgments of sequential stimuli are systematically biased by prior expectations and by the temporal structure of sensory input. In haptic discrimination tasks, these effects often manifest as time-order asymmetries, whereby the perceived difference between two stimuli depends on their presentation order. Here, we introduce a dynamical Bayesian model that accounts for these biases by combining noisy sensory measurements with an evolving internal representation of stimulus intensity. Th",
+      "categories": [
+        "q-bio.NC",
+        "physics.bio-ph",
+        "stat.AP"
+      ]
+    },
+    {
+      "id": "2604.18827v1",
+      "title": "OmniMouse: Scaling properties of multi-modal, multi-task Brain Models on 150B Neural Tokens",
+      "authors": [
+        "Konstantin F. Willeke",
+        "Polina Turishcheva",
+        "Alex Gilbert",
+        "Goirik Chakrabarty",
+        "Hasan A. Bedel"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Scaling data and artificial neural networks has transformed AI, driving breakthroughs in language and vision. Whether similar principles apply to modeling brain activity remains unclear. Here we leveraged a dataset of 3.1 million neurons from the visual cortex of 73 mice across 323 sessions, totaling more than 150 billion neural tokens recorded during natural movies, images and parametric stimuli, and behavior. We train multi-modal, multi-task models that support three regimes flexibly at test t",
+      "categories": [
+        "q-bio.NC",
+        "cs.AI"
+      ]
+    },
+    {
+      "id": "2604.18470v1",
+      "title": "High-fidelity and Network-based Spatio-temporal Mathematical Models of Alzheimer's Disease Progression and their Validation Against PET-SUVR Imaging Data",
+      "authors": [
+        "Beatrice Caon",
+        "Mattia Corti",
+        "Francesca Bonizzoni",
+        "Paola F. Antonietti"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Alzheimer's disease is the most common neurodegenerative disorder. Its pathological development is connected with the misfolding and accumulation of two toxic proteins: amyloid-beta and tau proteins. Mathematical models provide a valuable quantitative tool for monitoring disease progression. In this work, we proposed and compare a novel framework where the spatio-temporal dynamics of amyloid-beta and tau proteins is modeled based on employing either three-dimensional patient-specific geometries ",
+      "categories": [
+        "math.NA",
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.17960v1",
+      "title": "The Umwelt Representation Hypothesis: Rethinking Universality",
+      "authors": [
+        "Victoria Bosch",
+        "Rowan Sommers",
+        "Adrien Doerig",
+        "Tim C Kietzmann"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Recent studies reveal striking representational alignment between artificial neural networks (ANNs) and biological brains, leading to proposals that all sufficiently capable systems converge on universal representations of reality. Here, we argue that this claim of Universality is premature. We introduce the Umwelt Representation Hypothesis (URH), proposing that alignment arises not from convergence toward a single global optimum, but from overlap in ecological constraints under which systems de",
+      "categories": [
+        "q-bio.NC",
+        "cs.LG"
+      ]
+    },
+    {
+      "id": "2604.18643v1",
+      "title": "Quantum-Like Models of Cognition and Decision Making: Open-Systems and Gorini--Kossakowski--Sudarshan--Lindblad Dynamics",
+      "authors": [
+        "Masanari Asano",
+        "Andrei Khrennikov"
+      ],
+      "date": "2026-04-19",
+      "abstract": "This paper starts with surveying the evolution of quantum-like models of cognition and decision making, transitioning from static kinematic representations to a robust dynamical framework based on open quantum systems. We provide a comprehensive analysis of the Gorini-Kossakowski-Sudarshan-Lindblad (GKSL) master equation's application in cognitive psychology and decision making, illustrating how it models mental state evolution as a dissipative process influenced by an informational environment.",
+      "categories": [
+        "q-bio.NC",
+        "quant-ph"
+      ]
+    },
+    {
+      "id": "2604.17581v1",
+      "title": "How Much Data is Enough? The Zeta Law of Discoverability in Biomedical Data, featuring the enigmatic Riemann zeta function",
+      "authors": [
+        "Paul M. Thompson"
+      ],
+      "date": "2026-04-19",
+      "abstract": "How much data is enough to make a scientific discovery? As biomedical datasets scale to millions of samples and AI models grow in capacity, progress increasingly depends on predicting when additional data will substantially improve performance. In practice, model development often relies on empirical scaling curves measured across architectures, modalities, and dataset sizes, with limited theoretical guidance on when performance should improve, saturate, or exhibit cross-over behavior.   We prop",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.17291v1",
+      "title": "Poisson Flow Model of Cortical Folding Pattern",
+      "authors": [
+        "Moo K. Chung",
+        "Luigi Maccotta",
+        "Aaron Struck"
+      ],
+      "date": "2026-04-19",
+      "abstract": "Cortical folding reflects coordinated neurodevelopmental processes and provides a sensitive marker of neurological disease. In juvenile myoclonic epilepsy (JME), structural abnormalities are subtle and spatially distributed, limiting the sensitivity of conventional morphometric measures such as cortical thickness. We introduce a Poisson flow model derived from gradients of the mean curvature field on the cortical surface. The method yields a smooth scalar field obtained from a Poisson equation, ",
+      "categories": [
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.18637v1",
+      "title": "NeuroAI and Beyond: Bridging Between Advances in Neuroscience and ArtificialIntelligence",
+      "authors": [
+        "Anthony Zador",
+        "Jean-Marc Fellous",
+        "Terrence Sejnowski",
+        "Gina Adam",
+        "James B Aimone"
+      ],
+      "date": "2026-04-19",
+      "abstract": "Neuroscience and Artificial Intelligence (AI) have made impressive progress in recent years but remain only loosely interconnected. Based on a workshop convened by the National Science Foundation in August 2025, we identify three fundamental capability gaps in current AI: the inability to interact with the physical world, inadequate learning that produces brittle systems, and unsustainable energy and data inefficiency. We describe the neuroscience principles that address each: co-design of body ",
+      "categories": [
+        "q-bio.NC",
+        "cs.AI",
+        "cs.CY"
+      ]
+    },
+    {
+      "id": "2604.17151v1",
+      "title": "Causality as a Minimum Energy Principle",
+      "authors": [
+        "Moo K. Chung",
+        "D. Vijay Anand",
+        "Anass B El-Yaagoubi",
+        "Jae-Hun Jung",
+        "Anqi Qiu"
+      ],
+      "date": "2026-04-18",
+      "abstract": "Classical causal models, such as Granger causality and structural equation modeling, are largely restricted to acyclic interactions and struggle to represent cyclic and higher-order dynamics in complex networks. We introduce a causal framework grounded in a variational principle, interpreting causality as directional energy flow from high- to low-energy states along network connections. Using Hodge theory, network flows are decomposed into dissipative components and a persistent harmonic compone",
+      "categories": [
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.16875v1",
+      "title": "Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI",
+      "authors": [
+        "Nils Leutenegger"
+      ],
+      "date": "2026-04-18",
+      "abstract": "A central question in computational neuroscience is whether the learning rule used to train a neural network determines how well its internal representations align with those of the human visual cortex. We present a systematic comparison of four learning rules -- backpropagation (BP), feedback alignment (FA), predictive coding (PC), and spike-timing-dependent plasticity (STDP) -- applied to identical convolutional architectures and evaluated against human fMRI data from the THINGS-fMRI dataset (",
+      "categories": [
+        "cs.LG",
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.16710v1",
+      "title": "Timescale Limits of Linear-Threshold Networks",
+      "authors": [
+        "William Retnaraj",
+        "Simone Betteti",
+        "Alexander Davydov",
+        "Francesco Bullo",
+        "Jorge Cortes"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Linear-threshold networks (LTNs) capture the mesoscale behavior of interacting populations of neurons and are of particular interest to control theorists due to their dynamical richness and relative ease of analysis. The aim of this paper is to advance the study of global asymptotic stability in LTNs with asymmetric neural interactions and heterogeneous dissipation under the structural Lyapunov diagonal stability (LDS) condition. To this end, we introduce a one-parameter family of LTNs that pres",
+      "categories": [
+        "eess.SY",
+        "math.DS",
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.15747v1",
+      "title": "Role of chloride concentration in modulating seizure transitions in excitatory and inhibitory networks",
+      "authors": [
+        "Qianchen Gong",
+        "Yingpeng Liu",
+        "Yan Zhang",
+        "Muhua Zheng",
+        "Kesheng Xu"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Experimental evidence indicates that intracellular chloride concentration regulates the excitation and inhibition (EI) balance, yet the mechanisms by which activity-dependent chloride dynamics drive seizure evolution and stage transitions remain unclear. We present a conductance-based neuronal network in which EI balance emerges from chloride homeostasis via channel-mediated influx and transporter-mediated extrusion. We show that the fraction of inhibitory synaptic conductance contributing to ch",
+      "categories": [
+        "q-bio.NC",
+        "physics.bio-ph"
+      ]
+    },
+    {
+      "id": "2604.15245v1",
+      "title": "Goxpyriment: A Go Framework for Behavioral and Cognitive Experiments",
+      "authors": [
+        "Christophe Pallier",
+        "Julie Bonnaire",
+        "Marie-France Fourcade"
+      ],
+      "date": "2026-04-16",
+      "abstract": "We introduce `Goxpyriment', a new open-source software framework for programming behavioral and cognitive experiments using the Go programming language. The library is designed to address some limitations of existing Python-based experiment tools, particularly the runtime environment complexity that frequently complicates deployment across laboratories. Because Go is a compiled language that can natively embed assets (e.g., graphics, audio files, and stimulus lists), Goxpyriment compiles entire ",
+      "categories": [
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.14694v1",
+      "title": "Robust Evaluation of Neural Encoding Models via ground-truth approximation",
+      "authors": [
+        "Giovanni M. Di Liberto"
+      ],
+      "date": "2026-04-16",
+      "abstract": "Encoding models enable measurement of how our brains represent sensory inputs using electro-and magneto-encephalography (MEEG). Evaluating how closely encoding models reflect the underlying brain functions is a crucial premise for model interpretation and hypothesis testing. However, the ground-truth neural activity is unknown, preventing model evaluation with respect to the target neural signal. Existing evaluation metrics must therefore relate model's predictions to noisy MEEG measurements, wh",
+      "categories": [
+        "q-bio.NC"
+      ]
+    },
+    {
+      "id": "2604.14096v1",
+      "title": "Working Memory in a Recurrent Spiking Neural Networks With Heterogeneous Synaptic Delays",
+      "authors": [
+        "Laurent U Perrinet"
+      ],
+      "date": "2026-04-15",
+      "abstract": "Working memory -- the ability to store and recall precise temporal patterns of neural activity -- remains an open challenge for spiking neural networks (SNNs). We propose a recurrent SNN of $N$ neurons in which each synapse is equipped with $D = 41$ delays, modelled as a weight tensor $\\mathbf{W} \\in \\mathbb{R}^{N \\times N \\times D}$ and trained end-to-end with surrogate-gradient backpropagation through time. The network stores $M$ arbitrary target spike patterns by representing each as a sequen",
+      "categories": [
+        "q-bio.NC"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 307,
+    "date_range": "2026-03-22 to 2026-04-21",
+    "avg_authors_per_paper": 3.07
+  }
+}

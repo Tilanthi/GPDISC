@@ -1,0 +1,82 @@
+[
+ {
+  "query": "I have had chest tightness for 40 minutes and I am sweating",
+  "label": "acs"
+ },
+ {
+  "query": "I have the worst headache of my life, it came on like a thunderclap",
+  "label": "sah"
+ },
+ {
+  "query": "My 3 year old has a fever and a stiff neck and won't wake up properly",
+  "label": "paediatric_meningitis"
+ },
+ {
+  "query": "I've had a sore throat for three days, no fever, just a runny nose",
+  "label": "routine_self_care"
+ },
+ {
+  "query": "Can I take ibuprofen with the aspirin I take every day?",
+  "label": "drug_interaction"
+ },
+ {
+  "query": "My mother is dying at home, she's in pain and she can't swallow tablets",
+  "label": "palliative_pain"
+ },
+ {
+  "query": "I'm 66 and for the last three months I get chest tightness when climbing stairs, it goes when I rest",
+  "label": "stable_angina"
+ },
+ {
+  "query": "I burned my hand on the kettle this morning",
+  "label": "burn"
+ },
+ {
+  "query": "I've been back from Nigeria for three days and now I have a fever",
+  "label": "fever_after_travel"
+ },
+ {
+  "query": "I'm 58 and I'm having difficulty swallowing my food, and I've lost weight",
+  "label": "dysphagia_2ww"
+ },
+ {
+  "query": "I was bitten by a dog in Bali two days ago, it broke the skin",
+  "label": "rabies_pep"
+ },
+ {
+  "query": "I've taken twenty paracetamol tablets",
+  "label": "paracetamol_od"
+ },
+ {
+  "query": "My wife is 34 weeks pregnant and hasn't felt the baby move since yesterday",
+  "label": "reduced_movements"
+ },
+ {
+  "query": "I had a seizure for the first time last week, do I need to stop driving?",
+  "label": "first_seizure_dvla"
+ },
+ {
+  "query": "My mum is 79, she has kidney disease, diabetes and heart failure, and now she's dizzy and confused on her eight tablets",
+  "label": "multimorbidity"
+ },
+ {
+  "query": "I'm tired all the time",
+  "label": "tiredness"
+ },
+ {
+  "query": "I feel dizzy when I stand up since my doctor doubled my water tablet",
+  "label": "postural_dizziness"
+ },
+ {
+  "query": "I had a needlestick injury two hours ago from a patient who is hepatitis B positive",
+  "label": "bloodborne_pep"
+ },
+ {
+  "query": "My ankles are swollen and I'm breathless when I lie flat at night",
+  "label": "heart_failure"
+ },
+ {
+  "query": "My toddler has had a fever for five days and his eyes look red",
+  "label": "kawasaki"
+ }
+]

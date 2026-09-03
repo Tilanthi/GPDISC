@@ -1,0 +1,109 @@
+{
+  "source": "arXiv Quantitative Biology - Biomolecules (q-bio.BM)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "protein_structure_and_folding",
+    "molecular_generation",
+    "drug_discovery",
+    "antibody_design",
+    "protein_engineering",
+    "molecular_dynamics",
+    "deep_learning_for_biology",
+    "protein_language_models",
+    "generative_models"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.18559",
+      "title": "ConforNets: Latents-Based Conformational Control in OpenFold3",
+      "authors": ["Minji Lee", "Colin Kalicki", "Minkyu Jeon"],
+      "date": "2026-04-20",
+      "domain": "protein_structure",
+      "keywords": ["AlphaFold", "conformational_variability", "protein_states"]
+    },
+    {
+      "id": "2604.18031",
+      "title": "How Creative Are Large Language Models in Generating Molecules?",
+      "authors": ["Wen Tao", "Yiwei Wang", "Peng Zhou"],
+      "date": "2026-04-20",
+      "domain": "molecular_generation",
+      "keywords": ["LLMs", "molecule_generation", "creativity", "ADMET"]
+    },
+    {
+      "id": "2604.17175",
+      "title": "RosettaSearch: Multi-Objective Inference-Time Search for Protein Sequence Design",
+      "authors": ["Meghana Kshirsagar", "Allen Nie"],
+      "date": "2026-04-19",
+      "domain": "protein_design",
+      "keywords": ["protein_sequence_design", "multi-objective_optimization", "LLMs"]
+    },
+    {
+      "id": "2604.16851",
+      "title": "Applications of deep generative models to DNA reaction kinetics and to cryogenic electron microscopy",
+      "authors": ["Chenwei Zhang"],
+      "date": "2026-04-18",
+      "domain": "generative_models",
+      "keywords": ["deep_generative_models", "DNA_kinetics", "cryo-EM"]
+    },
+    {
+      "id": "2604.14796",
+      "title": "PUFFIN: Protein Unit Discovery with Functional Supervision",
+      "authors": ["Gökçe Uludoğan", "Buse Giledereli"],
+      "date": "2026-04-16",
+      "domain": "protein_function",
+      "keywords": ["protein_units", "graph_neural_networks", "functional_annotation"]
+    },
+    {
+      "id": "2604.14241",
+      "title": "Polyformer: a generative framework for thermodynamic modeling of polymeric molecules",
+      "authors": ["Alessio Valentini", "David Pekker"],
+      "date": "2026-04-15",
+      "domain": "molecular_dynamics",
+      "keywords": ["thermodynamics", "conformational_ensemble", "generative_framework"]
+    },
+    {
+      "id": "2604.13175",
+      "title": "Pareto-Optimal Offline Reinforcement Learning via Smooth Tchebysheff Scalarization",
+      "authors": ["Aadyot Bhatnagar", "Peter Mørch Groth"],
+      "date": "2026-04-14",
+      "domain": "protein_engineering",
+      "keywords": ["multi-objective_RL", "protein_engineering", "alignment"]
+    },
+    {
+      "id": "2604.12026",
+      "title": "TriFit: Trimodal Fusion with Protein Dynamics for Mutation Fitness Prediction",
+      "authors": ["Seungik Cho"],
+      "date": "2026-04-13",
+      "domain": "protein_mutation",
+      "keywords": ["mutation_fitness", "protein_dynamics", "multimodal_fusion"]
+    },
+    {
+      "id": "2604.09369",
+      "title": "Biologically-Grounded Multi-Encoder Architectures as Developability Oracles for Antibody Design",
+      "authors": ["Simon J. Crouzet"],
+      "date": "2026-04-10",
+      "domain": "antibody_design",
+      "keywords": ["antibody_design", "protein_language_models", "developability"]
+    },
+    {
+      "id": "2604.02842",
+      "title": "ViraHinter: a dual-modal artificial intelligence framework for predicting virus-host interactions",
+      "authors": ["Weiqiang Bai", "Fei Wang"],
+      "date": "2026-04-03",
+      "domain": "virology",
+      "keywords": ["virus-host_interactions", "protein-protein_interactions", "deep_learning"]
+    }
+  ],
+  "statistics": {
+    "total_authors": 487,
+    "date_range": "2026-01-29 to 2026-04-22",
+    "avg_authors_per_paper": 4.87
+  },
+  "corpus_quality": {
+    "recency": "excellent",
+    "diversity": "high",
+    "experimental_validation": "moderate",
+    "computational_focus": "high"
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "source": "OpenAlex - Biophysics",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "molecular_mechanics",
+    "single_molecule",
+    "biophysical_chemistry",
+    "structural_biology"
+  ],
+  "key_papers": [
+    {
+      "id": "W7128635374",
+      "title": "VISP Study: Visual Impairment after Stroke investigating Psychological difficulty",
+      "authors": [
+        "Mizla Manandhar-Richardson"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Anxiety",
+        "Stroke (engine)",
+        "Depression (economics)",
+        "Hospital Anxiety and Depression Scale",
+        "Association (psychology)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128635374"
+    },
+    {
+      "id": "W7128605086",
+      "title": "Experiences of Psychological Professionals and Carers in Cancer Care",
+      "authors": [
+        "Sherin Varghese"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Medicine",
+        "Cancer",
+        "Nursing",
+        "Family medicine",
+        "Qualitative research"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128605086"
+    },
+    {
+      "id": "W7141134061",
+      "title": "Exploring the experiences of previously incarcerated individuals : stigma, power, and nursing care in correctional settings",
+      "authors": [
+        "Elizabeth Mei-Larn Karhoffer"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "cIRcle (University of British Columbia)",
+      "concepts": [
+        "Nursing",
+        "Nursing care",
+        "Medicine",
+        "Psychology",
+        "Qualitative research"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7141134061"
+    },
+    {
+      "id": "W7149878038",
+      "title": "Evaluating the Effectiveness of a Mindfulness-Based APP to Reduce Stress Among Psychiatric Nurses at a Children\u2019s Hospital",
+      "authors": [
+        "Miracle U Izevbekhai"
+      ],
+      "date": "2027-12-20",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Digital Commons-TMC (Texas Medical Center)",
+      "concepts": [
+        "Mindfulness",
+        "Medicine",
+        "Emotional exhaustion",
+        "Job satisfaction",
+        "Nursing"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7149878038"
+    },
+    {
+      "id": "W7154550088",
+      "title": "Implementation of an Escape Room Simulation to Decrease Falls in an Inpatient Psychiatric Unit",
+      "authors": [
+        "Nicol\u00e1s Rosillo Ram\u00edrez"
+      ],
+      "date": "2027-12-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "DigtalCommons @ Texas Medical Center Library (Texas Medical Center)",
+      "concepts": [
+        "Medicine",
+        "Baseline (sea)",
+        "Preparedness",
+        "Unit (ring theory)",
+        "Mental health"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154550088"
+    },
+    {
+      "id": "W7116416487",
+      "title": "A framework for non-pharmacological interventions for adolescent sickle cell crisis pain management in Nigeria",
+      "authors": [
+        "Bukola Mary Ibitoye"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Open Collections",
+      "concepts": [
+        "Medicine",
+        "Psychological intervention",
+        "Pain management",
+        "Intensive care medicine",
+        "Sickle cell anemia"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7116416487"
+    },
+    {
+      "id": "W7115036469",
+      "title": "Effect of Nonpharmacological Interventions on Agitation among Persons Living with Alzheimer\u2019s Disease and Related Dementias",
+      "authors": [
+        "Joung, Danbi",
+        "Hester, Grace",
+        "Said, Ruka",
+        "Habtewold, Helen",
+        "Cummings, Marisol"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "DigitalCommons - Kennesaw State University (Kennesaw State University)",
+      "concepts": [
+        "Dementia",
+        "Medicine",
+        "Disease",
+        "Psychological intervention",
+        "Psychiatry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7115036469"
+    },
+    {
+      "id": "W7128638334",
+      "title": "Evaluating the Role of Antenatal Predictors of Postnatal Depression in Fathers: Does Relationship Quality Moderate the Risk?",
+      "authors": [
+        "Ella Solomon"
+      ],
+      "date": "2027-01-01",
+      "abstract": "",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Medicine",
+        "Depression (economics)",
+        "Quality (philosophy)",
+        "Antenatal depression",
+        "Population"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128638334"
+    },
+    {
+      "id": "W7128547413",
+      "title": "Experiences of Comorbid Dementia and Cancer: A Qualitative Systematic Review and Empirical Study",
+      "authors": [
+        "Georgie-Anne Quinn"
+      ],
+      "date": "2027-01-01",
+      "abstract": "",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Empirical research",
+        "Dementia",
+        "Qualitative research",
+        "Psychology",
+        "Psychiatry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128547413"
+    },
+    {
+      "id": "W7124432229",
+      "title": "Understanding the impact of drug decriminalization on substance-induced mental disorders : a multi-faceted study in British Columbia, Canada",
+      "authors": [
+        "Mana Mohebbian"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Open Collections",
+      "concepts": [
+        "Decriminalization",
+        "Psychiatry",
+        "Medicine",
+        "Drug",
+        "Mental health"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7124432229"
+    },
+    {
+      "id": "W7148495021",
+      "title": "Zjawisko hikikomori w Polsce -zapowied\u017a badania nad funkcjonowaniem spo\u0142ecznym m\u0142odych doros\u0142ych English title: Hikikomori in Poland -a preliminary study on social functioning of young adults",
+      "authors": [
+        "Damian Patryk Kujawa"
+      ],
+      "date": "2027-01-01",
+      "abstract": "",
+      "year": 2027,
+      "type": "article",
+      "source": "",
+      "concepts": [
+        "Psychology",
+        "Young adult",
+        "Developmental psychology",
+        "Social functioning",
+        "Gerontology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7148495021"
+    },
+    {
+      "id": "W7128529074",
+      "title": "Before the Diagnosis and Beyond: Understanding the Journey of Families affected by Young-Onset Dementia (YOD)",
+      "authors": [
+        "Isobel Carlin"
+      ],
+      "date": "2027-01-01",
+      "abstract": "",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Dementia",
+        "Medicine",
+        "Psychiatry",
+        "Psychology",
+        "Disease"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128529074"
+    },
+    {
+      "id": "W7128146561",
+      "title": "Climate-related and nature-based interventions for mental health",
+      "authors": [
+        "L. Brandt",
+        "M. De Prisco",
+        "D. Nocera",
+        "M. Rehm",
+        "S. Cohen"
+      ],
+      "date": "2026-12-31",
+      "abstract": "",
+      "year": 2026,
+      "type": "article",
+      "source": "MPG.PuRe (Max Planck Society)",
+      "concepts": [
+        "Psychological intervention",
+        "Mental health",
+        "Medicine",
+        "Psychiatry",
+        "Psychology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128146561"
+    },
+    {
+      "id": "W7117982701",
+      "title": "Criminal Liability of Defendants with Paranoid Schizophrenia Mental Disorder in the New Criminal Code",
+      "authors": [
+        "Nurul Dessy Ardiani",
+        "Pujiyono"
+      ],
+      "date": "2026-12-31",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Psychology",
+        "Paranoid schizophrenia",
+        "Criminal justice",
+        "Criminal code",
+        "Criminology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7117982701"
+    },
+    {
+      "id": "W7117974442",
+      "title": "Criminal Liability of Defendants with Paranoid Schizophrenia Mental Disorder in the New Criminal Code",
+      "authors": [
+        "Nurul Dessy Ardiani",
+        "Pujiyono"
+      ],
+      "date": "2026-12-31",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Psychology",
+        "Paranoid schizophrenia",
+        "Criminal justice",
+        "Criminal code",
+        "Criminology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7117974442"
+    },
+    {
+      "id": "W7128532763",
+      "title": "Experiences of psychotic symptoms among Greek fathers: A qualitative study",
+      "authors": [
+        "Kountouras Georgios"
+      ],
+      "date": "2026-12-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Psychosis",
+        "Psychology",
+        "Interpretative phenomenological analysis",
+        "Context (archaeology)",
+        "Qualitative research"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128532763"
+    },
+    {
+      "id": "W7128469567",
+      "title": "Experiences of psychotic symptoms among Greek fathers: A qualitative study",
+      "authors": [
+        "Kountouras Georgios"
+      ],
+      "date": "2026-12-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Psychosis",
+        "Psychology",
+        "Interpretative phenomenological analysis",
+        "Context (archaeology)",
+        "Qualitative research"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128469567"
+    },
+    {
+      "id": "W7125627951",
+      "title": "A Systematic Review of School-Based Mental Health Literacy Interventions: Efficacy in Reducing Stigma and Promoting Help-Seeking Among Urban Adolescents in Senegal",
+      "authors": [
+        "Aminata Diop",
+        "Moussa Sarr",
+        "Fatou Ndiaye"
+      ],
+      "date": "2026-11-23",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Mental health literacy",
+        "Mental health",
+        "Psychological intervention",
+        "Stigma (botany)",
+        "Medicine"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7125627951"
+    },
+    {
+      "id": "W7125645656",
+      "title": "A Systematic Review of School-Based Mental Health Literacy Interventions: Efficacy in Reducing Stigma and Promoting Help-Seeking Among Urban Adolescents in Senegal",
+      "authors": [
+        "Aminata Diop",
+        "Moussa Sarr",
+        "Fatou Ndiaye"
+      ],
+      "date": "2026-11-23",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Mental health literacy",
+        "Mental health",
+        "Psychological intervention",
+        "Stigma (botany)",
+        "Medicine"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7125645656"
+    },
+    {
+      "id": "W7112234680",
+      "title": "Psychological capacities: an umbrella review of mental health trajectories across the life course",
+      "authors": [
+        "Moreno-Agostino, Dar\u00edo",
+        "Khan, Nusrat",
+        "De Rubeis, Vanessa",
+        "Jacob, Chandni Maria",
+        "Banati, Prerna"
+      ],
+      "date": "2026-11-04",
+      "abstract": "",
+      "year": 2026,
+      "type": "article",
+      "source": "UCL Discovery (University College London)",
+      "concepts": [
+        "Mental health",
+        "Psychology",
+        "Life course approach",
+        "Quality of life (healthcare)",
+        "Clinical psychology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7112234680"
+    }
+  ],
+  "statistics": {
+    "total_authors": 278,
+    "avg_citations": 0.02,
+    "avg_authors_per_paper": 2.78
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "source": "arXiv Quantitative Biology - Quantitative Methods (q-bio.QM)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "bioinformatics",
+    "statistical_methods",
+    "machine_learning",
+    "data_analysis"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.19718v1",
+      "title": "Direct RNA sequence design under codon constraints using expressive tensor-based secondary structure models",
+      "authors": [
+        "Mark Fornace",
+        "Christina Wuyan Wang",
+        "Michael Lindsey"
+      ],
+      "date": "2026-04-21",
+      "abstract": "Nucleic acid sequence design via codon optimization is a fundamental task with applications across synthetic biology, mRNA therapeutics, and vaccine design. Given a target protein, it is a major open challenge to navigate the combinatorially large design space of codon sequences mapping to its amino acid sequence. Computational approaches generally seek to optimize simple objectives based on the codon sequence, possibly together with more complicated contributions based on secondary structure an",
+      "categories": [
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.19563v1",
+      "title": "Information-to-energy trade-offs and the optimal alphabet of polymer replication",
+      "authors": [
+        "Dami\u00e1n G. Hern\u00e1ndez"
+      ],
+      "date": "2026-04-21",
+      "abstract": "We analyze information transmission in a recently proposed coarse-grained model of polymer replication by framing it as a communication channel between templates and copies. By calculating the mutual information in the steady-state limit of long chains, we recover the accurate-random phase diagram and establish that the information per-monomer depends solely on template specificity within the accurate regime. Crucially, even in the accurate region, small error fractions lead to substantial infor",
+      "categories": [
+        "q-bio.QM",
+        "cond-mat.stat-mech",
+        "physics.bio-ph"
+      ]
+    },
+    {
+      "id": "2604.18548v1",
+      "title": "Physics-Informed Neural Networks for Biological $2\\mathrm{D}{+}t$ Reaction-Diffusion Systems",
+      "authors": [
+        "William Lavery",
+        "Jodie A. Cochrane",
+        "Christian Olesen",
+        "Dagim S. Tadele",
+        "John T. Nardini"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Physics-informed neural networks (PINNs) provide a powerful framework for learning governing equations of dynamical systems from data. Biologically-informed neural networks (BINNs) are a variant of PINNs that preserve the known differential operator structure (e.g., reaction-diffusion) while learning constitutive terms via trainable neural subnetworks, enforced through soft residual penalties. Existing BINN studies are limited to $1\\mathrm{D}{+}t$ reaction-diffusion systems and focus on forward ",
+      "categories": [
+        "cs.LG",
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.18431v2",
+      "title": "Care Trajectories Are Linked to Mental Health and Mortality in Cancer Patients",
+      "authors": [
+        "Simon D. Lindner",
+        "Elisabeth L. Zeilinger",
+        "Amelie Fuchs",
+        "Simone Lubowitzki",
+        "Peter Klimek"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Treatment of cancer involves heterogeneous, complex care pathways. The relationship between these longitudinal trajectories, baseline mental health, and prognostic outcomes remains poorly understood. We introduce an interpretable time-analysis framework leveraging these temporal dynamics, analyzing care patterns spanning up to 37 years for >8,000 patients. Using Dynamic Time Warping (DTW) and Hierarchical Clustering on sequence data of healthcare encounters, we identified nine distinct, robust t",
+      "categories": [
+        "physics.soc-ph",
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.18230v1",
+      "title": "ToFiE, a Topology-aware Fiber Extraction workflow for 3D reconstruction of dense and heterogeneous biological fiber networks from microscopy images",
+      "authors": [
+        "Risa Togo",
+        "Sara Cardona",
+        "Ir\u00e8ne Nagle",
+        "Gijsje H. Koenderink",
+        "Behrooz Fereidoonnezhad"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Fibrous networks are ubiquitous structural components in biology, spanning cellulose in plant cell walls, fibrin in blood clots, and collagen in the extracellular matrix of animal tissues. Theoretical models predict that network connectivity critically influences their mechanical behavior. However, accurately reconstructing network topology from 3D image data remains a major challenge as current segmentation methods are not designed to preserve network topology and often rely on intensity-based ",
+      "categories": [
+        "q-bio.QM",
+        "cond-mat.mtrl-sci",
+        "cond-mat.soft"
+      ]
+    },
+    {
+      "id": "2604.17361v1",
+      "title": "3D-DXA Cortical and Trabecular Parameters: Agreement Between Hologic Densitometers in Clinical Practice",
+      "authors": [
+        "Marta I. Bracco",
+        "Jorge Malouf",
+        "Laurent Maimoun",
+        "Xavier Nogues",
+        "Jean Paul Roux"
+      ],
+      "date": "2026-04-19",
+      "abstract": "Background: Three-dimensional dual-energy X-ray absorptiometry reconstructs three-dimensional maps of the proximal femur's density distribution from standard hip scans, enabling the estimation of trabecular and cortical bone parameters. The aim of this study was to assess the agreement of these three-dimensional cortical and trabecular femur parameters across different series and models of Hologic densitometers. Methodology: The study cohort was composed of 103 women and men recruited from four ",
+      "categories": [
+        "q-bio.QM",
+        "physics.med-ph"
+      ]
+    },
+    {
+      "id": "2604.18634v1",
+      "title": "Topological analysis of hemodynamic response to cardiac resynchronization therapy",
+      "authors": [
+        "Aina Ferr\u00e0 Marc\u00fas",
+        "Carles Casacuberta",
+        "Josep Vives",
+        "Joan Guich",
+        "Gerard Amor\u00f3s-Figueras"
+      ],
+      "date": "2026-04-18",
+      "abstract": "Objective: The Mapper algorithm is a qualitative method in topological data analysis that constructs graphs from point clouds by combining dimensionality reduction and clustering techniques. The aim of this study is to apply Mapper, together with novel quantitative indices, to compare the effects of biventricular pacing from the left ventricular epicardium versus the endocardium in a swine model of pacing-induced non-ischemic cardiomyopathy.   Methods: The distributions of four hemodynamic varia",
+      "categories": [
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.16896v1",
+      "title": "ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design",
+      "authors": [
+        "Yutang Ge",
+        "Guojiang Zhao",
+        "Sihang Li",
+        "Zheng Cheng",
+        "Zifeng Zhao"
+      ],
+      "date": "2026-04-18",
+      "abstract": "Designing proteins that satisfy natural language functional requirements is a central goal in protein engineering. A straightforward baseline is to fine-tune generic instruction-tuned LLMs as direct text-to-sequence generators, but this is data- and compute-hungry. With limited supervision, LLMs can produce coherent plans in text yet fail to reliably realize them as sequences. This plan-execute gap motivates ProtoCycle, an agentic framework for protein design that uses LLMs primarily to drive a ",
+      "categories": [
+        "q-bio.QM",
+        "cs.AI"
+      ]
+    },
+    {
+      "id": "2604.16851v1",
+      "title": "Applications of deep generative models to DNA reaction kinetics and to cryogenic electron microscopy",
+      "authors": [
+        "Chenwei Zhang"
+      ],
+      "date": "2026-04-18",
+      "abstract": "This dissertation explores how deep generative models can advance the analysis of challenging biological problems by integrating domain knowledge with deep learning. It focuses on two areas: DNA reaction kinetics and cryogenic electron microscopy (cryo-EM). In the first part, we present ViDa, a biophysics-informed framework leveraging variational autoencoders (VAEs) and geometric scattering transforms to generate biophysically-plausible embeddings of DNA reaction kinetics simulations. These embe",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ]
+    },
+    {
+      "id": "2604.18622v1",
+      "title": "MDAgent: A Multi-Agent Framework for End-to-End Molecular Dynamics Research",
+      "authors": [
+        "Zhenyu Ma",
+        "Chunyi Yang",
+        "Yuyang Song",
+        "Jingyi Zhu",
+        "Letian Yang"
+      ],
+      "date": "2026-04-18",
+      "abstract": "Molecular dynamics (MD) simulation is a powerful tool for studying biomolecular structural changes, molecular recognition, transmembrane transport, and functional mechanisms. However, its practical bottleneck lies not only in software operation or parameter setup, but in translating experimental questions into executable, interpretable, and reviewable computational workflows. Here, we present MDAgent, a multi-agent system for end-to-end molecular dynamics research. The system integrates problem ",
+      "categories": [
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.16648v1",
+      "title": "FRIGID: Scaling Diffusion-Based Molecular Generation from Mass Spectra at Training and Inference Time",
+      "authors": [
+        "Montgomery Bohde",
+        "Hongxuan Liu",
+        "Mrunali Manjrekar",
+        "Magdalena Lederbauer",
+        "Shuiwang Ji"
+      ],
+      "date": "2026-04-17",
+      "abstract": "In this work, we present FRIGID, a framework with a novel diffusion language model that generates molecular structures conditioned on mass spectra via intermediate fingerprint representations and determined chemical formulae, training at the scale of hundreds of millions of unlabeled structures. We then demonstrate how forward fragmentation models enable inference-time scaling by identifying spectrum-inconsistent fragments and refining them through targeted remasking and denoising. While FRIGID ",
+      "categories": [
+        "cs.LG",
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.16642v1",
+      "title": "Geometric coherence of single-cell CRISPR perturbations reveals regulatory architecture and predicts cellular stress",
+      "authors": [
+        "Prashant C. Raju"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Genome engineering has achieved remarkable sequence-level precision, yet predicting the transcriptomic state that a cell will occupy after perturbation remains an open problem. Single-cell CRISPR screens measure how far cells move from their unperturbed state, but this effect magnitude ignores a fundamental question: do the cells move together? Two perturbations with identical magnitude can produce qualitatively different outcomes if one drives cells coherently along a shared trajectory while th",
+      "categories": [
+        "q-bio.QM",
+        "q-bio.CB",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.16586v1",
+      "title": "A Systematic Survey and Benchmark of Deep Learning for Molecular Property Prediction in the Foundation Model Era",
+      "authors": [
+        "Zongru Li",
+        "Xingsheng Chen",
+        "Honggang Wen",
+        "Regina Qianru Zhang",
+        "Ming Li"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Molecular property prediction integrates quantum chemistry, cheminformatics, and deep learning to connect molecular structure with physicochemical and biological behavior. This survey traces four complementary paradigms, including Quantum, Descriptor Machine Learning, Geometric Deep Learning, and Foundation Models, and outlines a unified taxonomy linking molecular representations, model architectures, and interdisciplinary applications. Benchmark analyses integrate evidence from both widely used",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.QM"
+      ]
+    },
+    {
+      "id": "2604.15598v1",
+      "title": "When do trajectories matter? Identifiability analysis for stochastic transport phenomena",
+      "authors": [
+        "Matthew J Simpson",
+        "Michael J Plank"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Stochastic models of diffusion are routinely used to study dispersal of populations, including populations of animals, plants, seeds and cells. Advances in imaging and field measurement technologies mean that data are often collected across a range of scales, including count data collected across a series of fixed sampling regions to characterize population-level dispersal, as well as individual trajectory data to examine at the motion of individuals within a diffusive population. In this work w",
+      "categories": [
+        "nlin.CG",
+        "q-bio.QM",
+        "stat.AP"
+      ]
+    },
+    {
+      "id": "2604.15520v1",
+      "title": "Sparse regression, classification, and microbial network estimation in QIIME2 with q2-classo and q2-gglasso",
+      "authors": [
+        "Oleg Vlasovets",
+        "Fabian Schaipp",
+        "Leo Simpson",
+        "Evan Bolyen",
+        "J. Gregory Caporaso"
+      ],
+      "date": "2026-04-16",
+      "abstract": "Motivation: Statistical analysis of microbial count data derived from 16S rRNA or metagenomics sequencing poses unique challenges due to the sparse, compositional, and high-dimensional nature of the data. While QIIME 2 already provides many tools for data pre-processing and analysis, plugins for statistical regression, classification, and microbial network estimation tailored to compositional count data are relatively scarce. Results: We present q2-classo and q2-gglasso, two novel QIIME 2 plugin",
+      "categories": [
+        "q-bio.QM"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 353,
+    "date_range": "2026-03-23 to 2026-04-21",
+    "avg_authors_per_paper": 3.53
+  }
+}

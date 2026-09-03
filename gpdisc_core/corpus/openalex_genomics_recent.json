@@ -1,0 +1,443 @@
+{
+  "source": "OpenAlex - Genomics",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "genome_analysis",
+    "sequencing",
+    "transcriptomics",
+    "epigenomics",
+    "comparative_genomics"
+  ],
+  "key_papers": [
+    {
+      "id": "W3015352082",
+      "title": "The construct of institutional distance through the lens of diverse institutional perspectives: Review, analysis, and future directions.",
+      "authors": [
+        "Tatiana Kostova",
+        "R. Scott",
+        "Sjoerd Beugelsdijk",
+        "VE Kunst",
+        "C-H Chua"
+      ],
+      "date": "2050-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2050,
+      "type": "article",
+      "source": "University of Liverpool",
+      "concepts": [
+        "Construct (python library)",
+        "Institutionalism",
+        "Institutional theory",
+        "Institutional analysis",
+        "New institutionalism"
+      ],
+      "citation_count": 1,
+      "openalex_url": "https://openalex.org/W3015352082"
+    },
+    {
+      "id": "W7119532346",
+      "title": "What factors facilitate and hinder the embedding of JESIP into wider category one, category two, and third sector organisations. Report produced by the University of Liverpool for the Joint Emergency Services Interoperability Programme.",
+      "authors": [
+        "Sara Waring",
+        "Nicole Balmer",
+        "Hannah Langley",
+        "Kelsea Williams",
+        "Elena Vaughan-Chantler"
+      ],
+      "date": "2050-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2050,
+      "type": "article",
+      "source": "University of Liverpool",
+      "concepts": [
+        "Feeling",
+        "Public relations",
+        "Agency (philosophy)",
+        "Embedding",
+        "Training (meteorology)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7119532346"
+    },
+    {
+      "id": "W7128646703",
+      "title": "EXPLORING LEADERSHIP STRATEGIES FOR NAVIGATING PARADOXES IN DIGITAL PUBLIC SERVICES",
+      "authors": [
+        "Blessing Otuore"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Public relations",
+        "Business",
+        "Political science",
+        "Sociology",
+        "Public administration"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128646703"
+    },
+    {
+      "id": "W7128535615",
+      "title": "Music in early Coptic imagination: cultural acts and their cosmological aspects, according to literary sources",
+      "authors": [
+        "Robert Girling"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Musical",
+        "Scholarship",
+        "Literature",
+        "Musicology",
+        "Key (lock)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128535615"
+    },
+    {
+      "id": "W7127918584",
+      "title": "The Representation of the Anthropocene in Contemporary Chinese Science Fiction",
+      "authors": [
+        "Yue Zhou"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "University of Liverpool",
+      "concepts": [
+        "Anthropocene",
+        "Representation (politics)",
+        "History",
+        "Chinese literature",
+        "Literature"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127918584"
+    },
+    {
+      "id": "W7128622809",
+      "title": "Branding (Dis)enchantment: Exploring employer brand communications and the lived experience of employees in UK fast fashion retail.",
+      "authors": [
+        "Julia Marcet Alonso"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Consumption (sociology)",
+        "Nexus (standard)",
+        "Lived experience",
+        "Advertising",
+        "Business"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128622809"
+    },
+    {
+      "id": "W7128644306",
+      "title": "Bridging the Gap in Reading Skills: The Role of Home Literacy Environment and Parental Expectations in Chinese Rural-to- Urban Migrant Children",
+      "authors": [
+        "Yuchen Song"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Literacy",
+        "Reading (process)",
+        "Bridging (networking)",
+        "Psychology",
+        "Comprehension"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128644306"
+    },
+    {
+      "id": "W7116362194",
+      "title": "MODELING HOSPITALITY AND TOURISM STRATEGIES",
+      "authors": [
+        "Di Zhu"
+      ],
+      "date": "2030-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2030,
+      "type": "article",
+      "source": "Washington State University",
+      "concepts": [
+        "Hospitality",
+        "Tourism",
+        "Marketing",
+        "Economics",
+        "Hospitality industry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7116362194"
+    },
+    {
+      "id": "W7128547584",
+      "title": "'Policing While Black: A Black Feminist Autoethnography about Hate Crime Work'",
+      "authors": [
+        "Dominique Walker"
+      ],
+      "date": "2030-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Oppression",
+        "Sociology",
+        "Autoethnography",
+        "Gender studies",
+        "Racism"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128547584"
+    },
+    {
+      "id": "W7128493318",
+      "title": "Motivations to visit green and natural spaces: UK ethnic minority experiences and perceptions of greenspace in Bristol, England.",
+      "authors": [
+        "Andrew K. Palmer"
+      ],
+      "date": "2030-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Ethnic group",
+        "Sociocultural evolution",
+        "Affordance",
+        "Perception",
+        "Natural (archaeology)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128493318"
+    },
+    {
+      "id": "W7127923641",
+      "title": "Nurturing a collective approach to Transformative Service Research: Improving experiences of an infant feeding service eco-system through service user collaboration.",
+      "authors": [
+        "Jessica Weaver"
+      ],
+      "date": "2030-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Transformative learning",
+        "Reflexivity",
+        "Competence (human resources)",
+        "Bureaucracy",
+        "Public relations"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127923641"
+    },
+    {
+      "id": "W7154877547",
+      "title": "Integrating Restorative Justice: A Whole-System Approach",
+      "authors": [],
+      "date": "2029-10-29",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Research Repository (University of Gloucestershire)",
+      "concepts": [
+        "Transformative learning",
+        "Restorative justice",
+        "Harm",
+        "Engineering ethics",
+        "Criminal justice"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154877547"
+    },
+    {
+      "id": "W7128061666",
+      "title": "Healing Landscape that Supports Healthy Ageing-in-Place in Suzhou, China",
+      "authors": [
+        "Da Huo"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Conceptual framework",
+        "Redevelopment",
+        "Urbanization",
+        "Level design",
+        "Environmental planning"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128061666"
+    },
+    {
+      "id": "W7128617497",
+      "title": "A Framework for Understanding Moving Image Music Concerts: Repertoire, Reception and Recontextualisation",
+      "authors": [
+        "Elizabeth Hunt"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Presentation (obstetrics)",
+        "Repertoire",
+        "Popular music",
+        "Mode (computer interface)",
+        "Musical"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128617497"
+    },
+    {
+      "id": "W7128472456",
+      "title": "Social Capital and Regeneration in Historical Areas: Case Study of Jianguo Men Market, Xi\u2019an, China",
+      "authors": [
+        "Min Wang"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Grassroots",
+        "Guanxi",
+        "Social capital",
+        "Government (linguistics)",
+        "China"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128472456"
+    },
+    {
+      "id": "W7128643947",
+      "title": "Passions on the Protestant Deathbed in Thomas Becon's The Sycke Mans Salue (1553)",
+      "authors": [
+        "Elizabeth Wilkinson"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Protestantism",
+        "Battle",
+        "Passions",
+        "Religious studies",
+        "Philosophy"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128643947"
+    },
+    {
+      "id": "W7128507520",
+      "title": "A Study on University Campus Outdoor Environments Promoting Students\u2019 Mental Well-Being",
+      "authors": [
+        "Kunlun Ren"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "University campus",
+        "Psychology",
+        "Mental health",
+        "Medical education",
+        "Sociology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128507520"
+    },
+    {
+      "id": "W7149883430",
+      "title": "Cr\u00edticas\u00a0de\u00a0Bolsonaro\u00a0ao\u00a0Inpe\u00a0s\u00e3o\u00a0trabalho\u00a0de\u00a0quem\u00a0n\u00e3o\u00a0conhece\u00a0do\u00a0assunto",
+      "authors": [],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Biblioteca Digital da Mem\u00f3ria Cient\u00edfica do INPE (National Institute for Space Research)",
+      "concepts": [
+        "Political science",
+        "Business",
+        "Government (linguistics)",
+        "Context (archaeology)",
+        "History"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7149883430"
+    },
+    {
+      "id": "W7127379152",
+      "title": "Holistic Development Of Personality: A Perspective Of Indian Pedagogy",
+      "authors": [
+        "Siharan Chakrabarty"
+      ],
+      "date": "2028-08-12",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Indigenous",
+        "Meaning (existential)",
+        "Perspective (graphical)",
+        "Sociology",
+        "Theme (computing)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127379152"
+    },
+    {
+      "id": "W7127371715",
+      "title": "Holistic Development Of Personality: A Perspective Of Indian Pedagogy",
+      "authors": [
+        "Siharan Chakrabarty"
+      ],
+      "date": "2028-08-12",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Indigenous",
+        "Meaning (existential)",
+        "Perspective (graphical)",
+        "Sociology",
+        "Theme (computing)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127371715"
+    }
+  ],
+  "statistics": {
+    "total_authors": 144,
+    "avg_citations": 0.01,
+    "avg_authors_per_paper": 1.44
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "generated_date": "2026-04-22",
+  "categories": {
+    "Molecular Biology": {
+      "papers_count": 100,
+      "filename": "openalex_molecular_biology_recent.json"
+    },
+    "Cell Biology": {
+      "papers_count": 100,
+      "filename": "openalex_cell_biology_recent.json"
+    },
+    "Biophysics": {
+      "papers_count": 100,
+      "filename": "openalex_biophysics_recent.json"
+    },
+    "Computational Biology": {
+      "papers_count": 100,
+      "filename": "openalex_computational_biology_recent.json"
+    },
+    "Genomics": {
+      "papers_count": 100,
+      "filename": "openalex_genomics_recent.json"
+    }
+  },
+  "total_papers": 500,
+  "source": "OpenAlex API (open catalog of global research)"
+}

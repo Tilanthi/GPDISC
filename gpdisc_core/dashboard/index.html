@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIODISC Live - Biology Discovery Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header .status-badge {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 15px;
+        }
+
+        .discovery-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .discovery-item {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .discovery-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .discovery-domain {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .discovery-confidence {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: width 0.5s ease;
+        }
+
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .domain-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .domain-card:hover {
+            transform: scale(1.05);
+        }
+
+        .domain-card.active {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 5px;
+            border-left: 2px solid #667eea;
+            padding-left: 10px;
+        }
+
+        .log-time {
+            color: #888;
+            margin-right: 10px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 1200px) {
+            .grid { grid-template-columns: 1fr; }
+            .domain-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .domain-grid { grid-template-columns: repeat(2, 1fr); }
+            .header { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧬 BIODISC Live</h1>
+            <div style="text-align: center;">
+                <h2 style="color: #333; font-size: 1.2em; margin: 0;">Biology Discovery and Intelligence System</h2>
+                <p style="color: #666; margin-top: 5px;">Autonomous Biological Research Dashboard</p>
+            </div>
+            <div class="status-badge">
+                🔬 ACTIVE
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">📊 System Overview</div>
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="cycle-count">0</div>
+                        <div class="stat-label">Discovery Cycles</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="confidence">85%</div>
+                        <div class="stat-label">Confidence</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="papers-count">1300</div>
+                        <div class="stat-label">Papers Analyzed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="domains-count">10</div>
+                        <div class="stat-label">Active Domains</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🧬 Biology Domains</div>
+                <div class="domain-grid" id="domains-grid">
+                    <!-- Domains will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">📈 Discovery Activity</div>
+                <div class="chart-container">
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🎯 Domain Performance</div>
+                <div class="chart-container">
+                    <canvas id="domainChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discoveries and Logs -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">🔬 Recent Discoveries</div>
+                <div class="discovery-list" id="discovery-list">
+                    <!-- Discoveries will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 System Log</div>
+                <div class="log-container" id="log-container">
+                    <!-- Logs will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Card -->
+        <div class="card full-width">
+            <div class="card-title">⚡ Processing Progress</div>
+            <div style="margin-top: 15px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>Corpus Analysis</span>
+                    <span id="progress-text">78%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 78%;">78%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // BIODISC Dashboard JavaScript
+
+        // Biology domains
+        const domains = [
+            { name: 'Molecular Biology', icon: '🧬', active: true, papers: 156 },
+            { name: 'Biochemistry', icon: '⚗️', active: true, papers: 143 },
+            { name: 'Genetics', icon: '🧬', active: true, papers: 128 },
+            { name: 'Cell Biology', icon: '🔬', active: true, papers: 134 },
+            { name: 'Biophysics', icon: '⚡', active: true, papers: 98 },
+            { name: 'Bioinformatics', icon: '💻', active: true, papers: 167 },
+            { name: 'Computational Biology', icon: '🖥️', active: true, papers: 145 },
+            { name: 'Genomics', icon: '🧬', active: true, papers: 189 },
+            { name: 'Proteomics', icon: '🔍', active: true, papers: 112 },
+            { name: 'Systems Biology', icon: '🌐', active: true, papers: 128 }
+        ];
+
+        // Sample discoveries
+        const discoveries = [
+            {
+                title: 'Novel protein folding mechanism discovered',
+                domain: 'Molecular Biology',
+                confidence: 0.94,
+                time: '2 minutes ago'
+            },
+            {
+                title: 'CRISPR efficiency prediction model',
+                domain: 'Genetics',
+                confidence: 0.89,
+                time: '5 minutes ago'
+            },
+            {
+                title: 'Mitochondrial signaling pathway identified',
+                domain: 'Cell Biology',
+                confidence: 0.87,
+                time: '8 minutes ago'
+            },
+            {
+                title: 'Enzyme catalysis rate optimization',
+                domain: 'Biochemistry',
+                confidence: 0.92,
+                time: '12 minutes ago'
+            },
+            {
+                title: 'Single-cell analysis method improvement',
+                domain: 'Bioinformatics',
+                confidence: 0.88,
+                time: '15 minutes ago'
+            }
+        ];
+
+        // Initialize domains
+        function initDomains() {
+            const grid = document.getElementById('domains-grid');
+            grid.innerHTML = domains.map(domain => `
+                <div class="domain-card ${domain.active ? 'active' : ''}">
+                    <div style="font-size: 2em;">${domain.icon}</div>
+                    <div style="font-weight: bold; margin-top: 5px; font-size: 0.85em;">${domain.name}</div>
+                    <div style="color: #666; font-size: 0.75em; margin-top: 3px;">${domain.papers} papers</div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize discoveries
+        function initDiscoveries() {
+            const list = document.getElementById('discovery-list');
+            list.innerHTML = discoveries.map(d => `
+                <div class="discovery-item">
+                    <div class="discovery-title">${d.title}</div>
+                    <div class="discovery-domain">${d.domain}</div>
+                    <div>
+                        <span class="discovery-confidence">${Math.round(d.confidence * 100)}% confidence</span>
+                        <span style="color: #666; margin-left: 10px;">${d.time}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize charts
+        function initCharts() {
+            // Activity Chart
+            const activityCtx = document.getElementById('activityChart').getContext('2d');
+            const activityChart = new Chart(activityCtx, {
+                type: 'line',
+                data: {
+                    labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                    datasets: [{
+                        label: 'Discoveries',
+                        data: [12, 19, 23, 31, 28, 35],
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'Papers Processed',
+                        data: [120, 190, 230, 280, 310, 350],
+                        borderColor: '#764ba2',
+                        backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Domain Performance Chart
+            const domainCtx = document.getElementById('domainChart').getContext('2d');
+            const domainChart = new Chart(domainCtx, {
+                type: 'radar',
+                data: {
+                    labels: domains.map(d => d.name),
+                    datasets: [{
+                        label: 'Performance Score',
+                        data: [85, 78, 92, 88, 75, 95, 82, 90, 87, 79],
+                        backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                        borderColor: '#667eea',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize logs
+        function initLogs() {
+            const container = document.getElementById('log-container');
+            const logs = [
+                { time: '19:55:30', msg: 'BIODISC system initialized successfully' },
+                { time: '19:55:25', msg: 'Loading biology corpus: 1300 papers' },
+                { time: '19:55:20', msg: 'Connecting to UniProt database...' },
+                { time: '19:55:15', msg: 'MORK ontology loaded: 73 biology concepts' },
+                { time: '19:55:10', msg: 'Dashboard server started on port 8789' },
+                { time: '19:55:05', msg: 'Initializing BIODISC v4.0.0...' },
+                { time: '19:55:00', msg: 'System startup initiated' }
+            ];
+
+            container.innerHTML = logs.map(log => `
+                <div class="log-entry">
+                    <span class="log-time">${log.time}</span>
+                    <span class="log-msg">${log.msg}</span>
+                </div>
+            `).join('');
+        }
+
+        // Add new log entry
+        function addLog(msg) {
+            const container = document.getElementById('log-container');
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-GB');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerHTML = `<span class="log-time">${time}</span><span class="log-msg">${msg}</span>`;
+            container.insertBefore(entry, container.firstChild);
+        }
+
+        // Update stats
+        function updateStats() {
+            document.getElementById('cycle-count').textContent = Math.floor(Math.random() * 50) + 100;
+            document.getElementById('confidence').textContent = (85 + Math.random() * 5).toFixed(1) + '%';
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            initDomains();
+            initDiscoveries();
+            initCharts();
+            initLogs();
+
+            // Simulate live updates
+            setInterval(() => {
+                updateStats();
+                addLog('Processing paper batch...');
+            }, 5000);
+        });
+
+        // Fetch API status
+        async function refreshStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                document.getElementById('cycle-count').textContent = data.engine.cycle_count;
+                document.getElementById('confidence').textContent = (data.engine.system_confidence * 100).toFixed(1) + '%';
+            } catch (e) {
+                console.log('API not available, using simulation');
+            }
+        }
+
+        setInterval(refreshStatus, 10000);
+    </script>
+</body>
+</html>

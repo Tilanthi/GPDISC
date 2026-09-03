@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# PRIVATE PACKAGE - local install only.
+# GPDISC handles sensitive patient data. Do not publish to any index.
+# The GitHub-push prohibition in CLAUDE.md applies to this package.
+
+[project]
+name = "gpdisc-core"
+version = "1.1.0"
+description = "GPDISC: General Practice Discovery and Intelligence System for Consultation - private, local-only GP-led medical consultation and second opinions"
+requires-python = ">=3.10"
+dependencies = [
+    # Live consultation path (verified by runtime sys.modules audit, 2026-08-21)
+    "numpy",
+    "pandas",
+    "scipy",
+    "sympy",
+    "networkx",
+    "requests",
+    "reportlab",
+]
+
+[project.optional-dependencies]
+# Medical document ingestion (PDF reports, DICOM imaging)
+medical-io = [
+    "PyPDF2",
+    "pdfplumber",
+    "pdfminer.six",
+    "pydicom",
+]
+# Optional LLM bridge (llm_inference modules). Privacy note: importing the
+# SDK is not transmission; no patient data leaves this machine without an
+# explicitly configured API key. Keep unset for local-only operation.
+llm = [
+    "anthropic",
+]
+# Heavy research/ML extras used by non-medical heritage modules
+ml = [
+    "torch",
+    "scikit-learn",
+    "sentence-transformers",
+    "statsmodels",
+]
+viz = [
+    "matplotlib",
+]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+include = ["gpdisc_core*"]
+
+[tool.pytest.ini_options]
+testpaths = ["gpdisc_core/tests"]

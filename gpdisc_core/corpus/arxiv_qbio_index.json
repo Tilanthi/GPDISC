@@ -1,0 +1,41 @@
+{
+  "generated_date": "2026-04-22",
+  "categories": {
+    "q-bio.CB": {
+      "name": "Cell Behavior",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_CB_recent.json"
+    },
+    "q-bio.GN": {
+      "name": "Genomics",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_GN_recent.json"
+    },
+    "q-bio.MN": {
+      "name": "Molecular Networks",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_MN_recent.json"
+    },
+    "q-bio.NC": {
+      "name": "Neurons and Cognition",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_NC_recent.json"
+    },
+    "q-bio.PE": {
+      "name": "Populations and Evolution",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_PE_recent.json"
+    },
+    "q-bio.QM": {
+      "name": "Quantitative Methods",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_QM_recent.json"
+    },
+    "q-bio.TO": {
+      "name": "Tissues and Organs",
+      "papers_count": 100,
+      "filename": "arxiv_q_bio_TO_recent.json"
+    }
+  },
+  "total_papers": 700
+}

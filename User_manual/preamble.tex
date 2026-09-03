@@ -1,0 +1,37 @@
+% GPDISC shared PDF preamble (pandoc + xelatex), used by both manuals.
+% Loaded via --include-in-header AFTER the pandoc template's own packages,
+% so plain re-loads here are safe; only packages absent from the template
+% (titlesec) are fresh. Keep changes defensive: nothing that assumes a
+% template feature is guaranteed.
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{framed}
+\usepackage{fvextra}
+
+\definecolor{gpblue}{RGB}{18,58,110}
+\definecolor{gpgrey}{RGB}{96,102,110}
+\definecolor{gpback}{RGB}{244,246,249}
+
+% Code blocks carry the verbatim GPDISC responses: small, wrapped.
+\fvset{fontsize=\footnotesize,breaklines=true,breakanywhere=true}
+\definecolor{shadecolor}{RGB}{244,246,249}
+
+% Headings in the shared GPDISC blue; compact spacing to save pages.
+\titleformat{\section}{\color{gpblue}\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\color{gpblue}\large\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus .5ex}{0.8ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus .4ex}{0.6ex}
+
+% Running header/footer.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{gpgrey}GPDISC --- General Practice Discovery and Intelligence System for Consultation}
+\fancyhead[R]{\footnotesize\color{gpgrey}v1.1.0}
+\fancyfoot[C]{\footnotesize\color{gpgrey}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% Tighter lists: manuals are example-heavy, page budget matters.
+\usepackage{enumitem}
+\setlist{nosep,topsep=2pt,leftmargin=1.4em}

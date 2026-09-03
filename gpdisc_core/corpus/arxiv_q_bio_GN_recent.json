@@ -1,0 +1,253 @@
+{
+  "source": "arXiv Quantitative Biology - Genomics (q-bio.GN)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "genome_assembly",
+    "sequencing",
+    "transcriptomics",
+    "epigenomics",
+    "functional_genomics",
+    "comparative_genomics"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.18621v1",
+      "title": "Quantum AI for Cancer Diagnostic Biomarker Discovery",
+      "authors": [
+        "Mandeep Kaur Saggi",
+        "Amandeep Singh Bhatia",
+        "Humaira Gowher",
+        "Sabre Kais"
+      ],
+      "date": "2026-04-18",
+      "abstract": "Quantum machine learning offers a promising new paradigm for computational biology by leveraging quantum mechanical principles to enhance cancer classification, biomarker discovery, and bioinformatics diagnostics. In this study, we apply QML to identify subtype specific biomarkers for lung adenocarcinoma (LUAD) and lung squamous cell carcinoma (LUSC), the two predominant forms of non-small cell lung cancer. Our methodology involves a two-phase process: in Phase 1, differential expression analysi",
+      "categories": [
+        "q-bio.GN",
+        "cs.LG"
+      ]
+    },
+    {
+      "id": "2604.16642v1",
+      "title": "Geometric coherence of single-cell CRISPR perturbations reveals regulatory architecture and predicts cellular stress",
+      "authors": [
+        "Prashant C. Raju"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Genome engineering has achieved remarkable sequence-level precision, yet predicting the transcriptomic state that a cell will occupy after perturbation remains an open problem. Single-cell CRISPR screens measure how far cells move from their unperturbed state, but this effect magnitude ignores a fundamental question: do the cells move together? Two perturbations with identical magnitude can produce qualitatively different outcomes if one drives cells coherently along a shared trajectory while th",
+      "categories": [
+        "q-bio.QM",
+        "q-bio.CB",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.14305v1",
+      "title": "Combining Bayesian and Frequentist Inference for Laboratory-Specific Performance Guarantees in Copy Number Variation Detection",
+      "authors": [
+        "Austin Talbot",
+        "Alex V. Kotlar",
+        "Yue Ke"
+      ],
+      "date": "2026-04-15",
+      "abstract": "Targeted amplicon panels are widely used in oncology diagnostics, but providing per-gene performance guarantees for copy number variant (CNV) detection remains challenging due to amplification artifacts, process-mismatch heterogeneity, and limited validation sample sizes. While Bayesian CNV callers naturally quantify per-sample uncertainty, translating this into the frequentist population-level guarantees required for clinical validation, coverage rates, false-positive bounds, and minimum detect",
+      "categories": [
+        "stat.ME",
+        "cs.LG",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.12387v1",
+      "title": "oxo-call: Documentation-grounded Skill Augmentation for Accurate Bioinformatics Command-line Generation with Large Language Models",
+      "authors": [
+        "Yun Peng",
+        "Yujun Sun",
+        "Jia Ding",
+        "Bin Yan",
+        "Zhangyu Wang"
+      ],
+      "date": "2026-04-14",
+      "abstract": "Command-line bioinformatics tools remain essential for genomic analysis, yet their diversity in syntax and parameterization presents a persistent barrier to productive research. We present oxo-call, a Rust-based command-line assistant that translates natural-language task descriptions into accurate tool invocations through two complementary strategies: documentation-first grounding, which provides the large language model (LLM) with the complete, version-specific help text of each target tool, a",
+      "categories": [
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.12060v1",
+      "title": "Interpretable DNA Sequence Classification via Dynamic Feature Generation in Decision Trees",
+      "authors": [
+        "Nicolas Huynh",
+        "Krzysztof Kacprzyk",
+        "Ryan Sheridan",
+        "David Bentley",
+        "Mihaela van der Schaar"
+      ],
+      "date": "2026-04-13",
+      "abstract": "The analysis of DNA sequences has become critical in numerous fields, from evolutionary biology to understanding gene regulation and disease mechanisms. While deep neural networks can achieve remarkable predictive performance, they typically operate as black boxes. Contrasting these black boxes, axis-aligned decision trees offer a promising direction for interpretable DNA sequence analysis, yet they suffer from a fundamental limitation: considering individual raw features in isolation at each sp",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.08698v1",
+      "title": "EvoLen: Evolution-Guided Tokenization for DNA Language Model",
+      "authors": [
+        "Nan Huang",
+        "Xiaoxiao Zhou",
+        "Junxia Cui",
+        "Mario Tapia-Pacheco",
+        "Tiffany Amariuta"
+      ],
+      "date": "2026-04-09",
+      "abstract": "Tokens serve as the basic units of representation in DNA language models (DNALMs), yet their design remains underexplored. Unlike natural language, DNA lacks inherent token boundaries or predefined compositional rules, making tokenization a fundamental modeling decision rather than a naturally specified one. While existing approaches like byte-pair encoding (BPE) excel at capturing token structures that reflect human-generated linguistic regularities, DNA is organized by biological function and ",
+      "categories": [
+        "cs.LG",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.07196v1",
+      "title": "Probing 3D Chromatin Structure Awareness in Evo2 DNA Language Model",
+      "authors": [
+        "UkJin Lee"
+      ],
+      "date": "2026-04-08",
+      "abstract": "DNA language models like Evo2 now fit million-token contexts large enough to cover entire TADs, yet whether they learn 3D chromatin structure, a key regulatory layer acting atop primary sequence, remains untested and questionable, given that Evo2's training data includes prokaryotes lacking this structure. We probed Evo2-7B on TAD boundaries and convergent CTCF loops in 1 Mb windows using two complementary tests: likelihood-based perturbation and sequence generation. Evo2 did not distinguish fun",
+      "categories": [
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.06835v1",
+      "title": "WebCVTree4: A Newly Designed Phylogenetic and Taxonomic Study Platform for Prokaryotes Using Composition Vectors and Whole Genomes",
+      "authors": [
+        "Guanghong Zuo"
+      ],
+      "date": "2026-04-08",
+      "abstract": "CVTree is an alignment-free methodology for inferring species phylogeny and taxonomy. This method allows for the efficient and accurate resolution of evolutionary relationships among large numbers of species based on whole-genome sequence data. Since 2004, we have been continuously providing CVTree web services. Recently, the server has undergone a significant upgrade, culminating in the release of the WebCVTree4 platform. This upgrade encompasses a comprehensive update of the inbuilt genomic da",
+      "categories": [
+        "q-bio.PE",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.06569v1",
+      "title": "ECLIPSE: A Composable Pipeline for Predicting ecDNA Formation, Evolution, and Therapeutic Vulnerabilities in Cancer",
+      "authors": [
+        "Bryan Cheng",
+        "Jasper Zhang"
+      ],
+      "date": "2026-04-08",
+      "abstract": "Extrachromosomal DNA (ecDNA) represents one of the most pressing challenges in cancer biology: circular DNA structures that amplify oncogenes, evade targeted therapies, and drive tumor evolution in ~30% of aggressive cancers. Despite its clinical importance, computational ecDNA research has been built on broken foundations. We discover that existing benchmarks suffer from circular reasoning -- models trained on features that already require knowing ecDNA status -- artificially inflating performa",
+      "categories": [
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.06549v1",
+      "title": "The Mechanistic Invariance Test: Genomic Language Models Fail to Learn Positional Regulatory Logic",
+      "authors": [
+        "Bryan Cheng",
+        "Jasper Zhang"
+      ],
+      "date": "2026-04-08",
+      "abstract": "Genomic language models (gLMs) have transformed computational biology, achieving state-of-the-art performance across genomic tasks. Yet a fundamental question threatens the foundation of this success: do these models learn the mechanistic principles governing gene regulation, or do they merely exploit statistical shortcuts? We introduce the Mechanistic Invariance Test (MIT), a rigorous 650-sequence benchmark across 8 classes with scrambled controls that enables clean discrimination between compo",
+      "categories": [
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.05775v1",
+      "title": "PhageBench: Can LLMs Understand Raw Bacteriophage Genomes?",
+      "authors": [
+        "Yusen Hou",
+        "Weicai Long",
+        "Haitao Hu",
+        "Houcheng Su",
+        "Junning Feng"
+      ],
+      "date": "2026-04-07",
+      "abstract": "Bacteriophages, often referred to as the dark matter of the biosphere, play a critical role in regulating microbial ecosystems and in antibiotic alternatives. Thus, accurate interpretation of their genomes holds significant scientific and practical value. While general-purpose Large Language Models (LLMs) excel at understanding biological texts, their ability to directly interpret raw nucleotide sequences and perform biological reasoning remains underexplored. To address this, we introduce Phage",
+      "categories": [
+        "cs.CL",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.05774v1",
+      "title": "GenomeQA: Benchmarking General Large Language Models for Genome Sequence Understanding",
+      "authors": [
+        "Weicai Long",
+        "Yusen Hou",
+        "Junning Feng",
+        "Houcheng Su",
+        "Shuo Yang"
+      ],
+      "date": "2026-04-07",
+      "abstract": "Large Language Models (LLMs) are increasingly adopted as conversational assistants in genomics, where they are mainly used to reason over biological knowledge, annotations, and analysis outputs through natural language interfaces. However, existing benchmarks either focus on specialized DNA models trained for sequence prediction or evaluate biological knowledge using text-only questions, leaving the behavior of general-purpose LLMs when directly exposed to raw genome sequences underexplored. We ",
+      "categories": [
+        "q-bio.GN",
+        "cs.CL"
+      ]
+    },
+    {
+      "id": "2604.05478v3",
+      "title": "Transcriptomic Models for Immunotherapy Response Prediction Show Limited Cross-cohort Generalisability",
+      "authors": [
+        "Yuheng Liang",
+        "Lucy Chhuo",
+        "Ahmadreza Argha",
+        "Nona Farbehi",
+        "Lu Chen"
+      ],
+      "date": "2026-04-07",
+      "abstract": "Immune checkpoint inhibitors (ICIs) have transformed cancer therapy; yet substantial proportion of patients exhibit intrinsic or acquired resistance, making accurate pre-treatment response prediction a critical unmet need. Transcriptomics-based biomarkers derived from bulk and single-cell RNA sequencing (scRNA-seq) offer a promising avenue for capturing tumour-immune interactions, yet the cross-cohort generalisability of existing prediction models remains unclear.We systematically benchmark nine",
+      "categories": [
+        "q-bio.GN",
+        "cs.LG"
+      ]
+    },
+    {
+      "id": "2604.04287v1",
+      "title": "Entropy, Disagreement, and the Limits of Foundation Models in Genomics",
+      "authors": [
+        "Maxime Rochkoulets",
+        "Lovro Vr\u010dek",
+        "Mile \u0160iki\u0107"
+      ],
+      "date": "2026-04-05",
+      "abstract": "Foundation models in genomics have shown mixed success compared to their counterparts in natural language processing. Yet, the reasons for their limited effectiveness remain poorly understood. In this work, we investigate the role of entropy as a fundamental factor limiting the capacities of such models to learn from their training data and develop foundational capabilities. We train ensembles of models on text and DNA sequences and analyze their predictions, static embeddings, and empirical Fis",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "q-bio.GN"
+      ]
+    },
+    {
+      "id": "2604.04981v2",
+      "title": "An Imbalanced Dataset with Multiple Feature Representations for Studying Quality Control of Next-Generation Sequencing",
+      "authors": [
+        "Philipp R\u00f6chner",
+        "Clarissa Kr\u00e4mer",
+        "Johannes U Mayer",
+        "Franz Rothlauf",
+        "Steffen Albrecht"
+      ],
+      "date": "2026-04-04",
+      "abstract": "Next-generation sequencing (NGS) is a key technique for studying the DNA and RNA of organisms. However, identifying quality problems in NGS data across different experimental settings remains challenging. To develop automated quality-control tools, researchers require datasets with features that capture the characteristics of quality problems. Existing NGS repositories, however, offer only a limited number of quality-related features. To address this gap, we propose a dataset derived from 37,491",
+      "categories": [
+        "q-bio.GN",
+        "cs.LG",
+        "cs.NE"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 339,
+    "date_range": "2026-01-30 to 2026-04-18",
+    "avg_authors_per_paper": 3.39
+  }
+}

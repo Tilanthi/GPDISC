@@ -1,0 +1,240 @@
+{
+  "source": "arXiv Quantitative Biology - Populations and Evolution (q-bio.PE)",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "population_genetics",
+    "evolutionary_dynamics",
+    "phylogenetics",
+    "ecological_modeling"
+  ],
+  "key_papers": [
+    {
+      "id": "2604.18872v1",
+      "title": "Meeting times on graphs in near-cubic time",
+      "authors": [
+        "Alex McAvoy"
+      ],
+      "date": "2026-04-20",
+      "abstract": "The expected meeting time of two random walkers on an undirected graph of size $N$, where at each time step one walker moves and the process stops when they collide, satisfies a system of $\\binom{N}{2}$ linear equations. Na\u00efvely, solving this system takes $O\\left(N^{6}\\right)$ operations. However, this system of linear equations has nice structure in that it is almost a Sylvester equation, with the obstruction being a diagonal absorption constraint. We give a simple algorithm for solving this sy",
+      "categories": [
+        "q-bio.PE",
+        "cs.DS"
+      ]
+    },
+    {
+      "id": "2604.18809v1",
+      "title": "Analysis of persistence thresholds for a nonlocal PDE--ODE model of bacterial persister cells",
+      "authors": [
+        "Chongming Li",
+        "Tyler Meadows",
+        "Troy Day"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Within many bacterial colonies, persister cells exist as a subpopulation that is tolerant to antibiotics and other stressors, yet not genetically distinct from the rest of the colony. A recent study has proposed epigenetic inheritance as a mechanism that leads to the presence of persister cells. We analyze a nonlocal PDE--ODE model introduced in that study to describe the epigenetic inheritance process and establish its mathematical well-posedness, including existence, uniqueness, and nonnegativ",
+      "categories": [
+        "math.AP",
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.18521v1",
+      "title": "IDOBE: Infectious Disease Outbreak forecasting Benchmark Ecosystem",
+      "authors": [
+        "Aniruddha Adiga",
+        "Jingyuan Chou",
+        "Anshul Chiranth",
+        "Bryan Lewis",
+        "Ana I. Bento"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Epidemic forecasting has become an integral part of real-time infectious disease outbreak response. While collaborative ensembles composed of statistical and machine learning models have become the norm for real-time forecasting, standardized benchmark datasets for evaluating such methods are lacking. Further, there is limited understanding on performance of these methods for novel outbreaks with limited historical data. In this paper, we propose IDOBE, a curated collection of epidemiological ti",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.18345v1",
+      "title": "Effect of antibiotic spectrum on the abundance of resistant bacteria in multispecies communities",
+      "authors": [
+        "Magnus Aspenberg",
+        "Erik Andreas Martens",
+        "Kristofer Wollein Waldetoft"
+      ],
+      "date": "2026-04-20",
+      "abstract": "Antibiotic resistance is a major threat to global health. It emerges in multispecies microbial communities under antibiotic exposure. This makes antibiotic spectrum -- a drug's distribution of effects across species -- a potential key parameter in resistance management. However, we currently lack evolutionary theory for resistance dynamics in a multispecies setting. Analysing established community ecology theory, we develop a simple mathematical measure for how one taxon (strain or species) affe",
+      "categories": [
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.17926v1",
+      "title": "Information on hidden birth events restores identifiability in phylodynamic inference",
+      "authors": [
+        "Tobias Dieselhorst",
+        "Tanja Stadler"
+      ],
+      "date": "2026-04-20",
+      "abstract": "The parameters of many classes of birth-death processes cannot be inferred uniquely from phylogenetic trees: infinitely many parameter combinations yield the same distribution of phylogenetic trees. Here, we show that parameter identifiability can be recovered even for the most general cases of time-dependent rates when additional information on hidden birth events along branches of the reconstructed tree is available. This holds both for models in which individuals are sampled at a single point",
+      "categories": [
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.17036v1",
+      "title": "Evolution as fitness landscape navigation: Concepts, Measures, and Emerging Questions",
+      "authors": [
+        "Malvika Srivastava",
+        "Claudia Bank",
+        "Joachim Krug",
+        "Suman G. Das"
+      ],
+      "date": "2026-04-18",
+      "abstract": "Fitness landscapes are mappings between genotypes, phenotypes, and fitness that shape evolution. In recent years, empirical work and theoretical models have greatly advanced our understanding of how populations navigate rugged fitness landscapes. Here, we provide a timely review of this field. Its rapidly growing literature employs a wide range of terms, which are sometimes used ambiguously or inconsistently. We therefore begin by defining the major concepts and the field's vocabulary, highlight",
+      "categories": [
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.16065v1",
+      "title": "Phase transitions in microbial lineage trees",
+      "authors": [
+        "Kaan \u00d6cal",
+        "Syrine Ghrabli",
+        "Michael P. H. Stumpf"
+      ],
+      "date": "2026-04-17",
+      "abstract": "Statistical physics can describe the behavior of microbial populations consisting of many heterogeneous individuals. A direct consequence is the existence of phase transitions, where the behavior of a population changes discontinuously upon a small perturbation. While such phase transitions have often been proposed in biology, connecting observed behavior to the underlying physics has remained challenging. We show how phase transitions naturally arise in microbial population dynamics and highlig",
+      "categories": [
+        "q-bio.PE",
+        "physics.bio-ph"
+      ]
+    },
+    {
+      "id": "2604.14483v1",
+      "title": "Synchronized disease and behavioural dynamics in weakly coupled populations",
+      "authors": [
+        "Xinxuan Wang",
+        "Youngmin Park",
+        "Bryce Morsky"
+      ],
+      "date": "2026-04-15",
+      "abstract": "The spread of infectious disease is strongly influenced by social dynamics. In addition to infection risk, individuals vaccination decisions depend on prevailing social behavior: high infection levels and widespread vaccination can increase vaccine uptake, which in turn suppresses infection. This feedback can generate sustained oscillations in disease prevalence and vaccination behavior. Here, we study two such populations undergoing the same behavioral epidemiological limit cycle and introduce ",
+      "categories": [
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.13963v1",
+      "title": "A generative model for bipartite gene-sharing networks",
+      "authors": [
+        "Jaime Iranzo",
+        "Pedro J\u00f3dar",
+        "Eugene V. Koonin",
+        "Susanna Manrubia",
+        "Jos\u00e9 A. Cuesta"
+      ],
+      "date": "2026-04-15",
+      "abstract": "Gene-sharing networks provide a powerful framework to study the evolution of viruses and mobile genetic elements. These bipartite networks, which link genes to the genomes that contain them, exhibit characteristic degree distributions: a scale-free distribution for genes and an exponential-like decay for genomes. Here, we propose a mechanistic model that explains these patterns through fundamental evolutionary processes including horizontal gene transfer, capture of new genes, emergence of new g",
+      "categories": [
+        "q-bio.PE",
+        "physics.bio-ph"
+      ]
+    },
+    {
+      "id": "2604.13344v1",
+      "title": "What good is modeling? Introducing biology students to theory",
+      "authors": [
+        "Joanna Masel",
+        "Anna Dornhaus"
+      ],
+      "date": "2026-04-14",
+      "abstract": "Theory and empirical science should be in constant dialogue, but often find it hard to understand one another. Here we describe a graduate-level university course we developed to improve matters. The course was designed to help empirically-focused biology graduate students read and understand theory papers, despite little prior mathematical training. It uses several evidence-based principles of modern teaching: backwards design, active learning, and just-in-time teaching. We believe that this or",
+      "categories": [
+        "physics.ed-ph",
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.12884v1",
+      "title": "An abstract model of nonrandom, non-Lamarckian mutation in evolution using a multivariate estimation-of-distribution algorithm",
+      "authors": [
+        "Liudmyla Vasylenko",
+        "Adi Livnat"
+      ],
+      "date": "2026-04-14",
+      "abstract": "At the fundamental conceptual level, two alternatives have traditionally been considered for how mutations arise and how evolution happens: 1) random mutation and natural selection, and 2) Lamarckism. Recently, the theory of Interaction-based Evolution (IBE) has been proposed, according to which mutations are neither random nor Lamarckian, but are influenced by information accumulating internally in the genome over generations. Based on the estimation-of-distribution algorithms framework, we pre",
+      "categories": [
+        "cs.NE",
+        "q-bio.PE"
+      ]
+    },
+    {
+      "id": "2604.12546v1",
+      "title": "Predicting success of cooperators across arbitrary heterogeneous environmental landscapes",
+      "authors": [
+        "Amir Kargaran",
+        "Kamran Kaveh",
+        "Krishnendu Chatterjee"
+      ],
+      "date": "2026-04-14",
+      "abstract": "Cooperation is central to the organization of complex biological and social systems. Most theoretical models assume homogeneous environments; in reality, populations inhabit spatially varying landscapes in which the payoffs of cooperation differ across space. Here, we introduce a general framework for the evolution of cooperation in complex, heterogeneous environments where the benefit of cooperation depends on local environmental quality. Cooperators in environmentally rich sites confer greater",
+      "categories": [
+        "q-bio.PE",
+        "cond-mat.stat-mech",
+        "physics.soc-ph"
+      ]
+    },
+    {
+      "id": "2604.12164v1",
+      "title": "Phylogenetic Inference under the Balanced Minimum Evolution Criterion via Semidefinite Programming",
+      "authors": [
+        "P. Skums"
+      ],
+      "date": "2026-04-14",
+      "abstract": "In this study, we investigate the application of Semidefinite Programming (SDP) to phylogenetics. SDP is a powerful optimization framework that seeks to optimize a linear objective function over the cone of positive semidefinite matrices. As a convex optimization problem, SDP generalizes linear programming and provides tight relaxations for many combinatorial optimization problems. However, despite its many applications, SDP remains largely unused in computational biology.   We argue that SDP re",
+      "categories": [
+        "q-bio.PE",
+        "cs.DS",
+        "math.OC"
+      ]
+    },
+    {
+      "id": "2604.12004v1",
+      "title": "Fixation probabilities for multi-allele Moran dynamics with weak selection",
+      "authors": [
+        "Ian Braga",
+        "Lucas Wardil",
+        "Ricardo Martinez-Garcia"
+      ],
+      "date": "2026-04-13",
+      "abstract": "Fixation probabilities are essential for characterizing stochastic evolutionary dynamics, but analytical results remain limited mainly to systems with two competing types. We develop a perturbative framework to compute fixation probabilities in multi-allele Moran processes under weak selection. Exploiting the general structure of the backward Fokker-Planck operator in this regime, we show that fixation probabilities admit a systematic expansion around their neutral solution. We first introduce t",
+      "categories": [
+        "q-bio.PE",
+        "cond-mat.stat-mech"
+      ]
+    },
+    {
+      "id": "2604.11915v1",
+      "title": "Can AI Detect Life? Lessons from Artificial Life",
+      "authors": [
+        "Ankit Gupta",
+        "Christoph Adami"
+      ],
+      "date": "2026-04-13",
+      "abstract": "Modern machine learning methods have been proposed to detect life in extraterrestrial samples, drawing on their ability to distinguish biotic from abiotic samples based on training models using natural and synthetic organic molecular mixtures. Here we show using Artificial Life that such methods are easily fooled into detecting life with near 100% confidence even if the analyzed sample is not capable of life. This is due to modern machine learning methods' propensity to be easily fooled by out-o",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_authors": 286,
+    "date_range": "2026-03-04 to 2026-04-20",
+    "avg_authors_per_paper": 2.86
+  }
+}

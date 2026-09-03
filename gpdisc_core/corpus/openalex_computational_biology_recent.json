@@ -1,0 +1,436 @@
+{
+  "source": "OpenAlex - Computational Biology",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "bioinformatics_algorithms",
+    "computational_methods",
+    "data_analysis",
+    "modeling"
+  ],
+  "key_papers": [
+    {
+      "id": "W7128606142",
+      "title": "The evaluation of kinetic and static perimetry practice in neuro-ophthalmology",
+      "authors": [
+        "Michaela Sherlock"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Mathematics",
+        "Computer science",
+        "Kinetic energy",
+        "Noise (video)",
+        "Physics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128606142"
+    },
+    {
+      "id": "W7140762600",
+      "title": "Vacuum Mechanics: How the Quaternion Finally Made the Standard Model Make Sense",
+      "authors": [
+        "Luqman Omar Mahmood"
+      ],
+      "date": "2029-03-26",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Electroweak interaction",
+        "Particle physics",
+        "Standard Model (mathematical formulation)",
+        "Physics",
+        "Section (typography)"
+      ],
+      "citation_count": 6,
+      "openalex_url": "https://openalex.org/W7140762600"
+    },
+    {
+      "id": "W7140299984",
+      "title": "Vacuum Mechanics: How the Quaternion Finally Made the Standard Model Make Sense",
+      "authors": [
+        "Luqman Omar Mahmood"
+      ],
+      "date": "2029-03-26",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Electroweak interaction",
+        "Particle physics",
+        "Standard Model (mathematical formulation)",
+        "Physics",
+        "Section (typography)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7140299984"
+    },
+    {
+      "id": "W7117476988",
+      "title": "Paper 3: The Holographic Principle and Surface-Area Scaling in a Holosphere Lattice",
+      "authors": [
+        "Michael John Sarnowski"
+      ],
+      "date": "2028-12-28",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Scaling",
+        "Physics",
+        "Intermittency",
+        "Observable",
+        "Statistical physics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7117476988"
+    },
+    {
+      "id": "W7126163546",
+      "title": "Density functional theory driven compound design and reactivity analysis",
+      "authors": [
+        "Devin Oscar Klapatiuk"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Density functional theory",
+        "Reactivity (psychology)",
+        "Chemistry",
+        "Materials science",
+        "Thermodynamics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7126163546"
+    },
+    {
+      "id": "W3127118001",
+      "title": "NORC2017-05-tracer data version 1",
+      "authors": [
+        "Huang, Peng"
+      ],
+      "date": "2028-01-01",
+      "abstract": "",
+      "year": 2028,
+      "type": "article",
+      "source": "Mendeley Data",
+      "concepts": [
+        "TRACER",
+        "Computer science",
+        "Physics",
+        "Nuclear physics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W3127118001"
+    },
+    {
+      "id": "W7154712957",
+      "title": "Integrated circuits for photonic computing and sensing",
+      "authors": [
+        "Mohammed Ali Mohammed Al-Qadasi"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "cIRcle (University of British Columbia)",
+      "concepts": [
+        "Integrated circuit",
+        "Computer science",
+        "Electronic engineering",
+        "Photonic integrated circuit",
+        "Integrated optics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154712957"
+    },
+    {
+      "id": "W7126178630",
+      "title": "A fully on-chip frequency-locked loop (FLL) based chirp generator for frequency-modulated continuous-wave (FMCW) radar",
+      "authors": [
+        "Hassan Talaeian"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open Collections",
+      "concepts": [
+        "Control theory (sociology)",
+        "Computer science",
+        "Loop (graph theory)",
+        "Radar",
+        "Generator (circuit theory)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7126178630"
+    },
+    {
+      "id": "W7131907774",
+      "title": "Unveiling structure-function relationships in intermetallic quantum materials",
+      "authors": [
+        "Samikshya Priyadarsini Sahu"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Intermetallic",
+        "Quantum",
+        "Materials science",
+        "Physics",
+        "Condensed matter physics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7131907774"
+    },
+    {
+      "id": "W7125520264",
+      "title": "Quantum state manipulation of cold molecules with magnetic fields",
+      "authors": [
+        "Jiahong Hu"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Open Collections",
+      "concepts": [
+        "Physics",
+        "Magnetic field",
+        "Quantum",
+        "Quantum mechanics",
+        "State (computer science)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7125520264"
+    },
+    {
+      "id": "W7128409931",
+      "title": "Analyser et repr\u00e9senter le rythme : \u00e9tude exploratoire sur le transfert rythmique acoustique et gestuel d\u2019apprenants malaisophones en FLE",
+      "authors": [
+        "Jordan Souchet",
+        "Tilia Gamba-Kresh"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "SPIRE - Sciences Po Institutional REpository",
+      "concepts": [
+        "Physics",
+        "Art",
+        "Analyser",
+        "Optics",
+        "Computer science"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128409931"
+    },
+    {
+      "id": "W7128616647",
+      "title": "Simulation and measurement of particle therapy beams with a silicon-based detection system",
+      "authors": [
+        "Fajer Mohammed Z Alqahtani"
+      ],
+      "date": "2027-01-01",
+      "abstract": "",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Optics",
+        "Physics",
+        "Materials science",
+        "Noise (video)",
+        "Particle (ecology)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128616647"
+    },
+    {
+      "id": "W7154706886",
+      "title": "Nuclear dynamics in Sclerotinia sclerotiorum",
+      "authors": [
+        "Josh Li"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "cIRcle (University of British Columbia)",
+      "concepts": [
+        "Sclerotinia sclerotiorum",
+        "Chemistry",
+        "Biology",
+        "Dynamics (music)",
+        "Nuclear power"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154706886"
+    },
+    {
+      "id": "W7113055598",
+      "title": "Repetition and Return: The Politics of Episodicity in Star Trek: Voyager",
+      "authors": [
+        "Eve, Martin Paul"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "BIROn (Birkbeck, University of London)",
+      "concepts": [
+        "Repetition (rhetorical device)",
+        "Politics",
+        "Astronomy",
+        "Star (game theory)",
+        "Physics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7113055598"
+    },
+    {
+      "id": "W7128640974",
+      "title": "Current-driven Magnetic Skyrmions for Encoding/Storing Information: Manipulation and Dynamics in Nanoscale Structures",
+      "authors": [
+        "Yunxi Jiang"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Skyrmion",
+        "Spintronics",
+        "Condensed matter physics",
+        "Physics",
+        "Domain wall (magnetism)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128640974"
+    },
+    {
+      "id": "W3165776926",
+      "title": "Dissecting the conformational equilibrium of Src kinase using single-molecule FRET",
+      "authors": [
+        "Liuyu Chen"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Brandeis Institutional Repository",
+      "concepts": [
+        "Proto-oncogene tyrosine-protein kinase Src",
+        "Tyrosine-protein kinase CSK",
+        "SH3 domain",
+        "Phosphorylation",
+        "SH2 domain"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W3165776926"
+    },
+    {
+      "id": "W7134051991",
+      "title": "Development of numerical toolsets for the democratization of Radioactive Particle Tracking technology",
+      "authors": [
+        "Guilherme Anrain Lindner"
+      ],
+      "date": "2027-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2027,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Tracking (education)",
+        "Democratization",
+        "Development (topology)",
+        "Computer science",
+        "Engineering"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7134051991"
+    },
+    {
+      "id": "W7155008150",
+      "title": "Emaliowana fibula prowincjonalnorzymska z okolic Kazimierzy Wielkiej",
+      "authors": [
+        "Krzysztof Bratko"
+      ],
+      "date": "2026-12-31",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Roman Empire",
+        "Type (biology)",
+        "Typology",
+        "Fibula",
+        "Art"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7155008150"
+    },
+    {
+      "id": "W7127556932",
+      "title": "Measurement of the top-quark Yukawa coupling from t t \u00af production in the lepton+jets final state using pp collisions at s = 13 TeV with the ATLAS detector",
+      "authors": [],
+      "date": "2026-12-31",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Lancaster EPrints (Lancaster University)",
+      "concepts": [
+        "Physics",
+        "Yukawa potential",
+        "Particle physics",
+        "Higgs boson",
+        "Electroweak interaction"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127556932"
+    },
+    {
+      "id": "W7154991943",
+      "title": "Emaliowana fibula prowincjonalnorzymska z okolic Kazimierzy Wielkiej",
+      "authors": [
+        "Krzysztof Bratko"
+      ],
+      "date": "2026-12-31",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2026,
+      "type": "article",
+      "source": "Zenodo (CERN European Organization for Nuclear Research)",
+      "concepts": [
+        "Roman Empire",
+        "Type (biology)",
+        "Typology",
+        "Fibula",
+        "Art"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154991943"
+    }
+  ],
+  "statistics": {
+    "total_authors": 173,
+    "avg_citations": 0.06,
+    "avg_authors_per_paper": 1.73
+  }
+}

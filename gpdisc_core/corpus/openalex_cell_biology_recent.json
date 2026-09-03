@@ -1,0 +1,447 @@
+{
+  "source": "OpenAlex - Cell Biology",
+  "fetched_date": "2026-04-22",
+  "total_papers": 100,
+  "domains_covered": [
+    "cell_structure",
+    "cell_signaling",
+    "organelles",
+    "cell_cycle",
+    "membrane_biology"
+  ],
+  "key_papers": [
+    {
+      "id": "W7119530753",
+      "title": "\u201cWhen a child goes missing\u201d: Care home staff experiences and practice reflections. Report produced by the University of Liverpool.",
+      "authors": [
+        "Sara Waring",
+        "Emily Ashworth",
+        "Amelia Shaw",
+        "Paige Monaghan",
+        "Susan Giles"
+      ],
+      "date": "2050-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2050,
+      "type": "article",
+      "source": "University of Liverpool",
+      "concepts": [
+        "Consistency (knowledge bases)",
+        "Discretion",
+        "Nursing",
+        "Medicine",
+        "Matching (statistics)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7119530753"
+    },
+    {
+      "id": "W7128068624",
+      "title": "Investigating The Role of CD7 in Acute Myeloid Leukaemia.",
+      "authors": [
+        "James Griffin"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Cancer research",
+        "Myeloid",
+        "Phenotype",
+        "Immune system",
+        "Myeloid leukemia"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128068624"
+    },
+    {
+      "id": "W7128616586",
+      "title": "The role of dimethylguanidino valeric acid (DMGV)-related metabolic pathways in carbohydrate and lipid metabolism",
+      "authors": [
+        "Yueyuan Han"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Metabolic pathway",
+        "Metabolic syndrome",
+        "Biochemistry",
+        "Lipid metabolism",
+        "Chemistry"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128616586"
+    },
+    {
+      "id": "W7128635374",
+      "title": "VISP Study: Visual Impairment after Stroke investigating Psychological difficulty",
+      "authors": [
+        "Mizla Manandhar-Richardson"
+      ],
+      "date": "2031-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Anxiety",
+        "Stroke (engine)",
+        "Depression (economics)",
+        "Hospital Anxiety and Depression Scale",
+        "Association (psychology)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128635374"
+    },
+    {
+      "id": "W7128521376",
+      "title": "Investigating the ability of statin-mediated ERK5 activation to protect cardiac microvascular endothelial cells and cardiomyocytes against the adverse effects of doxorubicin.",
+      "authors": [
+        "Shrouq Almaghrabi"
+      ],
+      "date": "2031-01-01",
+      "abstract": "",
+      "year": 2031,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Adverse effect",
+        "Medicine",
+        "Endothelium",
+        "Endothelial stem cell",
+        "Cell biology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128521376"
+    },
+    {
+      "id": "W2913717743",
+      "title": "The Functional Results of Surgical Percutaneous Joystick Reduction Therapy for Isolated Severely Angulated Radial Neck Fracture in Children",
+      "authors": [
+        "Muzahim Ahmed Abbas"
+      ],
+      "date": "2030-06-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2030,
+      "type": "article",
+      "source": "SHILAP Revista de lepidopterolog\u00eda",
+      "concepts": [
+        "Percutaneous",
+        "Medicine",
+        "Reduction (mathematics)",
+        "Surgery",
+        "Mathematics"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W2913717743"
+    },
+    {
+      "id": "W7127930269",
+      "title": "THE BURDEN OF ANIMAL DISEASE IN WORKING DONKEYS IN ETHIOPIA",
+      "authors": [
+        "Girma Birhan Asteraye"
+      ],
+      "date": "2030-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Donkey",
+        "Agriculture",
+        "Livelihood",
+        "Socioeconomics",
+        "Welfare"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7127930269"
+    },
+    {
+      "id": "W7128613060",
+      "title": "Characterizing the two-component regulatory system (TCS) LytSR in Group B Streptococcus",
+      "authors": [
+        "Fahad Mashwal"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Biology",
+        "Streptococcus",
+        "Group (periodic table)",
+        "Genetics",
+        "Microbiology"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128613060"
+    },
+    {
+      "id": "W7128605086",
+      "title": "Experiences of Psychological Professionals and Carers in Cancer Care",
+      "authors": [
+        "Sherin Varghese"
+      ],
+      "date": "2030-01-01",
+      "abstract": "",
+      "year": 2030,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Medicine",
+        "Cancer",
+        "Nursing",
+        "Family medicine",
+        "Qualitative research"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128605086"
+    },
+    {
+      "id": "W7128533252",
+      "title": "Studies on immune responses and efficacy of infectious bronchitis virus saRNA vaccine in chicken",
+      "authors": [
+        "Sirorat Munyahongse"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Immune system",
+        "Virology",
+        "Immunology",
+        "Biology",
+        "Virus"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128533252"
+    },
+    {
+      "id": "W7149881639",
+      "title": "Governo\u00a0transforma\u00a0desmatamento\u00a0e\u00a0queimadas\u00a0em\u00a0pauta\u00a0geopol\u00edtica",
+      "authors": [
+        "\u00a0Pedro Teixeira"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Biblioteca Digital da Mem\u00f3ria Cient\u00edfica do INPE (National Institute for Space Research)",
+      "concepts": [
+        "Geography",
+        "Population",
+        "Medicine",
+        "Incidence (geometry)",
+        "Government (linguistics)"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7149881639"
+    },
+    {
+      "id": "W7154876116",
+      "title": "Culture Audit - Save a Life Pet Rescue",
+      "authors": [
+        "Grace L Kmak",
+        "Kaley A Chriswell",
+        "Carter Roberts",
+        "Antonio Pizza",
+        "Caroline Parrott"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "Journal of International Crisis and Risk Communication Research",
+      "concepts": [
+        "Audit",
+        "Business",
+        "Audit plan",
+        "Medical emergency",
+        "Operations management"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154876116"
+    },
+    {
+      "id": "W7151411061",
+      "title": "The design of soft-actuated upper-body exoskeletons for movement assistance and physical therapy",
+      "authors": [
+        "Daniel George"
+      ],
+      "date": "2029-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2029,
+      "type": "article",
+      "source": "CentAUR (University of Reading)",
+      "concepts": [
+        "Exoskeleton",
+        "Physical medicine and rehabilitation",
+        "Movement (music)",
+        "Computer science",
+        "Medicine"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7151411061"
+    },
+    {
+      "id": "W7128644483",
+      "title": "Healthcare Professionals Delivering Bad News In Stroke Care",
+      "authors": [
+        "Robert Hodges"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Medicine",
+        "Health care",
+        "Medical emergency",
+        "Nursing",
+        "Health professionals"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128644483"
+    },
+    {
+      "id": "W7128020427",
+      "title": "Data Augmentation Application in Deep Learning Drug Discovery by Utilizing Relationships Between Biological and Medical Entities",
+      "authors": [
+        "Tianjun Wang"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Deep learning",
+        "Drug discovery",
+        "Computer science",
+        "Artificial intelligence",
+        "Data science"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128020427"
+    },
+    {
+      "id": "W7128551175",
+      "title": "Development of an Advanced Artificial Intelligence-based Model (Deep Business Analytics) for Managing and Improving Control and Decision Making in Modern Organisations: Application in a Hospital Clinical Laboratory",
+      "authors": [
+        "Mahdi Seify"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Control (management)",
+        "Engineering management",
+        "Process management",
+        "Risk analysis (engineering)",
+        "Computer science"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128551175"
+    },
+    {
+      "id": "W7128635503",
+      "title": "Evaluations of Antibacterial and Antibiofilm Properties of Antibiotics Teixobactins",
+      "authors": [
+        "Tsz Ying To"
+      ],
+      "date": "2029-01-01",
+      "abstract": "",
+      "year": 2029,
+      "type": "article",
+      "source": "Open MIND",
+      "concepts": [
+        "Antibiotics",
+        "Chemistry",
+        "Antibacterial agent",
+        "Microbiology",
+        "Biofilm"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7128635503"
+    },
+    {
+      "id": "W7154738525",
+      "title": "Towards smarter prevention : advances in soft sensors and physiological understanding of pressure injuries",
+      "authors": [
+        "Justin Kian Ming Wyss"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "cIRcle (University of British Columbia)",
+      "concepts": [
+        "Medicine",
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Engineering",
+        "Forensic engineering"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7154738525"
+    },
+    {
+      "id": "W7125410077",
+      "title": "Polyunsaturated fatty acids mediate the antitumor effects of fasting by inducing lipid peroxidation and ferroptosis in breast cancer",
+      "authors": [
+        "Marzia Santamaria"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "Open Research Online (The Open University)",
+      "concepts": [
+        "Polyunsaturated fatty acid",
+        "Docosahexaenoic acid",
+        "Arachidonic acid",
+        "Lipid peroxidation",
+        "Lipolysis"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7125410077"
+    },
+    {
+      "id": "W7152045514",
+      "title": "Development and optimisation of a novel microcapillary and smartphone based global haemostasis and platelet function assay",
+      "authors": [
+        "Daniel James Hodge"
+      ],
+      "date": "2028-01-01",
+      "abstract": "Abstract available in OpenAlex",
+      "year": 2028,
+      "type": "article",
+      "source": "CentAUR (University of Reading)",
+      "concepts": [
+        "Platelet",
+        "Point-of-care testing",
+        "Point of care",
+        "Function (biology)",
+        "Medicine"
+      ],
+      "citation_count": 0,
+      "openalex_url": "https://openalex.org/W7152045514"
+    }
+  ],
+  "statistics": {
+    "total_authors": 156,
+    "avg_citations": 0.0,
+    "avg_authors_per_paper": 1.56
+  }
+}
