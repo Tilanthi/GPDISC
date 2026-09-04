@@ -607,7 +607,7 @@ CONDITIONS_PART2: List[ConditionProfile] = [
         investigations=[],
         management_first_line="Mild: single oral dexamethasone 0.15 mg/kg; moderate/"
                               "severe: nebulised budesonide, consider adrenaline, "
-                              "hospital transfer (NICE NG9 croup).",
+                              "hospital transfer (NICE CKS croup).",
         referral_tier="urgent",
         safety_net="Stridor while resting or sleepy, or struggling to breathe — 999.",
         source="NICE CKS croup; BTS paedic",
@@ -969,12 +969,18 @@ CONDITIONS_PART2: List[ConditionProfile] = [
         prevalence_per_consult=0.02,
         symptoms=[
             SymptomFrequency("morning_shakes", 0.50, 0.75),
+            SymptomFrequency("alcohol_heavy_pattern", 0.75, 0.85),
             SymptomFrequency("alcohol_craving", 0.80, 0.70),
             SymptomFrequency("poor_sleep", 0.50, 0.15),
             SymptomFrequency("anxiety", 0.40, 0.10),
         ],
-        discriminators=["AUDIT-C/AUDIT score", "withdrawal on waking",
-                        "tolerance + loss of control"],
+        discriminators=["AUDIT-C first (score >=5 positive): how often, "
+                        "how many units a typical day, how often 6+ in "
+                        "one session",
+                        "withdrawal on waking; tolerance + loss of control",
+                        "ALWAYS the paracetamol question (PabQ): "
+                        "co-ingested paracetamol on a chronic-drinking "
+                        "liver is the UK's classic hepatotoxic disaster"],
         red_flags=["withdrawal seizures/delirium tremens", "jaundice/ascites",
                    "withdrawal at home unsupervised with history of fits"],
         investigations=[
@@ -984,9 +990,11 @@ CONDITIONS_PART2: List[ConditionProfile] = [
                                  0.60, 0.70, "NICE CG115"),
         ],
         management_first_line="AUDIT; brief intervention or community-assisted "
-                              "withdrawal with chlordiazepoxide + thiamine "
-                              "(never without thiamine); relapse prevention "
-                              "(NICE CG115).",
+                              "withdrawal with ORAL chlordiazepoxide + thiamine "
+                              "(thiamine BEFORE any glucose; never an abrupt "
+                              "unsupported stop); relapse prevention; involve "
+                              "the local community alcohol service and the "
+                              "family (NICE CG115).",
         referral_tier="routine",
         safety_net="Fits, confusion or shaking badly on stopping alcohol — emergency "
                    "(withdrawal can kill); never stop suddenly unsupervised if "
@@ -1601,7 +1609,7 @@ CONDITIONS_PART2: List[ConditionProfile] = [
         investigations=[
             InvestigationProfile("STI screen (chlamydia/gonorrhoea)", "supportive "
                                  "(can be negative)", 0.60, 0.95,
-                                 "NICE NG37 PID"),
+                                 "BASHH PID 2018; NICE CKS"),
         ],
         management_first_line="Empirical antibiotics per BASHH: ceftriaxone IM + "
                               "doxycycline + metronidazole 14 days; analgesia; "
@@ -1895,7 +1903,7 @@ CONDITIONS_PART2: List[ConditionProfile] = [
             InvestigationProfile("duplex ultrasound", "confirm",
                                  0.95, 0.95, "NICE NG158"),
         ],
-        management_first_line="Wells >= 1 (likely): proximal leg vein ultrasound; "
+        management_first_line="Wells >= 2 (likely): proximal leg vein ultrasound within 4h; "
                               "unlikely: D-dimer, if positive scan; anticoagulate per "
                               "NICE NG158; DOAC typical.",
         referral_tier="urgent",
@@ -2184,6 +2192,17 @@ SYMPTOM_SYNONYMS_PART2: Dict[str, list] = {
                        "morning shakes", "hands shake until first drink"],
     "alcohol_craving": ["craving alcohol", "need a drink", "can't stop drinking",
                         "alcohol dependent", "drinking every day"],
+    # audit missing-area 2 (2026-09-04): the entry existed but common
+    # phrasings missed it - a bottle-of-wine-a-night question drew nothing
+    "alcohol_heavy_pattern": [
+        "drink every day", "drinks every day", "drink every night",
+        "drinks every night", "bottle of wine a night",
+        "bottle of wine every night", "wine every night",
+        "drinks a bottle", "cans every night", "spirits every day",
+        "vodka every", "units a week", "units a day",
+        "drinking too much", "drinks too much", "hiding drink",
+        "hidden bottles", "drinking alone", "detox before",
+    ],
     "insomnia_severe": ["not sleeping at all", "severe insomnia", "awake all night "
                         "every night"],
     # musculoskeletal

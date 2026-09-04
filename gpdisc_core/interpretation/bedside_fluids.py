@@ -159,7 +159,7 @@ def interpret_synovial_fluid(appearance: str = "",
         r.pattern = "Gram-positive organisms in the joint"
         r.urgency = "emergency"
         r.actions.append("Septic arthritis: washout + IV antibiotics "
-                         "TODAY — every hour of delay damages cartage "
+                         "TODAY — every hour of delay damages cartilage "
                          "permanently.")
         return r
 

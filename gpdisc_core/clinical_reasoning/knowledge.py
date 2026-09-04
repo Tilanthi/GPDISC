@@ -50,7 +50,7 @@ CONDITIONS: List[ConditionProfile] = [
         safety_net="Any chest pain lasting >15 minutes, or with sweating, nausea or "
                    "breathlessness, is an emergency — call 999 immediately.",
         dangerous_mimic_of=["gerd", "musculoskeletal_chest_pain", "anxiety_atacks"],
-        source="NICE chest pain (NG237); ESC ACS guideline 2023",
+        source="NICE chest pain (CG95); ESC ACS guideline 2023",
     ),
     ConditionProfile(
         condition_id="acs_nstemi",
@@ -131,9 +131,9 @@ CONDITIONS: List[ConditionProfile] = [
                    "BP differential", "new aortic regurgitation murmur"],
         investigations=[
             InvestigationProfile("CT angiography aorta", "definitive; do not delay",
-                                 0.95, 0.95, "NICE NG51"),
+                                 0.95, 0.95, "ESVS aortic disease guideline"),
             InvestigationProfile("chest X-ray", "wide mediastinum clue",
-                                 0.60, 0.70, "NICE NG51"),
+                                 0.60, 0.70, "ESVS aortic disease guideline"),
         ],
         management_first_line="Call 999; surgical emergency — avoid anticoagulation; "
                               "transfer to a centre with cardiothoracic capability.",
@@ -141,7 +141,7 @@ CONDITIONS: List[ConditionProfile] = [
         safety_net="Sudden tearing pain into the back or between shoulder blades is an "
                    "emergency — 999.",
         dangerous_mimic_of=["musculoskeletal_chest_pain", "renal_colic_pending"],
-        source="NICE NG51 aortic diseases",
+        source="NICE CKS aortic aneurysm/dissection; ESVS aortic guideline",
     ),
     ConditionProfile(
         condition_id="pe",
@@ -156,7 +156,7 @@ CONDITIONS: List[ConditionProfile] = [
             SymptomFrequency("syncope", 0.10, 0.40),
         ],
         discriminators=["pleuritic pain with sudden breathlessness", "VTE risk factors",
-                        "Wells PE score >= 4 or D-dimer positive"],
+                        "Wells PE score > 4 (likely) or D-dimer positive"],
         red_flags=["haemodynamic instability", "hypoxia", "syncope with breathlessness"],
         investigations=[
             InvestigationProfile("Wells PE score", "pre-test probability gate",
@@ -355,7 +355,7 @@ CONDITIONS: List[ConditionProfile] = [
         red_flags=["confusion", "cyanosis, rising CO2", "PEF/respiratory deterioration",
                    "failure to improve on treatment"],
         investigations=[
-            InvestigationProfile("spironetry (stable state)", "diagnosis confirmation",
+            InvestigationProfile("spirometry (stable state)", "diagnosis confirmation",
                                  0.90, 0.95, "NICE NG115"),
             InvestigationProfile("chest X-ray", "exclude pneumonia/pneumothorax",
                                  0.50, 0.70, "NICE NG115"),
@@ -880,7 +880,7 @@ CONDITIONS: List[ConditionProfile] = [
         investigations=[
             InvestigationProfile("non-contrast CT head <6 h", "excludes SAH",
                                  0.99, 0.99, "NICE CG150_headache"),
-            InvestigationProfile("LP xanthochromin 6h-14d if CT negative", "detects SAH",
+            InvestigationProfile("LP for xanthochromia from 12h; reliable to 2 weeks if CT negative", "detects SAH missed by CT",
                                  0.93, 0.95, "NICE CG150"),
         ],
         management_first_line="Immediate ED via 999; CT within 1 h of presentation.",
@@ -1249,7 +1249,7 @@ CONDITIONS: List[ConditionProfile] = [
         safety_net="Fever, back pain, vomiting, or confusion — the infection may have "
                    "reached the kidneys: urgent review.",
         dangerous_mimic_of=[],
-        source="NICE lower UTI guidance (NG111 family); PHE",
+        source="NICE lower UTI guidance (NG109 family); PHE",
     ),
 ]
 
@@ -1443,7 +1443,11 @@ SYMPTOM_SYNONYMS: Dict[str, List[str]] = {
                           "leg pain from back"],
     "bilateral_leg_weakness": ["both legs are weak", "legs giving way", "weak in both legs"],
     "confusion": ["confused", "confusion", "muddled", "not making sense", "disoriented",
-                  "didn't know where she was", "didn't know where he was"],
+                  "didn't know where she was", "didn't know where he was",
+                  # hypoactive-delirium language (audit gap 8): the quiet,
+                  # not-themselves elderly patient is the missed delirium
+                  "gone quiet", "not herself today", "not himself today",
+                  "not herself this morning", "not himself this morning"],
     "drowsiness": ["drowsy", "sleepy", "hard to wake", "unrousable", "unresponsive"],
     "behaviour_change": ["behaviour change", "acting strangely", "personality change",
                          "not themselves", "odd behaviour"],

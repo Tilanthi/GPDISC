@@ -26,7 +26,9 @@ class TestUKMEC:
         assert "cocp" not in methods
 
     def test_table_size(self):
-        assert len(UKMEC) == 20
+        # 21 since the audit fix: smoker_35_plus split into <15/day (3)
+        # and >=15/day (4) per FSRH UKMEC.
+        assert len(UKMEC) == 21
 
 
 class TestSTIPanels:

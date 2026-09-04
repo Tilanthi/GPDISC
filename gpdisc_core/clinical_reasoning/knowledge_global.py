@@ -274,14 +274,15 @@ CONDITIONS_PART6: List[ConditionProfile] = [
                                  "WHO disability grading"),
         ],
         management_first_line="Refer to specialist (dermatology/"
-                              "infectious diseases) for "
-                              "WHO multidrug therapy: rifampicin + "
-                              "clofazimine (+ dapsone if "
-                              "paucibacillary), 6-12 months, FREE of "
-                              "charge in endemic programmes. It is "
-                              "CURABLE and not spread by casual "
-                              "contact — say so out loud; stigma is "
-                              "the complication that harms most.",
+                              "infectious diseases) for WHO multidrug "
+                              "therapy. PAUCIBACILLARY: rifampicin + "
+                              "dapsone, 6 months. MULTIBACILLARY: "
+                              "rifampicin + dapsone + clofazimine, 12 "
+                              "months. FREE of charge in endemic "
+                              "programmes. It is CURABLE and not spread "
+                              "by casual contact — say so out loud; "
+                              "stigma is the complication that harms "
+                              "most.",
         referral_tier="routine",
         safety_net="New weakness, painful red nerves or eye "
                    "involvement — same-day review: reactions damage "
@@ -521,9 +522,10 @@ CONDITIONS_PART6: List[ConditionProfile] = [
                         "with a brain lesion or myocarditis"],
         red_flags=["syncope, heart failure or new block in someone "
                    "from rural Latin America — urgent cardiology",
-                   "acute symmetrical facial swelling after return "
-                   "from an endemic area (chagoma/Romaña sign) — "
-                   "urgent"],
+                   "acute UNILATERAL periorbital swelling after "
+                   "return from an endemic area (chagoma/Romaña "
+                   "sign — one eye only; that is its diagnostic "
+                   "value) — urgent"],
         investigations=[
             InvestigationProfile("T. cruzi serology x2 different "
                                  "assays (chronic); parasitaemia "
@@ -584,10 +586,12 @@ CONDITIONS_PART6: List[ConditionProfile] = [
         management_first_line="Urgent specialist/infectious-diseases "
                               "referral: stage determines therapy "
                               "(pentamidine/suramin for stage 1; "
-                              "NECT — nifurtimox-eflornithine or "
-                              "foscarnol-based for stage 2). "
-                              "National/tropical programmes hold the "
-                              "drugs; notify public health.",
+                              "NECT — nifurtimox + eflornithine — "
+                              "or oral fexinidazole for stage 2; "
+                              "melarsoprol where nothing else is "
+                              "available). National/tropical "
+                              "programmes hold the drugs; notify "
+                              "public health.",
         referral_tier="urgent",
         safety_net="Drowsiness, confusion or personality change "
                    "after travel to tsetse regions — emergency "
@@ -716,7 +720,7 @@ CONDITIONS_PART6: List[ConditionProfile] = [
                         "weakness without the water spasms — "
                         "post-exposure history is the only clue"],
         red_flags=["this whole entry is a red flag — suspected "
-                   "symptomatic rabia needs: isolation, specialist "
+                   "symptomatic rabies needs: isolation, specialist "
                    "ID + critical care discussion, palliative "
                    "framing with the family, public-health "
                    "notification, and contact PEP risk assessment"],
@@ -1186,7 +1190,7 @@ CONDITIONS_PART6: List[ConditionProfile] = [
         management_first_line="Refer paediatrics/medicine: aspirin/"
                               "NSAIDs for arthritis, penicillin to "
                               "clear the strep (and SECONDARY "
-                              "prophYLAXIS monthly benzathine "
+                              "prophylaxis monthly benzathine "
                               "penicillin for years — the "
                               "recurrence, not the first attack, "
                               "destroys valves), carditis managed "
@@ -1348,8 +1352,13 @@ SYMPTOM_SYNONYMS_PART6: Dict[str, List[str]] = {
         "chest infection after chest infection", "boils keep coming",
     ],
     "prep_request": [
-        "prep", "on prep", "start prep", "taking prep",
-        "truvada", "want prep",
+        # anchored: bare "prep" sat inside "preparing"/"prescribed"
+        # ("preparing for a marathon" once drew a PrEP-only differential)
+        "on prep", "start prep", "starting prep", "take prep",
+        "taking prep", "want prep", "wanting prep", "need prep",
+        "ask for prep", "asked about prep", "asking about prep",
+        "hiv prep", "prep appointment", "prep clinic",
+        "truvada",
     ],
     "condomless_multiple_partners": [
         "condomless sex with", "without condoms with",
@@ -1655,13 +1664,19 @@ SYMPTOM_SYNONYMS_PART6: Dict[str, List[str]] = {
         "pain in the bones of my legs", "legs and back agony",
     ],
     "migratory_joint_pain_young": [
-        "moved from knee to ankle", "one joint then another",
-        "jumping from joint to joint", "started in the knee then the ankle",
-        "arthritis moving between joints",
-        "moved to the ankle", "moved to the other", "pain moved",
-        "moved from the knee", "started in the knee then",
-        "moved to his", "moved to her", "then the ankle",
-        "then the elbow", "then the other knee", "joint to joint",
+        # anchored 2026-09-04: bare "pain moved" / "moved to his" /
+        # "then the ankle" matched non-articular stories (any pain that
+        # moved, any sentence containing "then the ankle")
+        "moved from knee to ankle", "moved from the knee to the ankle",
+        "moved from one joint to", "moved to another joint",
+        "joint to joint", "one joint then another",
+        "jumping from joint to joint", "arthritis moving between joints",
+        "started in the knee then the ankle", "knee then the ankle",
+        "ankle then the knee", "moved from joint to joint",
+        "pain moved from one joint", "started in one joint then",
+        "migratory arthritis", "joint pain that moved",
+        "pain moved to the ankle", "pain moved to the elbow",
+        "pain moved to the knee", "pain moved to the wrist",
     ],
     "recent_sore_throat_joints": [
         "sore throat a few weeks ago", "strep throat before",
@@ -1674,7 +1689,11 @@ SYMPTOM_SYNONYMS_PART6: Dict[str, List[str]] = {
     # --- human-rights sensitive care ---
     "fgm_disclosure": [
         "fgm", "been cut", "circumcised as a girl",
-        "closed up down below", "infibulated", "sewn up",
+        "closed up down below", "infibulated",
+        # anchored: bare "sewn up" matched "sewn up after the birth"
+        # (normal perineal repair) and drew obstetric emergencies
+        "sewn up as a girl", "sewn up when i was", "sewn me up",
+        "sewn her up", "sewn shut", "sewn up down below",
         "they cut me as a child", "female circumcision",
     ],
     "fgm_urinary_period_problems": [

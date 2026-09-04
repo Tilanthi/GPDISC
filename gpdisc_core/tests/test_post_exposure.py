@@ -123,6 +123,33 @@ class TestBloodbornePEP:
                    in " ".join(a.questions).lower() for q in a.questions)
 
 
+class TestUnknownSourceOccupational:
+    """Audit fix 2026-09-04: the `elif occupational:` branch was dead —
+    the union elif above it swallowed every occupational case for both
+    hour ranges, so ALL unknown-source needlesticks inside 72h were
+    offered HIV PEP and the community-source note was unreachable."""
+
+    def test_community_needle_unknown_source_no_routine_pep(self):
+        a = bloodborne_exposure(
+            "stood on a needle in the park 3 hours ago", {})
+        assert a.hiv_pep is False
+        assert "usually NOT indicated" in a.hiv_note
+        assert "tetanus" in a.hiv_note
+
+    def test_high_risk_injury_gets_first_dose_now(self):
+        a = bloodborne_exposure(
+            "needlestick, deep injury, device visibly blood-filled, "
+            "source unknown, 3 hours ago", {})
+        assert a.hiv_pep is True
+        assert "FIRST DOSE" in a.hiv_note
+
+    def test_unknown_source_outside_72h_still_decides_hbv_today(self):
+        a = bloodborne_exposure(
+            "needlestick injury 4 days ago, source unknown", {})
+        assert a.hiv_pep is False
+        assert "HBV" in a.hiv_note
+
+
 class TestPEPScreenDispatcher:
     def test_bite_routes_to_rabies(self):
         r = pep_screen("bitten by a dog in Bali", {})

@@ -144,7 +144,7 @@ def interpret_ecg(text: str, context: Optional[Dict] = None) -> ECGReport:
         rep.urgency = "emergency"
         rep.findings.append("A regular broad-complex tachycardia in an "
                             "adult is VT even when the patient looks "
-                            "well — treating it as SVB with verapamil "
+                            "well — treating it as SVT with verapamil "
                             "has killed patients.")
         rep.actions.append("DC cardioversion if compromised; amiodarone "
                            "or cardioversion if stable; expert review "

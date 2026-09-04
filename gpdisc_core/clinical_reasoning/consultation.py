@@ -49,9 +49,58 @@ LOW_CONFIDENCE_FLOOR = 0.13
 # Presentations whose intent is care the corpus does not yet carry. Saying
 # so beats force-fitting quinsy onto a dying patient. Safety screen wins:
 # this guard only runs when no emergency/urgent rule fired.
+# Widened 2026-09-04 (audit missing-area 4): "stage four cancer,
+# struggling to cope" fell to an empty differential before; the
+# cancer-spread phrasings route to the palliative module's planning and
+# symptom frames. Deliberately NOT bare "spread to the lungs" — an
+# infection spreads too.
 _EOL_INTENT = re.compile(
     r"\b(dying|end of life|palliative|hospice|last (?:days|hours|weeks)|"
-    r"comfortable|make (?:him|her|them) comfortable)\b", re.I)
+    r"comfortable|make (?:him|her|them) comfortable)\b"
+    r"|stage (?:four|4) cancer|terminal cancer|cancer has spread|"
+    r"\bsecondaries\b|\bmetastas\w+\b|no more (?:treatment|they can do)|"
+    r"oncolog\w+ (?:can't|cannot|won't) (?:do|offer|treat)", re.I)
+
+# Pre-travel consults route to the travel-medicine plan (audit routing
+# gap 1). Needs a travel word AND either a future marker or an explicit
+# what-do-I-need question, and must NOT fire post-travel ("fever since
+# I came back" is the fever-after-travel syndrome, not a plan request).
+_TRAVEL_WORD = re.compile(
+    r"travell?ing|travel plans|going abroad|flying to|flying out|"
+    r"\btrip (?:to|next|abroad)\b|holiday (?:in|to|next|abroad)|"
+    r"backpack\w*|travel clinic|travel vaccin\w*|"
+    r"before (?:i|we) (?:go|travel|fly|leave)", re.I)
+_TRAVEL_FUTURE = re.compile(
+    r"next (?:month|week|year|weekend|summer|spring|autumn|winter|"
+    r"january|february|march|april|may|june|july|august|september|"
+    r"october|november|december|\d+ (?:weeks?|months?))|"
+    r"in (?:a|two|three|four|five|six|eight|ten|\d+) (?:weeks?|months?)|"
+    r"soon|booked|\btomorrow\b", re.I)
+_TRAVEL_ASK = re.compile(
+    r"vaccin|immunis|\bjabs?\b|malaria|prophyla|tablets|travel kit|"
+    r"what (?:do|should) (?:i|we)|do i need|advice", re.I)
+_POST_TRAVEL = re.compile(
+    r"since (?:i|we) (?:came|got) back|(?:just|recently) (?:got|came) back|"
+    r"return\w* from|back from\b|after (?:the |my )?(?:trip|holiday|travel)|"
+    r"post[- ]travel", re.I)
+
+# Preventive-care questions route to the prevention module (audit routing
+# gaps 6-7): "what am I due at 68", "should I get the shingles vaccine".
+_PREVENTION_INTENT = re.compile(
+    r"what (?:vaccin\w*|screening|checks?|jabs?|am i due|do i need)\b|"
+    r"(?:am i|what's) due\b|due any\b|due a (?:check|jab|vaccine)|"
+    r"(?:shingles|flu|pneumococcal|covid|rsv|whooping cough) vaccin\w*|"
+    r"health check|\bscreening\b|bowel kit|smear test", re.I)
+
+# "Can I drink while taking X?" routes to the alcohol-interaction table
+# (audit routing gap 5): metronidazole is the famous one, but the
+# question is asked about warfarin, MTX and paracetamol too.
+_ALCOHOL_WORD = re.compile(r"\balcohol\b|\bdrinks?\b|\bdrinking\b|\bbooze\b", re.I)
+_DRUG_WORD = re.compile(
+    r"metronidazole|tinidazole|flagyl|isoniazid|ketoconazole|disulfiram|"
+    r"warfarin|methotrexate|paracetamol|doxycycline|nitrofurantoin|"
+    r"amoxicillin|clarithromycin|antibiot\w*|\btablets?\b|\bmedicine\b|"
+    r"\bmedication\b", re.I)
 
 HONESTY_STATEMENT = ("I don't have enough knowledge to assess this "
                      "presentation — describe more or see a clinician.")
@@ -281,6 +330,125 @@ class ConsultationPipeline:
                 "new-arrival / infectious-diseases screening programme.")
             return self._finalize(rec, context)
 
+        # Pre-travel consults route to the travel plan (audit routing
+        # gap 1). Same guard discipline: ROUTINE only — a febrile
+        # returned traveller is a fever-after-travel emergency first.
+        if assessment.level == EscalationLevel.ROUTINE and \
+                _TRAVEL_WORD.search(presentation) and \
+                (_TRAVEL_FUTURE.search(presentation) or
+                 _TRAVEL_ASK.search(presentation)) and \
+                not _POST_TRAVEL.search(presentation):
+            from ..travel_medicine import pre_travel_consult
+            plan = pre_travel_consult(presentation, context)
+            rec.problem_representation = (
+                f"Pre-travel consultation — "
+                f"{plan.destination or 'destination not recognised'}.")
+            parts = []
+            mal = plan.malaria or {}
+            if mal.get("risk"):
+                parts.append(f"Malaria ({mal['risk']}): "
+                             f"{mal.get('recommendation', '')}")
+            if plan.vaccines:
+                v = plan.vaccines[0]
+                names = ", ".join(v) if isinstance(v, (list, tuple)) \
+                    else str(v)
+                for entry in plan.vaccines:
+                    if isinstance(entry, dict):
+                        names = ", ".join(str(x) for x in entry.values())
+                        break
+                parts.append(f"Vaccines to consider: {names}")
+            if plan.certificate:
+                parts.append("Certificate: " + plan.certificate)
+            if plan.general:
+                parts.append("General: " + " ".join(plan.general))
+            rec.treatment = "\n".join(parts) or (
+                "Destination not in the local table — build the plan "
+                "from NaTHNaC / TravelHealthPro country pages.")
+            rec.uncertainty = (
+                "Plan from the destination named and the history given; "
+                "itinerary details, pregnancy and medical conditions "
+                "change it.")
+            rec.safety_net = (
+                "Fever after return is never 'just a bug' — same-day "
+                "assessment, and say where you have been.")
+            rec.referral = (
+                "Practice nurse / travel clinic for vaccine "
+                "administration and any certificates.")
+            return self._finalize(rec, context)
+
+        # Preventive-care questions route to the prevention module
+        # (audit routing gaps 6-7). Age and sex are read from the text
+        # when stated; without them the check still runs but says what
+        # it needs.
+        if assessment.level == EscalationLevel.ROUTINE and \
+                _PREVENTION_INTENT.search(presentation):
+            from ..preventive_medicine import prevention_check
+            patient: Dict = dict(context or {})
+            m_age = re.search(r"\b(\d{1,3})\b", presentation)
+            if m_age and 1 <= int(m_age.group(1)) <= 105:
+                patient.setdefault("age_years", int(m_age.group(1)))
+            if re.search(r"\b(?:woman|female|she|her)\b", presentation,
+                         re.I):
+                patient.setdefault("sex", "f")
+            elif re.search(r"\b(?:man|male|he|his)\b", presentation,
+                           re.I):
+                patient.setdefault("sex", "m")
+            items = prevention_check(patient)
+            rec.problem_representation = (
+                "Preventive care check — vaccinations and screening due.")
+            if items:
+                rec.treatment = "\n".join(
+                    f"{it['kind'].capitalize()}: {it['name']} — "
+                    f"{it['detail']}" for it in items)
+            else:
+                rec.treatment = (
+                    "Nothing flagged due from the age and sex as given — "
+                    "tell me the age, sex and any conditions for a full "
+                    "check.")
+            rec.uncertainty = (
+                "Schedule generated from age/sex as stated; "
+                "immunosuppression, pregnancy, and long-term conditions "
+                "add cohorts.")
+            rec.safety_net = (
+                "New symptoms are not answered by a prevention check — "
+                "describe them separately.")
+            rec.referral = (
+                "Practice nurse / healthcare assistant for "
+                "administration and booking.")
+            return self._finalize(rec, context)
+
+        # "Can I drink while taking X?" routes to the alcohol table
+        # (audit routing gap 5). Needs BOTH the alcohol word and a drug
+        # word in the same question.
+        if assessment.level == EscalationLevel.ROUTINE and \
+                _ALCOHOL_WORD.search(presentation) and \
+                _DRUG_WORD.search(presentation):
+            from ..uk_practice.prescribing_safety import (
+                alcohol_interaction, ALCOHOL_INTERACTIONS)
+            hits = alcohol_interaction(presentation)
+            rec.problem_representation = (
+                "Alcohol-and-medication interaction question.")
+            if hits:
+                rec.treatment = "\n".join(
+                    f"{drug.capitalize()}: {guidance}"
+                    for drug, guidance in hits)
+            else:
+                named = [d for d in ALCOHOL_INTERACTIONS
+                         if d in presentation.lower()]
+                rec.treatment = (
+                    f"No alcohol-interaction row for the medicine named"
+                    f"{'' if not named else ' (' + ', '.join(named) + ')'}"
+                    " — check the BNF or ask the pharmacist; do not "
+                    "guess from a similar-sounding drug.")
+            rec.uncertainty = (
+                "Interaction guidance only — the underlying condition "
+                "being treated is a separate question.")
+            rec.safety_net = (
+                "Flushing, vomiting or palpitations after drinking on "
+                "antibiotics — stop drinking and seek advice.")
+            rec.referral = "Community pharmacist for the specific product."
+            return self._finalize(rec, context)
+
         diff: DifferentialResult = self.engine.build_differential(presentation, context)
         rec.problem_representation = (
             f"{len(diff.key_features)} discriminating features extracted: "
@@ -339,6 +507,16 @@ class ConsultationPipeline:
         if not rec.safety_net:
             rec.safety_net = ("If symptoms worsen, change, or new red-flag "
                               "features appear, seek urgent medical review.")
+
+        # an urgent safety rule's advice is the REASON this consultation
+        # is urgent — it must reach the output. Emergency rules return
+        # early above with their advice; urgent rules fall through to
+        # this differential flow, so without this the tier text would
+        # silently replace the rule's instruction (e.g. the MTX warning-
+        # card 'STOP and same-day FBC' advice).
+        if assessment.level == EscalationLevel.URGENT and assessment.advice:
+            rec.referral = (f"URGENT ({assessment.emergency_rule}): "
+                            f"{assessment.advice} | {rec.referral}").strip(" |")
 
         # marginal presentations: when the top two are too close to call,
         # the consultation's next step is the questions that separate them.

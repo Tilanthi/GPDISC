@@ -452,7 +452,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
         safety_net="If rituals stop you eating, leaving the house, or "
                    "make you feel life is not worth living — come back "
                    "the same day.",
-        source="NICE CG31/CG113 obsessive-compulsive disorder",
+        source="NICE CG31 obsessive-compulsive disorder and BDD",
     ),
     ConditionProfile(
         condition_id="ptsd",
@@ -602,7 +602,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                         "sleeps) is a psychiatric emergency",
                         "screen with Whooley questions at every "
                         "perinatal contact"],
-        red_flags=["any psychotic symptom — postpartal psychosis is a "
+        red_flags=["any psychotic symptom — postpartum (puerperal) psychosis is a "
                    "mother-and-baby-unit emergency",
                    "thoughts of harming the baby with intent or plan",
                    "not eating, not drinking, not sleeping despite the "
@@ -666,7 +666,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
             InvestigationProfile("None needed unless PCOS suspected: "
                                  "then testosterone, SHBG, LH/FSH",
                                  "only for the hormonal pattern", 0.90,
-                                 0.80, "NICE NG196 acne"),
+                                 0.80, "NICE NG198 acne"),
         ],
         management_first_line="Grade severity honestly. Mild: benzoyl "
                               "peroxide + topical retinoid. Moderate: "
@@ -685,7 +685,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                    "come back; referral for isotretinoin is justified "
                    "by scarring or psychological burden, not spot "
                    "counts alone.",
-        source="NICE NG196 acne vulgaris",
+        source="NICE NG198 acne vulgaris",
     ),
     ConditionProfile(
         condition_id="urticaria_chronic",
@@ -936,7 +936,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                                  "bandaging", "excludes arterial "
                                  "insufficiency; compression on an "
                                  "ischaemic leg causes gangrene",
-                                 0.95, 0.95, "NICE CG168 leg ulcer"),
+                                 0.95, 0.95, "NICE CKS leg ulcer - venous (ABPI)"),
         ],
         management_first_line="Compression is the treatment — "
                               "four-layer bandaging or hosiery once "
@@ -951,7 +951,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                    "ulcer not healing after 12 weeks of correct "
                    "compression goes to the 2-week-wait pathway to "
                    "exclude skin cancer.",
-        source="NICE CG168 venous leg ulcers; SIGN",
+        source="NICE CKS venous leg ulcers; SIGN 26",
     ),
     ConditionProfile(
         condition_id="seborrhoeic_dermatitis",
@@ -1115,9 +1115,10 @@ CONDITIONS_PART5: List[ConditionProfile] = [
             SymptomFrequency("low_libido", 0.20, 0.20),
         ],
         discriminators=["definition: no conception after 12 months of "
-                        "regular unprotected intercourse (under 35) — "
-                        "6 months if the woman is 35-39; immediate "
-                        "referral over 40 or a known cause",
+                        "regular unprotected intercourse (under 36) — "
+                        "6 months if the woman is 36 or over "
+                        "(over 40: do not wait even that long); "
+                        "immediate referral for a known cause",
                         "both partners are patients from day one: "
                         "semen analysis is the cheapest test in "
                         "fertility and 40% of factors are male",
@@ -1125,7 +1126,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                         "semen = unexplained, not untreatable",
                         "frequency of intercourse (every 2-3 days) "
                         "before ovulation tracking"],
-        red_flags=["woman over 36 — refer after 6 months, do not "
+        red_flags=["woman 36 or over — refer after 6 months, do not "
                    "wait the year",
                    "known endometriosis, PID history, chemotherapy, "
                    "undescended testis, erectile dysfunction — refer "
@@ -1361,7 +1362,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                                  "post-residual ultrasound if "
                                  "retention suspected", "quantifies "
                                  "symptoms and protects the kidneys",
-                                 0.80, 0.75, "NICE NG97 lower urinary "
+                                 0.80, 0.75, "NICE CG97 lower urinary "
                                  "tract symptoms"),
         ],
         management_first_line="Conservative: fluids 2h before bed "
@@ -1381,7 +1382,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                    "overflow — emergency catheterisation. Blood in "
                    "the urine, weight loss or bone pain — urgent "
                    "cancer-pathway review.",
-        source="NICE NG97 lower urinary tract symptoms in men",
+        source="NICE CG97 lower urinary tract symptoms in men",
     ),
     ConditionProfile(
         condition_id="testicular_cancer_suspect",
@@ -1537,7 +1538,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                                  "calcium, glucose, FBC)", "the "
                                  "diagnosis is the history and the "
                                  "bowel pattern", 0.85, 0.85,
-                                 "NICE CG61 constipation"),
+                                 "NICE CKS constipation in adults"),
         ],
         management_first_line="Treat the cause found (review opioids, "
                               "iron, anticholinergics); fluids, "
@@ -1553,7 +1554,7 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                    "severe pain — emergency/same-day. Constipation "
                    "that keeps recurring despite treatment — review "
                    "for secondary causes.",
-        source="NICE CG61 constipation; CKS",
+        source="NICE CKS constipation in adults",
     ),
     ConditionProfile(
         condition_id="crohns_disease_suspect",
@@ -2113,8 +2114,9 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                                  "night", 0.85, 0.85, "NICE "
                                  "TA139 OSAHS; BTS sleep apnoea"),
         ],
-        management_first_line="Weight loss where overweight (5-10% "
-                              "can halve the apnoea index), alcohol "
+        management_first_line="Weight loss where overweight (10% "
+                              "lost cuts the apnoea index by about a "
+                              "quarter — real but rarely a cure), alcohol "
                               "and sedatives off at night, sleep "
                               "hygiene, driving advice BEFORE "
                               "treatment, then CPAP with mask "
@@ -2372,6 +2374,52 @@ CONDITIONS_PART5: List[ConditionProfile] = [
                    "with it — urgent review.",
         source="NICE NG123 urinary incontinence and pelvic organ "
                "prolapse",
+    ),
+    # --- audit missing-areas 2 & 3 (2026-09-04): the daily-clinic
+    # conditions the corpus carried no home for ---
+    ConditionProfile(
+        condition_id="advanced_cancer_supportive",
+        name="Advanced cancer - supportive care",
+        category="palliative_support",
+        prevalence_per_consult=0.002,
+        symptoms=[
+            SymptomFrequency("advanced_cancer_known", 0.90, 0.92),
+            SymptomFrequency("functional_decline_iadl", 0.50, 0.30),
+            SymptomFrequency("pain_for_years", 0.30, 0.10),
+        ],
+        discriminators=["the question has changed from treating the "
+                        "cancer to treating the patient — say so out "
+                        "loud with them",
+                        "holistic needs assessment: pain, other "
+                        "symptoms, home support, money, family — the "
+                        "recovery package, not just a drug chart",
+                        "palliative referral is about living, not "
+                        "dying: earlier referral means better symptom "
+                        "control and sometimes longer life"],
+        red_flags=["new severe back pain or leg weakness — malignant "
+                   "cord compression: emergency",
+                   "facial swelling or breathlessness lying flat — "
+                   "SVCO: emergency",
+                   "thirst and confusion with constipation — "
+                   "hypercalcaemia: same-day"],
+        investigations=[
+            InvestigationProfile("symptom review + holistic needs "
+                                 "assessment", "what matters to the "
+                                 "patient decides the plan", None, None,
+                                 "NICE NG31 palliative care"),
+        ],
+        management_first_line="Treat the symptoms they actually have "
+                              "(pain, nausea, breathlessness, fatigue) "
+                              "by the palliative module; coordinate a "
+                              "named key worker, community palliative "
+                              "team and Macmillan support; discuss "
+                              "resuscitation and anticipatory planning "
+                              "EARLY, not in the last week.",
+        referral_tier="routine",
+        safety_net="New severe pain, weakness, breathlessness, "
+                   "confusion or bleeding — same-day review: "
+                   "oncological emergencies move fast.",
+        source="NICE NG31 palliative care; palliative module (7.4)",
     ),
 ]
 
@@ -2670,8 +2718,10 @@ SYMPTOM_SYNONYMS_PART5: Dict[str, List[str]] = {
         "make myself vomit", "throw up after eating",
     ],
     "binge_eating_episodes": [
-        "eat huge amounts", "eating huge amounts", "binge", "bingeing",
-        "binging", "eat loads then", "thousands of calories in one go",
+        "eat huge amounts", "eating huge amounts", "binge eat",
+        "binge eating", "binge on food", "bingeing on food",
+        "binging on food", "food binge", "food binges",
+        "eat loads then", "thousands of calories in one go",
         "eat and eat",
     ],
     "compensatory_behaviours": [
@@ -2953,7 +3003,9 @@ SYMPTOM_SYNONYMS_PART5: Dict[str, List[str]] = {
     ],
     "known_ckd": [
         "kidney disease", "chronic kidney disease",
-        "stage four", "stage 4 ckd", "ckd stage", "renal failure",
+        "stage four ckd", "stage 4 ckd", "ckd stage", "ckd stage 4",
+        "stage four kidney", "stage 4 kidney", "stage four renal",
+        "stage 4 renal", "renal failure",
         "kidney failure", "ckd",
     ],
     "uraemic_itch": [
@@ -3065,5 +3117,15 @@ SYMPTOM_SYNONYMS_PART5: Dict[str, List[str]] = {
         "had three children", "after three children",
         "had four children", "since having children",
         "after my children", "had two children",
+    ],
+
+    "advanced_cancer_known": [
+        "stage four cancer", "stage 4 cancer", "terminal cancer",
+        "secondary cancer", "secondaries in the",
+        "spread to the liver", "spread to the bones",
+        "spread to the bone", "spread to the brain",
+        "spread to his lungs", "spread to her lungs",
+        "cancer has spread", "it's in my bones now",
+        "no more treatment", "no more they can do",
     ],
 }

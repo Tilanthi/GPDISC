@@ -105,7 +105,7 @@ CONDITIONS_PART4: List[ConditionProfile] = [
             SymptomFrequency("pale_cold_skin", 0.40, 0.60),
         ],
         discriminators=["any penetrating wound between neck and groin — "
-                        "platen signs develop late",
+                        "visceral injury signs develop late",
                         "impaled objects are stabilised in place, never "
                         "removed"],
         red_flags=["expanding neck veins + silent chest = tension "
@@ -306,7 +306,8 @@ CONDITIONS_PART4: List[ConditionProfile] = [
         investigations=[
             InvestigationProfile("none before transfer", "Parkland fluid "
                                  "formula from the clock of the burn: "
-                                 "3 mL x kg x %TBSA over 24h", None, None,
+                                 "4 mL x kg x %TBSA over 24h, half in "
+                                 "the first 8h from the time of the burn", None, None,
                                  "ATLS burn chapter"),
         ],
         management_first_line="Cool running water 20 min (within 3h of "
@@ -406,7 +407,7 @@ CONDITIONS_PART4: List[ConditionProfile] = [
                    "disproportionately, or the skin turns purple/black — "
                    "emergency now (necrotising fasciitis).",
         dangerous_mimic_of=["cellulitis"],
-        source="NICE CG191; antimicrobial stewardship",
+        source="NICE CKS wound infection; antimicrobial stewardship",
     ),
     ConditionProfile(
         condition_id="spinal_injury_suspect",
@@ -495,7 +496,7 @@ CONDITIONS_PART4: List[ConditionProfile] = [
                                  "+ LFT/INR/creatinine",
                                  "plot on the treatment nomogram; INR is "
                                  "the liver-failure tracker", 0.95, 0.95,
-                                 "TOXBASE; NICE NG16 self-harm"),
+                                 "TOXBASE; NICE NG225 self-harm"),
         ],
         management_first_line="TOXBASE/poison centre advice; N-acetyl-"
                               "cysteine per nomogram (start before levels "
@@ -651,7 +652,7 @@ CONDITIONS_PART4: List[ConditionProfile] = [
                                  "pre-oxygenation)",
                                  "CO-oximetry; pulse oximetry LIES "
                                  "(reads normal)", 0.90, 0.95,
-                                 "NICE NG139 carbon monoxide"),
+                                 "TOXBASE; NICE CKS carbon monoxide poisoning"),
         ],
         management_first_line="Leave the source, fresh air, 999; high-flow "
                               "oxygen 15 L/non-rebreather; check everyone "
@@ -661,7 +662,7 @@ CONDITIONS_PART4: List[ConditionProfile] = [
         safety_net="Symptoms that return on re-entering the building mean "
                    "the source is still active — stay out until the "
                    "boiler/appliance is checked.",
-        source="NICE NG139 carbon monoxide",
+        source="TOXBASE; NICE CKS carbon monoxide poisoning",
     ),
     ConditionProfile(
         condition_id="alcohol_withdrawal_delirium",
@@ -691,8 +692,8 @@ CONDITIONS_PART4: List[ConditionProfile] = [
                                  "NICE CG100/CG115 alcohol-use disorders"),
         ],
         management_first_line="Emergency/acute assessment; parenteral "
-                              "benzodiazepines (chlordiazepoxide IV/IM or "
-                              "lorazepam); thiamine BEFORE any glucose; "
+                              "benzodiazepines (lorazepam IV/IM or diazepam IV "
+                              "- chlordiazepoxide is ORAL only); thiamine BEFORE any glucose; "
                               "treat in a lit, familiar environment.",
         referral_tier="emergency",
         safety_net="Confusion, seeing things or a seizure in a heavy "
@@ -1013,10 +1014,11 @@ CONDITIONS_PART4: List[ConditionProfile] = [
             SymptomFrequency("abdominal_pain", 0.80, 0.20),
             SymptomFrequency("exhaustion", 0.60, 0.30),
         ],
-        discriminators=["labour >12h (multip) / >6h active (primip) with "
-                        "no descent — obstruction until assessed; in "
-                        "low-resource settings this is the fistula and "
-                        "death pathway",
+        discriminators=["active labour >12h (primip) / >6h (multip) with "
+                        "no descent — obstruction until assessed (rate of "
+                        "progress matters more than absolute hours; follow "
+                        "the partogram); in low-resource settings this is "
+                        "the fistula and death pathway",
                         "bladder distension, bandl's ring (uterine "
                         "rupture precursor), fetal head high"],
         red_flags=["contractions stopping with continuous pain (rupture), "
@@ -1683,8 +1685,8 @@ CONDITIONS_PART4: List[ConditionProfile] = [
                                  "NICE CG149 neonatal infection"),
         ],
         management_first_line="Emergency transfer; IV antibiotics within "
-                              "the hour (ampicillin+gentamicin per local "
-                              "policy); do not delay for feeding attempts "
+                              "the hour (benzylpenicillin+gentamicin per "
+                              "local policy - NICE CG149); do not delay for feeding attempts "
                               "or obs re-checks.",
         referral_tier="emergency",
         safety_net="A baby under three months with any fever, grunting, "
@@ -1894,9 +1896,11 @@ SYMPTOM_SYNONYMS_PART4: Dict[str, List[str]] = {
     ],
     # --- penetrating / blunt trauma ---
     "stab_or_gunshot": [
-        "stab", "knife wound", "gunshot", "been shot",
-        "shot in the chest", "shot in the stomach", "impaled",
-        "penetrating wound",
+        # anchored 2026-09-04: bare "stab" sat inside "stabbing pain"
+        # (and "a stab" inside "a stable condition")
+        "stabbed", "stab wound", "stab wounds", "knife wound",
+        "gunshot", "been shot", "shot in the chest",
+        "shot in the stomach", "impaled", "penetrating wound",
     ],
     "breathless_acute": [
         "breathless", "short of breath", "can't breathe",
@@ -1904,7 +1908,13 @@ SYMPTOM_SYNONYMS_PART4: Dict[str, List[str]] = {
         "winded",
     ],
     "wound_bleeding": [
-        "bleeding", "blood pouring", "blood gushing",
+        # anchored 2026-09-04: bare "bleeding" matched every mention
+        # (gums, years of bleeding, "bleeding didn't stop" anecdotes)
+        "bleeding heavily", "bleeding badly", "bleeding a lot",
+        "won't stop bleeding", "bleeding out", "blood pouring",
+        "blood gushing", "bleeding through", "bleeding everywhere",
+        "cut is bleeding", "wound is bleeding", "still bleeding",
+        "he's bleeding", "she's bleeding", "it's bleeding",
     ],
     "pale_cold_skin": [
         "pale and cold", "pale, cold", "cold and clammy",
@@ -2123,8 +2133,14 @@ SYMPTOM_SYNONYMS_PART4: Dict[str, List[str]] = {
         "taken too much", "suicidal ingestion",
     ],
     "paracetamol_ingested": [
-        "paracetamol", "acetaminophen", "tylenol",
-        "calpol", "co-codamol", "solpadeine", "panadol",
+        # anchored 2026-09-04: bare "paracetamol" matched every mention
+        # ("paracetamol didn't touch it" drew the overdose profile).
+        # Ingestive phrasings only; brands stay (low collision).
+        "paracetamol overdose", "took paracetamol", "taken paracetamol",
+        "swallowed paracetamol", "bottle of paracetamol",
+        "packets of paracetamol", "whole packet of paracetamol",
+        "acetaminophen", "tylenol", "calpol", "co-codamol",
+        "solpadeine", "panadol",
     ],
     "staggered_over_hours": [
         "staggered", "over the last few days", "several times over",
@@ -2252,9 +2268,20 @@ SYMPTOM_SYNONYMS_PART4: Dict[str, List[str]] = {
         "hyperreflexia",
     ],
     "stimulant_drug_context": [
-        "cocaine", "crack", "mdma", "ecstasy", "amphetamine",
-        "speed", "meth", "crystal meth", "mephedrone", "mkat",
-        "adderall overdose", "took a lot of coke",
+        # anchored 2026-09-04: bare "meth" sat inside "methotrexate"
+        # (an MTX patient with fever drew Stimulant toxicity instead of
+        # marrow suppression); bare "speed"/"crack" matched ordinary
+        # words and "cracked rib"
+        "cocaine", "mdma", "ecstasy", "amphetamine",
+        "took speed", "on speed", "taking speed", "using speed",
+        # NB every '<verb> meth' token prefixes '<verb> methotrexate'
+        # ("on meth", "took meth", "injecting meth"... all collide), so
+        # meth is end-anchored only
+        "methamphetamine", "crystal meth", "meth head", "meth addict",
+        "meth pipe", "meth now", "meth today",
+        "took crack", "on crack", "smoking crack", "crack cocaine",
+        "mephedrone", "mkat", "adderall overdose",
+        "took a lot of coke",
     ],
     "agitation": [
         "agitated", "agitation", "restless and pacing",
@@ -2274,7 +2301,7 @@ SYMPTOM_SYNONYMS_PART4: Dict[str, List[str]] = {
     ],
     "pesticide_exposure": [
         "pesticide", "organophosphate", "insecticide", "sprayed crops",
-        "crop spraying", "sheep dip", "parquet", "malathion",
+        "crop spraying", "sheep dip", "paraquat", "malathion",
         "diazinon", "chlorpyrifos", "spraying the field",
         "pesticide on the crops", "spray tank", "roundup",
     ],
@@ -2317,10 +2344,21 @@ SYMPTOM_SYNONYMS_PART4: Dict[str, List[str]] = {
         "the baby is moving less", "my bump",
     ],
     "birth_recently": [
-        "just given birth", "gave birth", "since the birth",
-        "after the birth", "yesterday i had the baby", "had a baby",
-        "delivered", "postpartum", "day 3 after delivery",
-        "six days after giving birth", "newborn at home",
+        # anchored 2026-09-04: bare "after the birth" / "since the
+        # birth" matched mentions years old ("sewn up after the birth
+        # three years ago" led with PPH); bare "delivered" matched
+        # parcels and speeches
+        "just given birth", "gave birth", "had a baby",
+        "yesterday i had the baby", "postpartum", "postnatal",
+        "day 3 after delivery", "six days after giving birth",
+        "newborn at home", "hours after the birth",
+        "days after the birth", "after giving birth yesterday",
+        "after the birth yesterday", "after the birth last week",
+        "the birth last week", "the birth two days ago",
+        "the birth yesterday", "since the birth last",
+        "baby was born yesterday", "baby was born last week",
+        "just delivered", "delivered a baby", "delivered her baby",
+        "delivered my baby", "gave birth to",
     ],
     "bleeding_heavy": [
         "bleeding heavily", "bleeding very heavily", "soaking",

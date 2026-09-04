@@ -41,7 +41,7 @@ class TestCorpusPart5Integrity:
         # 7.2: 7 dermatology + 5 women's health + 4 men's health
         # 7.3: 7 chronic GI/hepatology/renal + 3 eyes/ENT
         #      + 5 sleep/pain/continence
-        assert len(CONDITIONS_PART5) == 44
+        assert len(CONDITIONS_PART5) == 45  # +advanced_cancer_supportive (audit missing-area 3)
 
     def test_part5_ids_unique_and_new(self):
         ids = [c.condition_id for c in CONDITIONS]

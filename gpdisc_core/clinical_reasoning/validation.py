@@ -338,8 +338,14 @@ class ClinicalValidator:
                         for m in re.finditer(r"\b(NG\s?\d+|CS\s?\d+)\b",
                                              text, re.I)]
         if claimed_refs:
-            known_refs = {g.nice_ref.upper() for g in GUIDELINES}
-            missing = [r for r in claimed_refs if r not in known_refs]
+            _ref_re = re.compile(r"\b(NG|CS)\s?\d+", re.I)
+            rows_by_ref: Dict[str, list] = {}
+            for g in GUIDELINES:
+                m = _ref_re.search(g.nice_ref)
+                if m:
+                    rows_by_ref.setdefault(
+                        m.group(0).replace(" ", "").upper(), []).append(g)
+            missing = [r for r in claimed_refs if r not in rows_by_ref]
             if missing:
                 report.findings.append(ValidationFinding(
                     check="claim_grounding", severity="flag",
@@ -347,6 +353,26 @@ class ClinicalValidator:
                             "verify before use",
                     evidence=f"unknown references: {', '.join(missing)}"))
                 return
+
+            # existing number, WRONG TOPIC: if the claim's own topic words
+            # map to an index row, the cited ref should be (one of) that
+            # row's — NG111-for-lower-UTI mirrors passed the old number-
+            # exists check, which is exactly how the audit's wrong-topic
+            # citations survived
+            topic_rows = lookup_guideline(text)
+            if topic_rows:
+                cited_rows = [g for r in claimed_refs
+                              for g in rows_by_ref.get(r, [])]
+                if not set(map(id, topic_rows)) & set(map(id, cited_rows)):
+                    report.findings.append(ValidationFinding(
+                        check="claim_grounding", severity="flag",
+                        message="guideline reference exists but covers a "
+                                "different topic than the claim — verify "
+                                "before use",
+                        evidence=f"claim topic matches "
+                                 f"{', '.join(g.nice_ref for g in topic_rows)}"
+                                 f" ({', '.join(g.topic for g in topic_rows)})"
+                                 f" but cites {', '.join(claimed_refs)}"))
 
         # otherwise the topic area itself must be grounded: the index
         # matches topic-in-text, so try the whole claim, then word pairs,

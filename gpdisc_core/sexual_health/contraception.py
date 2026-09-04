@@ -9,7 +9,10 @@ METHODS = ("cocp", "pop", "implant", "dmpa", "ius_iud")
 
 UKMEC: Dict[Tuple[str, str], Tuple[int, str]] = {
     ("cocp", "migraine_with_aura"): (4, "Stroke risk — oestrogen absolutely contraindicated"),
-    ("cocp", "smoker_35_plus"): (4, "Age >=35 smoking any amount: VTE + MI risk unacceptable"),
+    ("cocp", "smoker_35_plus_heavy"): (4, "Age >=35 smoking >=15/day: "
+     "unacceptable - VTE + arterial risk; stop CHC"),
+    ("cocp", "smoker_35_plus"): (3, "Age >=35 smoking <15/day: risks "
+     "usually outweigh benefits - switch to progestogen-only"),
     ("cocp", "vte_history"): (4, "Oestrogen multiplies recurrence risk"),
     ("cocp", "bp_160_100"): (4, "Uncontrolled severe hypertension"),
     ("cocp", "breastfeeding_6wks"): (4, "Oestrogen suppresses lactation before 6 weeks"),

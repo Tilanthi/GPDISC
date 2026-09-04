@@ -8,14 +8,13 @@ requirements for CD prescriptions and registers.
 from typing import Dict, List
 
 CD_SCHEDULES: Dict[str, List[str]] = {
-    "1": ["heroin (diamorphine, special licence only)", "lysergide", "mdma",
-          "psilocin"],
+    "1": ["lysergide", "mdma", "psilocin", "cannabinol derivatives"],
     "2": ["morphine", "diamorphine", "fentanyl", "oxycodone", "pethidine",
           "methadone", "amphetamine", "methylphenidate"],
-    "3": ["buprenorphine", "ketamine (special rules)", "flunitrazepam",
-          "temazepam was moved to schedule 4 — see schedule 4"],
+    "3": ["buprenorphine", "ketamine", "flunitrazepam", "midazolam",
+          "tramadol", "phenobarbital"],
     "4": ["diazepam", "lorazepam", "zopiclone", "zolpidem", "temazepam",
-          "clonazepam", "nitrazepam", "midazolam"],
+          "clonazepam", "nitrazepam", "anabolic steroids (part 2)"],
     "5": ["co-codamol and other codeine compound preparations",
           "morphine low-concentration oral solutions", "kaolin & morphine"],
 }
@@ -53,8 +52,8 @@ _GUARDRAILS: Dict[str, List[str]] = {
     ],
     "oxycodone": [
         "Second-line opioid after morphine intolerance or renal issues",
-        "Equianalgesic: oxycodone is ~2/3 the potency-adjustment of oral "
-        "morphine — convert, halve, then titrate",
+        "Oral oxycodone is roughly TWICE as potent as oral morphine: halve "
+        "the total daily morphine dose when converting, then titrate",
     ],
     "methadone": [
         "Specialist initiation only — long and variable half-life",

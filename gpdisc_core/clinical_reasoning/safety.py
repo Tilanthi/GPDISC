@@ -209,9 +209,13 @@ EMERGENCY_RULES: List[EmergencyPattern] = [
     # Any stated overdose is an emergency regardless of stated intent or
     # current wellness — paracetamol looks benign for 48h while the liver
     # fails. The urgent self_harm rule stays for cutting-only presentations.
+    EmergencyPattern("st_elevation_ecg", [
+        r"(?<!no )(?<!without )(?<!negative for )st[- ]elevat\w+|"
+        r"\bstemi\b|st elevation in (?:ii|iii|avf|the inferior)",
+    ], 1, "ST elevation on an ECG is an acute myocardial infarction until proven otherwise — emergency assessment NOW."),
     EmergencyPattern("any_overdose", [
-        r"overdose|took \d+ (?:\w+ )?(?:tablets|pills|capsules)|"
-        r"swallowed \d+ (?:\w+ )?(?:tablets|pills)|took too many|"
+        r"overdose|took (?:\d+|ten|eleven|twelve|fifteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred) (?:\w+ )?(?:tablets|pills|capsules)|"
+        r"swallowed (?:\d+|ten|eleven|twelve|fifteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred) (?:\w+ )?(?:tablets|pills)|took too many|"
         r"whole packet|a handful of (?:tablets|pills|capsules)|"
         r"took a handful|more than the packet|"
         r"more than it says on the (?:box|packet)|over the (?:packet|box) "
@@ -434,6 +438,16 @@ URGENT_RULES: List[EmergencyPattern] = [
           "care, antibiotics, tetanus, and the rabies PEP decision. "
           "Abroad or any bat anywhere: vaccine ± immunoglobulin today; "
           "there is no 'too late' until symptoms."),
+    EmergencyPattern("methotrexate_warning_signs", [
+        r"on methotrexate|taking methotrexate|methotrexate injection|"
+        r"weekly methotrexate|methotrexate weekly|\bon mtx\b",
+        r"\bfever\b|feverish|high temperature|temperature of 3[89]|"
+        r"38\.\d|39\.\d|\brigors?\b|\bchills\b|hot and cold|"
+        r"sore throat|mouth ulcers?",
+    ], 2, "Fever, sore throat or mouth ulcers on methotrexate (the "
+          "warning-card signs): STOP the methotrexate and same-day FBC "
+          "- the UK's commonest cytotoxic disaster pattern, not "
+          "wait-and-see."),
     EmergencyPattern("bloodborne_exposure_rule", [
         r"needlestick|needle stick|sharps injury|stood on a needle|"
         r"stepped on a needle|stuck by a (?:used )?needle|"

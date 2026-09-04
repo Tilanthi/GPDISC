@@ -28,6 +28,10 @@ _SOURCE_HBV = re.compile(r"hepatitis b positive|hb ?sag positive|"
 _SOURCE_HIV = re.compile(
     r"\bhiv positive|known hiv|with hiv\b|has hiv|source hiv|hiv\+", re.I)
 _SOURCE_HCV = re.compile(r"hepatitis c positive|known hepatitis c", re.I)
+_HIGH_RISK_INJURY = re.compile(
+    r"deep(?:ly)? (?:injur|stab|punctur|penetrat)|hollow[- ]?bore|"
+    r"visible blood|blood[- ]filled|\biv drug\b|intravenous drug|"
+    r"injecting drug|high[- ]risk (?:source|group|patient)", re.I)
 _UNDETECTABLE = re.compile(r"undetectable|viral load (?:is |was )?zero|"
                            r"on treatment,? suppressed", re.I)
 _HOURS = re.compile(
@@ -87,27 +91,59 @@ def bloodborne_exposure(
             "transmission risk is effectively zero — PEP is not "
             "indicated. Baseline HIV test for the exposed person "
             "anyway, and document the decision.")
-    elif (source_hiv or sexual or occupational) and hours < 72:
+    elif source_hiv and hours < 72:
         a.hiv_pep = True
         a.hiv_note = (
             f"Exposure ~{hours}h ago, inside the 72-hour window: give "
             "the FIRST DOSE of HIV PEP now — a 28-day starter pack — "
             "and complete the risk assessment afterwards. The earlier "
             "the first dose, the better it works.")
-    elif (source_hiv or sexual or occupational) and hours >= 72:
+    elif source_hiv:
         a.hiv_pep = False
         a.hiv_note = (
             f"~{hours}h have passed: outside the 72-hour PEP window. "
             "Discuss with a specialist (exceptional cases are "
             "sometimes still offered), and arrange HIV testing at the "
             "appropriate interval instead.")
-    elif occupational:
-        # unknown low-risk community source
+    elif sexual and hours < 72:
+        a.hiv_pep = True
+        a.hiv_note = (
+            f"Sexual exposure ~{hours}h ago, inside the 72-hour "
+            "window: give the FIRST DOSE of HIV PEP now and complete "
+            "the source risk assessment in parallel — do not wait for "
+            "it before the first dose.")
+    elif sexual:
         a.hiv_pep = False
         a.hiv_note = (
-            "Unknown community source: HIV PEP is usually not "
-            "indicated (HIV prevalence in discarded needles is very "
-            "low) — but HBV and tetanus DO need deciding today.")
+            f"~{hours}h have passed: outside the 72-hour PEP window. "
+            "Specialist discussion for exceptional cases; HIV testing "
+            "at the appropriate interval instead.")
+    elif occupational and hours < 72:
+        # Unknown-source percutaneous/mucosal injury: risk-stratify
+        if _HIGH_RISK_INJURY.search(t):
+            a.hiv_pep = True
+            a.hiv_note = (
+                f"High-risk injury ~{hours}h ago (deep / hollow-bore / "
+                "visible blood / high-risk source group): give the "
+                "FIRST DOSE of HIV PEP now while the source is being "
+                "clarified — stop later if the source proves low risk.")
+        else:
+            a.hiv_pep = False
+            a.hiv_note = (
+                f"Injury ~{hours}h ago, source unknown: HIV PEP is "
+                "usually NOT indicated (HIV prevalence in discarded "
+                "needles and community sources is very low) — but HBV "
+                "and tetanus DO need deciding today. Start PEP "
+                "immediately if anything puts the source in a higher-"
+                "risk group (IV drug use, known/suspected HIV, "
+                "high-prevalence background).")
+    elif occupational:
+        a.hiv_pep = False
+        a.hiv_note = (
+            f"~{hours}h have passed: outside the routine 72-hour HIV "
+            "PEP window (specialist discussion for exceptional cases) "
+            "— but HBV prophylaxis and tetanus still need deciding "
+            "today; arrange HIV testing at the appropriate interval.")
 
     # ---- HBV ----
     if _SOURCE_HBV.search(t):
@@ -156,5 +192,4 @@ def bloodborne_exposure(
             "Full STI screen at the appropriate window, chlamydia/"
             "gonorrhoea now and repeat later per protocol?",
         ]
-        a.hiv_pep = a.hiv_pep or hours < 72
     return a

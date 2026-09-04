@@ -83,7 +83,8 @@ class TestCorpusPart3:
         # + 15 chronic GI/hepato-renal + eyes/ENT + sleep/pain (7.3)
         # + 26 global burden + environmental extremes (8.1; cholera
         # dropped as a shadow duplicate of knowledge_tropical's entry)
-        assert len(CONDITIONS) == 272
+        # + 1 advanced-cancer supportive care (audit missing-area, 2026-09-04)
+        assert len(CONDITIONS) == 273
         part3_ids = {c.condition_id for c in CONDITIONS_PART3}
         old_ids = set(ids) - part3_ids
         assert not (part3_ids & old_ids)
@@ -130,7 +131,9 @@ class TestCorpusPart3:
             CONDITIONS, SYMPTOM_SYNONYMS)
         from gpdisc_core.clinical_reasoning.knowledge_breadth2 import (
             CONDITIONS_PART5)
-        assert len(CONDITIONS_PART5) == 44
+        # 44 (Stage 7) + advanced_cancer_supportive (audit missing-area
+        # 3, 2026-09-04) = 45
+        assert len(CONDITIONS_PART5) == 45
         # the 7.1 over-triage fix must hold: status_epilepticus scores
         # only on not-stopping wording, never the bare word 'seizure'
         status = find_condition("status_epilepticus")

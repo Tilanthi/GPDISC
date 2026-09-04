@@ -4,7 +4,7 @@ Expertise program Stage 3, Task 7. The BNF-level safety knowledge for the
 drugs that most often harm in UK primary care: what to monitor and when,
 plus eGFR thresholds at which prescribing must change.
 """
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 MONITORING: Dict[str, List[str]] = {
     "lithium": [
@@ -130,3 +130,68 @@ def renal_flags(drug: str, egfr: float) -> List[str]:
     key = _canonical(drug)
     return [msg for (threshold, msg) in _RENAL_FLAGS.get(key, [])
             if egfr < threshold]
+
+
+# ---- audit routing-gap fix (2026-09-04): "can I drink while taking X?" ----
+# The famous one is metronidazole; the honest table covers the drugs the
+# question is actually asked about. Verdicts are conservative UK practice
+# (BNF / NICE CKS framing): "avoid" = do not drink; "caution" = limits and
+# monitoring; "moderate ok" = no interaction at normal intake.
+
+ALCOHOL_INTERACTIONS: Dict[str, str] = {
+    "metronidazole": (
+        "AVOID alcohol during treatment and for 48 HOURS after the last "
+        "dose — disulfiram-like reaction (flushing, vomiting, "
+        "palpitations, headache). This is the classic exam question and "
+        "a real one: mouthwash and other alcohol-containing medicines "
+        "count too."),
+    "tinidazole": (
+        "AVOID alcohol during treatment and for 48 hours after the last "
+        "dose — same disulfiram-like reaction as metronidazole."),
+    "flagyl": None,          # alias for metronidazole, resolved below
+    "isoniazid": (
+        "AVOID — alcohol adds to the hepatotoxicity risk; if drinking "
+        "is ongoing, LFTs need watching."),
+    "ketoconazole": (
+        "AVOID — disulfiram-like reaction reported."),
+    "disulfiram": (
+        "NEVER — the entire point of the drug; severe reaction."),
+    "warfarin": (
+        "CAUTION — binge drinking swings the INR (acutely up, "
+        "chronically down via the liver); a steady small intake is "
+        "safer than variable drinking, and the INR check tells the "
+        "truth either way."),
+    "methotrexate": (
+        "CAUTION — both are hepatotoxic; keep well inside UK unit "
+        "limits, and the routine LFT monitoring already booked is the "
+        "safety net."),
+    "paracetamol": (
+        "CAUTION at chronic heavy intake — the hepatotoxic threshold "
+        "falls; standard doses remain safe for an occasional drinker, "
+        "never exceed 4 g/day."),
+    "doxycycline": (
+        "Moderate intake is fine — no disulfiram reaction; chronic "
+        "heavy drinking reduces blood levels, so separate doses from "
+        "drinking sessions."),
+    "nitrofurantoin": (
+        "Moderate intake is fine — no interaction of note."),
+    "amoxicillin": (
+        "Moderate intake is fine — the metronidazole warning is the "
+        "famous one, not this."),
+    "clarithromycin": (
+        "Moderate intake is fine; the interactions that matter here "
+        "are with other DRUGS (statins, warfarin), not alcohol."),
+}
+ALCOHOL_INTERACTIONS["flagyl"] = ALCOHOL_INTERACTIONS["metronidazole"]
+
+
+def alcohol_interaction(text: str) -> List[Tuple[str, str]]:
+    """Drugs mentioned in the text that carry an alcohol-interaction
+    row. Returns (canonical drug, guidance) pairs; empty list means no
+    row matched — say so honestly rather than guessing."""
+    hits = []
+    for drug, guidance in ALCOHOL_INTERACTIONS.items():
+        if drug in text.lower():
+            hits.append((drug, guidance))
+    # 'flagyl' text hits the alias row; report it under metronidazole
+    return [(d, g) for d, g in hits]

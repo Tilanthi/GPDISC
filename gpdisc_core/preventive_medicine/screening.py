@@ -18,7 +18,9 @@ class ScreeningEntry:
 
 
 SCREENING_UK = [
-    ScreeningEntry("Bowel cancer screening (FIT)", "54-74 (expanding to 50), men and women",
+    ScreeningEntry("Bowel cancer screening (FIT)", "50-74, men and women "
+        "(routine invitations phased down to 50; anyone 50+ can self-request "
+        "a kit)",
         "Every 2 years", "Faecal immunochemical test at home",
         "Positive FIT → colonoscopy via SSP"),
     ScreeningEntry("Breast cancer screening", "Women 50-70 (self-request 71+)",
@@ -52,7 +54,7 @@ def screening_due(entry: ScreeningEntry, patient: dict) -> bool:
     sex = patient.get("sex")
     p = patient
     if entry.programme.startswith("Bowel"):
-        return age is not None and 54 <= age <= 74
+        return age is not None and 50 <= age <= 74
     if entry.programme.startswith("Breast"):
         return sex == "f" and age is not None and 50 <= age <= 70
     if entry.programme.startswith("Cervical"):

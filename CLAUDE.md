@@ -40,6 +40,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **All patient records from the MEDIDISC era were purged** from this repository (archived outside the repo, then removed). The `patients/` directory and `gpdisc_core/data/` are empty skeletons awaiting fresh data.
 - **The package rename is complete** (2026-09-03): `medidisc_core` → `gpdisc_core`, factory `create_medidisc_system()` → `create_gpdisc_system()`, with all imports, paths, configs, and docs updated. Import via `from gpdisc_core import create_gpdisc_system`.
+- **Hallucination audit FIXED** (2026-09-04): the outside-consultant audit (`docs/superpowers/specs/2026-09-03-hallucination-audit.md`) found 23+ errors (legal facts, citations, clinical thresholds, collisions, typos) plus 8 routing gaps and 4 missing areas. ALL are fixed and locked by tests — every correction ships with both-direction probes (the genuine case still detected, the benign near-miss still benign). Key additions: alcohol-interaction table (`prescribing_safety.ALCOHOL_INTERACTIONS`), methotrexate warning-card urgent rule, ST-elevation emergency rule, `advanced_cancer_supportive` corpus entry (corpus now 273), pre-travel/prevention/alcohol-interaction front-door routes, urgent-rule advice now always rendered (never silently replaced by tier text).
 
 ### Naming Convention
 
@@ -142,6 +143,18 @@ print(result['answer'])
 ---
 
 ## Medical Specialties
+
+### Domain structure (honest map)
+
+`gpdisc_core/domains/` holds 44 domain packages, in three tiers:
+
+- **5 primary medical domains (UK-framed)** — Cardiology, Epilepsy, General Practice, Orthopedics, Pharmacology. These are the supported direct-entry specialties.
+- **29 legacy specialty domains (US-framed)** — emergency_medicine, dermatology, pediatrics, neurology, and the rest inherited from the MEDIDISC era. Their content is individually correct **in a US frame** (Beers criteria, FDA labels, ASCVD ≥7.5%, mg/dL units, acetaminophen/meperidine naming, PDMP) inside a UK-first system — a mismatch flagged by the 2026-09-03 audit. **Prefer the clinical-reasoning front door** (`create_gpdisc_system()` / `ConsultationPipeline`), which is UK-grounded and safety-screened; the legacy domains remain as background knowledge, not as consultation entry points.
+- **10 biology domains (preserved)** — the scientific foundation, unchanged.
+
+The consultation pathway a query should take is the front door, NOT a direct legacy-domain `process_query()`.
+
+### The five primary specialties
 
 ### Cardiology
 - ECG/EKG interpretation
@@ -264,8 +277,12 @@ python3 -m pytest gpdisc_core/tests/test_global.py gpdisc_core/tests/test_resour
 # Consultant opinions + interpretation breadth (Stage 9)
 python3 -m pytest gpdisc_core/tests/test_mdt_consultants.py gpdisc_core/tests/test_interpretation_breadth.py -v
 
-# Full battery (23 suites, 583 tests)
-python3 -m pytest gpdisc_core/tests/test_clinical_reasoning.py gpdisc_core/tests/test_travel_medicine.py gpdisc_core/tests/test_sexual_health.py gpdisc_core/tests/test_preventive_medicine.py gpdisc_core/tests/test_pharmacology_safety.py gpdisc_core/tests/test_uk_practice.py gpdisc_core/tests/test_mdt.py gpdisc_core/tests/test_mdt_consultants.py gpdisc_core/tests/test_consultation_skills.py gpdisc_core/tests/test_benign_vs_emergency.py gpdisc_core/tests/test_regression_bank.py gpdisc_core/tests/test_validation.py gpdisc_core/tests/test_audit_probes.py gpdisc_core/tests/test_emergency_breadth.py gpdisc_core/tests/test_post_exposure.py gpdisc_core/tests/test_breadth2.py gpdisc_core/tests/test_front_door.py gpdisc_core/tests/test_palliative_care.py gpdisc_core/tests/test_global.py gpdisc_core/tests/test_resource_settings.py gpdisc_core/tests/test_jurisdictions.py gpdisc_core/tests/test_humanitarian_care.py gpdisc_core/tests/test_interpretation_breadth.py -q
+# Routing gaps (hallucination-audit section D: the 8 presentations that
+# once reached no specialist pathway, locked with their over-triage guards)
+python3 -m pytest gpdisc_core/tests/test_routing_gaps.py -v
+
+# Full battery (24 suites, 609 tests)
+python3 -m pytest gpdisc_core/tests/test_clinical_reasoning.py gpdisc_core/tests/test_travel_medicine.py gpdisc_core/tests/test_sexual_health.py gpdisc_core/tests/test_preventive_medicine.py gpdisc_core/tests/test_pharmacology_safety.py gpdisc_core/tests/test_uk_practice.py gpdisc_core/tests/test_mdt.py gpdisc_core/tests/test_mdt_consultants.py gpdisc_core/tests/test_consultation_skills.py gpdisc_core/tests/test_benign_vs_emergency.py gpdisc_core/tests/test_regression_bank.py gpdisc_core/tests/test_validation.py gpdisc_core/tests/test_audit_probes.py gpdisc_core/tests/test_emergency_breadth.py gpdisc_core/tests/test_post_exposure.py gpdisc_core/tests/test_breadth2.py gpdisc_core/tests/test_front_door.py gpdisc_core/tests/test_palliative_care.py gpdisc_core/tests/test_global.py gpdisc_core/tests/test_resource_settings.py gpdisc_core/tests/test_jurisdictions.py gpdisc_core/tests/test_humanitarian_care.py gpdisc_core/tests/test_interpretation_breadth.py gpdisc_core/tests/test_routing_gaps.py -q
 ```
 
 ### Medical Domain Tests
@@ -325,8 +342,13 @@ print(result['answer'])
 └─────────────────────────────────────────────────────────────────┘
                               │
 ┌─────────────────────────────────────────────────────────────────┐
-│              Medical Domains (5)                                │
+│      Primary Medical Domains (5, UK-framed)                     │
 │  Cardiology | Epilepsy | General Practice | Orthopedics | Pharmacology │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────────┐
+│   Legacy Specialty Domains (29, US-framed — prefer front door)  │
+│  Emergency Medicine | Dermatology | Paediatrics | Neurology ... │
 └─────────────────────────────────────────────────────────────────┘
                               │
 ┌─────────────────────────────────────────────────────────────────┐
@@ -360,7 +382,7 @@ print(result['answer'])
 
 ### Clinical Reasoning Core (GP-led front door)
 
-`gpdisc_core/clinical_reasoning/` — Level 1 + Level 6 of the GP expertise architecture: structured condition corpus (202 conditions across 20+ categories, Parts 1-4), Bayesian test interpretation, safety/escalation layer with emergency overlays, differential engine with anti-anchoring, and the consultation pipeline. `answer()` routes every medical query through safety screening first; emergency patterns are never downgraded by benign reasoning. Uncertainty ("I don't know yet") is a first-class output, and unpopulated consultation stages become questions to ask.
+`gpdisc_core/clinical_reasoning/` — Level 1 + Level 6 of the GP expertise architecture: structured condition corpus (273 conditions across 20+ categories, Parts 1-6: core, breadth, emergencies, chronic/daily breadth, global burden), Bayesian test interpretation, safety/escalation layer with emergency and urgent overlays, differential engine with anti-anchoring, and the consultation pipeline. `answer()` routes every medical query through safety screening first; emergency patterns are never downgraded by benign reasoning. Uncertainty ("I don't know yet") is a first-class output, and unpopulated consultation stages become questions to ask. Routine-intent presentations route to their specialist modules after the safety screen: pre-travel questions to `travel_medicine`, "what am I due" prevention questions to `preventive_medicine`, alcohol-plus-medication questions to the `prescribing_safety.ALCOHOL_INTERACTIONS` table, end-of-life presentations to `palliative_care` — safety always wins, so each route fires only when no emergency/urgent rule did.
 
 ```python
 from gpdisc_core.clinical_reasoning import ConsultationPipeline
@@ -387,7 +409,7 @@ cat, why = ukmec_category("cocp", "migraine_with_aura")      # (4, "Stroke risk.
 
 ### UK Practice Layer (Stage 3)
 
-`gpdisc_core/uk_practice/` — the UK-specific regulatory and policy layer: NICE/CKS guideline index (24 areas), 2ww urgent-suspected-cancer criteria (16 NG12-aligned rules with age/sex gating), DVLA fitness-to-drive rules (14 conditions, group 1 + 2), MCA two-stage capacity test + best-interests + DNACPR + safeguarding frameworks, controlled-drug schedules with prescribing guardrails, antimicrobial stewardship (first-line tables with penicillin-allergic alternatives and delayed-prescribing notes), high-risk drug monitoring (lithium, methotrexate, clozapine, DOACs...) with eGFR renal flags, and fit-note (Med3) rules. Vaccination/screening cohorts live in `preventive_medicine` (Stage 2).
+`gpdisc_core/uk_practice/` — the UK-specific regulatory and policy layer: NICE/CKS guideline index (26 areas), 2ww urgent-suspected-cancer criteria (16 NG12-aligned rules with age/sex gating), DVLA fitness-to-drive rules (14 conditions, group 1 + 2), MCA two-stage capacity test + best-interests + DNACPR + safeguarding frameworks, controlled-drug schedules with prescribing guardrails, antimicrobial stewardship (first-line tables with penicillin-allergic alternatives and delayed-prescribing notes), high-risk drug monitoring (lithium, methotrexate, clozapine, DOACs...) with eGFR renal flags, an alcohol-interaction table (metronidazole AVOID 48h post-dose incl. alcohol-containing mouthwash; warfarin INR caution; honest "no row" for unknown drugs), and fit-note (Med3) rules. Vaccination/screening cohorts live in `preventive_medicine` (Stage 2).
 
 ```python
 from gpdisc_core.uk_practice import (
@@ -509,7 +531,7 @@ ecg = interpret_ecg("ST elevation in II, III, aVF")   # emergency + V4R action
 gas = interpret_abg(7.28, 3.4, 12, lactate=2.0)        # metabolic, Winter's-appropriate
 ```
 
-Tests: `test_mdt_consultants.py` (23), `test_interpretation_breadth.py` (53). Battery 23 suites / 583 tests; import sweep 580 modules clean.
+Tests: `test_mdt_consultants.py` (23), `test_interpretation_breadth.py` (53). Battery 24 suites / 609 tests (with `test_routing_gaps.py`); import sweep 580 modules clean.
 
 ### Consultant Audit + Validation Layer (2026-09-03)
 
@@ -532,6 +554,15 @@ assert not report.passed                   # blocked, with the truth attached
 
 validator.record_hallucination("claim", "correct value", "source")  # persists locally
 ```
+
+### Hallucination Audit — FIXED (2026-09-04)
+
+The second outside-consultant audit (`docs/superpowers/specs/2026-09-03-hallucination-audit.md`) went document-by-document through the knowledge base and found 23+ errors (wrong NICE numbers, wrong DVLA/controlled-drug facts, wrong preventive-medicine schedules, substring collisions that over-triaged, typos in clinical strings), 8 routing gaps (presentations that reached no specialist pathway) and 4 missing areas. **All fixed, every fix locked both directions** — the genuine case still detected, the benign near-miss still benign:
+
+- **Legal/factual**: DVLA group-2 post-stroke 1 year, elective PCI group-1 1 week, unexplained syncope 6 months; midazolam/tramadol Schedule 3, diamorphine Schedule 2, temazepam Schedule 4; pyelonephritis NG111 (not NG109); Sri Lanka correctly malaria-free; bowel screening 50-74; shingles vaccine at 65 (phasing to 60, catch-up 70-79).
+- **New mechanisms**: `ALCOHOL_INTERACTIONS` table + `alcohol_interaction()`; `methotrexate_warning_signs` paired urgent rule (fever/sore throat/ulcers ON methotrexate → STOP + same-day FBC; routine MTX blood checks stay routine); `st_elevation_ecg` emergency rule with negation guard ("no ST elevation" never 999s); word-number overdose rule ("swallowed twenty" is emergency, "two" stays routine); urgent-rule advice now always rendered on the referral line, never silently replaced by tier text.
+- **Corpus**: `advanced_cancer_supportive` (PART5, corpus 273); `alcohol_dependence` enriched with heavy-drinking patterns ("bottle of wine every night"), PabQ paracetamol question, thiamine-before-glucose; hypoactive-delirium tokens ("gone quiet", "not herself today"); meth tokens end-anchored so "on methotrexate" is never "on meth".
+- **Locks**: `test_routing_gaps.py` (21 tests) for the 8 gaps + over-triage guards; corrected pins in the affected suites; validator `_check_citation` now catches wrong-topic citations (existing NG number, wrong guideline), not just invented ones.
 
 Marginal presentations now ask rather than shrug: a close top-2 differential emits its conditions' discriminators, and any benign-vs-emergency pair match emits the pair's discriminating questions (`Ask next:` in the summary).
 
@@ -791,9 +822,12 @@ All medical decisions should be made in consultation with qualified healthcare p
 
 ## Code Statistics
 
-- **Total Python Files**: 514
+- **Total Python Files**: 596
 - **Directory Size**: ~300 MB
-- **Medical Domains**: 5 (Cardiology, Epilepsy, General Practice, Orthopedics, Pharmacology)
+- **Primary Medical Domains**: 5 (Cardiology, Epilepsy, General Practice, Orthopedics, Pharmacology — UK-framed)
+- **Legacy Specialty Domains**: 29 (US-framed, MEDIDISC-era — background knowledge, prefer the front door)
 - **Biology Domains**: 10 (preserved for scientific foundation)
+- **Condition Corpus**: 273 conditions (Parts 1-6)
+- **Test Battery**: 24 suites, 609 tests
 - **Advanced Capabilities**: 66+ specialist capabilities
 - **Dashboard Port**: 8790

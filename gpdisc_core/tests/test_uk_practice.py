@@ -7,7 +7,10 @@ from gpdisc_core.uk_practice.guidelines_index import (
 
 class TestGuidelinesIndex:
     def test_24_entries(self):
-        assert len(GUIDELINES) == 24
+        # 26 since the audit fix: NG198 acne and CG97 LUTS-in-men rows
+        # added so the validator can ground the corpus's own (corrected)
+        # citations instead of flagging them as unknown numbers.
+        assert len(GUIDELINES) == 26
 
     def test_every_entry_populated(self):
         for g in GUIDELINES:
@@ -145,7 +148,27 @@ class TestControlledDrugs:
 
     def test_safe_practice_nonempty(self):
         assert len(CD_SAFE_PRACTICE) >= 5
-        assert controlled_drug_class("midazolam") == "4"
+
+    def test_audit_corrected_schedules(self):
+        # Locked 2026-09-04 hallucination-audit corrections:
+        # midazolam/tramadol are Schedule 3; medicinal diamorphine is
+        # Schedule 2 (never 1); temazepam Schedule 4 (the old Schedule 3
+        # note string used to hijack this substring lookup).
+        assert controlled_drug_class("midazolam") == "3"
+        assert controlled_drug_class("tramadol") == "3"
+        assert controlled_drug_class("diamorphine") == "2"
+        assert controlled_drug_class("temazepam") == "4"
+
+    def test_audit_corrected_dvla(self):
+        # DVLA guide (Nov 2025): group 2 after stroke/TIA = 1-year
+        # revocation; elective PCI group 1 = 1 week; unexplained syncope
+        # group 1 = 6 months.
+        g2 = driving_rules("tia", group=2)[0].group2_rule
+        assert "1 year" in g2
+        pci = driving_rules("angioplasty", group=1)[0].group1_rule
+        assert "1 week" in pci
+        syn = driving_rules("syncope", group=1)[0].group1_rule
+        assert "6 months" in syn
 
 
 from gpdisc_core.uk_practice.antimicrobial_stewardship import (

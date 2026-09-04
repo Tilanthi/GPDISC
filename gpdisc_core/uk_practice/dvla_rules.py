@@ -35,22 +35,28 @@ _ROWS = [
      "10 years seizure-free off medication",
      "Medication changes can restart the clock"),
     ("TIA / stroke", ["tia", "stroke", "mini stroke"],
-     "1 month off after TIA/stroke",
-     "1 month off; licensing review",
-     "Recurrent TIAs: until the pattern is controlled"),
+     "1 month off after TIA/stroke; notify DVLA only if residual deficit "
+     "(visual field, cognitive, limb function)",
+     "Licence refused/revoked for 1 year after stroke or TIA; relicensing "
+     "after 1 year needs no debarring impairment (may need exercise ECG)",
+     "Multiple TIAs: 1 month off after each episode"),
     ("Myocardial infarction", ["heart attack", "myocardial infarction", "mi "],
      "1 week off if uncomplicated with successful treatment (e.g. PCI)",
      "6 weeks; may need a functional test",
      "Angina: must not drive while symptomatic"),
     ("Angioplasty (elective)", ["angioplasty", "stent", "pci"],
-     "2 days after elective PCI (private driving) — check current DVLA guidance",
-     "6 weeks",
-     "Check current DVLA guidance"),
+     "1 week off after elective PCI; no need to notify DVLA (uncomplicated)",
+     "6 weeks, provided LVEF ≥40% and functional test requirements met",
+     "Elective PCI is 1 week; PCI for ACS has its own (1 week) standard — "
+     "medically managed ACS is 4 weeks"),
     ("Syncope", ["syncope", "faint", "blackout"],
-     "4 weeks off if unexplained/untreated; 4 days if explained and treated "
-     "(e.g. vasovagal with prodrome)",
-     "Case-by-case; often 3 months",
-     "Identify the cause; cardiac syncope needs cardiology review"),
+     "Unexplained: 6 months off (notify DVLA). Vasovagal with reliable "
+     "prodrome, not while driving: may drive once recovered; if it happened "
+     "while driving: 1 month. No reliable prodrome: 3 months",
+     "Unexplained: licence revoked 12 months (5 years if recurrent); reflex "
+     "syncope 3-12 months by pattern, with specialist report",
+     "Identify the cause; cardiac syncope follows the underlying-diagnosis "
+     "standard and needs cardiology review"),
     ("Diabetes on insulin", ["insulin", "diabetes on insulin"],
      "3-year licence with demonstrated hypoglycaemia awareness; check glucose "
      "before driving and every 2 hours on long drives",
