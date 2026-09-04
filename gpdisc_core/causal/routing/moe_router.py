@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Mixture-of-Experts (MoE) Inspired Capability Router for STAN_IX_ASTRO
+Mixture-of-Experts (MoE) Inspired Capability Router
 
 This module implements a learned routing mechanism inspired by:
 "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Approach"

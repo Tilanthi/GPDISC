@@ -55,14 +55,7 @@ V42 Core Enhancement Modules:
 37. Calibrated Confidence Estimation - Proper probability calibration
 38. Falsification-First Hypothesis Testing - Popperian scientific method
 
-V43 Astrophysics-Aware Reasoning:
-39. Observational Likelihood - Connect forward models to data with beam convolution
-40. Physical Process Library - Encyclopedia of ISM mechanisms
-41. ISM Knowledge Base - Expert domain knowledge (phases, tracers, dust, B-fields)
-42. Astrophysical Causal Discovery - Physics-constrained, bias-aware causality
-43. Astrophysical Theory Synthesis - Build theories from patterns
-44. Multiwavelength Reconciliation - Integrate X-ray/optical/IR/radio
-45. Observational Strategy - Design discriminating tests
+V43 Astrophysics-Aware Reasoning: removed in the 2026-09-04 ASTRA purge
 
 V44 ARC-AGI Integration (NEW):
 46. ARC-AGI Integration - Grid-based pattern recognition and transformation synthesis
@@ -864,13 +857,6 @@ __all__ = [
     'ValidatedDiscovery',
 
     # V42: Cross-Survey Fusion
-    'CrossSurveyFusionEngine',
-    'get_cross_survey_fusion_engine',
-    'CrossMatcher',
-    'MeasurementCombiner',
-    'JointPosteriorCalculator',
-    'FusedSource',
-    'JointPosterior',
 
     # V42: Learned Proposals
     'AdaptiveProposalManager',
@@ -900,91 +886,6 @@ __all__ = [
     'HypothesisV42',
 
     # V43: Astrophysics-Aware Reasoning
-    'BeamConvolver',
-    'SpectralLikelihood',
-    'ImageLikelihood',
-    'CubeLikelihood',
-    'MultiWavelengthLikelihood',
-    'CalibrationUncertaintyPropagator',
-    'get_spectral_likelihood',
-    'get_image_likelihood',
-    'ProcessCategory',
-    'PhysicalProcess',
-    'ProcessLibrary',
-    'MechanismMatcher',
-    'ProcessChainBuilder',
-    'get_process_library',
-    'find_process',
-    'explain_observable',
-    'ISMPhase',
-    'ISMPhaseProperties',
-    'MolecularTracer',
-    'DustProperties',
-    'MagneticFieldMethod',
-    'SFRelation',
-    'ISMKnowledgeBase',
-    'get_ism_knowledge_base',
-    'what_traces',
-    'get_critical_density',
-    'ConservationLaw',
-    'ObservationalBias',
-    'AstroCausalGraph',
-    'BiasAwareCausalDiscovery',
-    'PhysicsConstrainedGraph',
-    'MechanismIdentifier',
-    'LatentPhysicsProposer',
-    'DynamicalCausalModel',
-    'AstrophysicalCausalDiscovery',
-    'discover_causal_structure',
-    'identify_mechanism_for_correlation',
-    'AstroPatternType',
-    'ConfidenceLevel',
-    'ObservedPattern',
-    'AstroPhysicalLaw',
-    'Mechanism',
-    'AstroPrediction',
-    'MechanismTheory',
-    'PatternIdentifier',
-    'LawPromoter',
-    'TheoryComparator',
-    'AstroPredictionGenerator',
-    'TheoryBuilder',
-    'get_turbulent_sf_theory',
-    'get_magnetic_sf_theory',
-    'identify_pattern',
-    'build_theory_from_patterns',
-    'compare_sf_theories',
-    'WavelengthDomain',
-    'EmissionMechanism',
-    'MultiWavObservation',
-    'PhysicalComponent',
-    'DomainBelief',
-    'Tension',
-    'UnifiedModel',
-    'MultiWavelengthBelief',
-    'DomainReconciler',
-    'TensionDetector',
-    'SEDIntegrator',
-    'PhysicalStateInferrer',
-    'reconcile_observations',
-    'detect_wavelength_tensions',
-    'build_sed_from_observations',
-    'TelescopeType',
-    'ObservationType',
-    'Telescope',
-    'Instrument',
-    'ObservationPlan',
-    'StrategyHypothesis',
-    'CriticalTest',
-    'ObservationDesigner',
-    'DiscriminatingTestFinder',
-    'SensitivityCalculator',
-    'FollowupPrioritizer',
-    'design_observation_for_hypothesis',
-    'find_critical_test',
-    'calculate_detection_limit',
-    'prioritize_followup',
-    'get_telescope_database',
     # V42 GPQA: Test-Time Search
     'TestTimeSearch',
     'SearchConfig',
@@ -1294,26 +1195,6 @@ except ImportError:
     AnomalyV42 = None
     ValidatedDiscovery = None
 
-# V42: Cross-Survey Knowledge Fusion
-try:
-    from .cross_survey_fusion import (
-        CrossSurveyFusionEngine,
-        get_cross_survey_fusion_engine,
-        CrossMatcher,
-        MeasurementCombiner,
-        JointPosteriorCalculator,
-        FusedSource,
-        JointPosterior,
-    )
-except ImportError:
-    CrossSurveyFusionEngine = None
-    get_cross_survey_fusion_engine = None
-    CrossMatcher = None
-    MeasurementCombiner = None
-    JointPosteriorCalculator = None
-    FusedSource = None
-    JointPosterior = None
-
 # V42: Learned Proposal Distributions
 try:
     from .learned_proposals import (
@@ -1374,179 +1255,11 @@ except ImportError:
     TestOutcome = None
     HypothesisV42 = None
 
-# V43: Astrophysics-Aware Reasoning
-try:
-    from .observational_likelihood import (
-        BeamConvolver,
-        SpectralLikelihood,
-        ImageLikelihood,
-        CubeLikelihood,
-        MultiWavelengthLikelihood,
-        CalibrationUncertaintyPropagator,
-        get_spectral_likelihood,
-        get_image_likelihood,
-    )
-except ImportError:
-    BeamConvolver = None
-    SpectralLikelihood = None
-    ImageLikelihood = None
-    CubeLikelihood = None
-    MultiWavelengthLikelihood = None
-    CalibrationUncertaintyPropagator = None
-    get_spectral_likelihood = None
-    get_image_likelihood = None
-
-try:
-    from .physical_process_library import (
-        ProcessCategory,
-        PhysicalProcess,
-        ProcessLibrary,
-        MechanismMatcher,
-        ProcessChainBuilder,
-        get_process_library,
-        find_process,
-        explain_observable,
-    )
-except ImportError:
-    ProcessCategory = None
-    PhysicalProcess = None
-    ProcessLibrary = None
-    MechanismMatcher = None
-    ProcessChainBuilder = None
-    get_process_library = None
-    find_process = None
-    explain_observable = None
-
-try:
-    from .ism_knowledge_base import (
-        ISMPhase,
-        ISMPhaseProperties,
-        MolecularTracer,
-        DustProperties,
-        MagneticFieldMethod,
-        SFRelation,
-        ISMKnowledgeBase,
-        get_ism_knowledge_base,
-        what_traces,
-        get_critical_density,
-    )
-except ImportError:
-    ISMPhase = None
-    ISMPhaseProperties = None
-    MolecularTracer = None
-    DustProperties = None
-    MagneticFieldMethod = None
-    SFRelation = None
-    ISMKnowledgeBase = None
-    get_ism_knowledge_base = None
-    what_traces = None
-    get_critical_density = None
-
-try:
-    from .astrophysical_causal_discovery import (
-        ConservationLaw,
-        ObservationalBias,
-        CausalEdge,
-        LatentVariable,
-        CausalGraph as AstroCausalGraph,
-        BiasAwareCausalDiscovery,
-        PhysicsConstrainedGraph,
-        MechanismIdentifier,
-        LatentPhysicsProposer,
-        DynamicalCausalModel,
-        AstrophysicalCausalDiscovery,
-        discover_causal_structure,
-        identify_mechanism_for_correlation,
-    )
-except ImportError:
-    ConservationLaw = None
-    ObservationalBias = None
-    AstroCausalGraph = None
-    BiasAwareCausalDiscovery = None
-    PhysicsConstrainedGraph = None
-    MechanismIdentifier = None
-    LatentPhysicsProposer = None
-    DynamicalCausalModel = None
-    AstrophysicalCausalDiscovery = None
-    discover_causal_structure = None
-    identify_mechanism_for_correlation = None
-    LatentVariable = None
-
-try:
-    from .astrophysical_theory_synthesis import (
-        AstroPatternType,
-        ConfidenceLevel,
-        ObservedPattern,
-        PhysicalLaw as AstroPhysicalLaw,
-        Mechanism,
-        Prediction as AstroPrediction,
-        MechanismTheory,
-        PatternIdentifier,
-        LawPromoter,
-        TheoryComparator,
-        PredictionGenerator as AstroPredictionGenerator,
-        TheoryBuilder,
-        get_turbulent_sf_theory,
-        get_magnetic_sf_theory,
-        identify_pattern,
-        build_theory_from_patterns,
-        compare_sf_theories,
-    )
-except ImportError:
-    AstroPatternType = None
-    ConfidenceLevel = None
-    ObservedPattern = None
-    AstroPhysicalLaw = None
-    Mechanism = None
-    AstroPrediction = None
-    MechanismTheory = None
-    PatternIdentifier = None
-    LawPromoter = None
-    TheoryComparator = None
-    AstroPredictionGenerator = None
-    TheoryBuilder = None
-    get_turbulent_sf_theory = None
-    get_magnetic_sf_theory = None
-    identify_pattern = None
-    build_theory_from_patterns = None
-    compare_sf_theories = None
-
-from .multiwavelength_reconciliation import (
-    WavelengthDomain,
-    EmissionMechanism,
-    Observation as MultiWavObservation,
-    PhysicalComponent,
-    DomainBelief,
-    Tension,
-    UnifiedModel,
-    MultiWavelengthBelief,
-    DomainReconciler,
-    TensionDetector,
-    SEDIntegrator,
-    PhysicalStateInferrer,
-    reconcile_observations,
-    detect_wavelength_tensions,
-    build_sed_from_observations,
-)
-
-from .observational_strategy import (
-    TelescopeType,
-    ObservationType,
-    Telescope,
-    Instrument,
-    ObservationPlan,
-    Hypothesis as StrategyHypothesis,
-    CriticalTest,
-    ObservationDesigner,
-    DiscriminatingTestFinder,
-    SensitivityCalculator,
-    FollowupPrioritizer,
-    design_observation_for_hypothesis,
-    find_critical_test,
-    calculate_detection_limit,
-    prioritize_followup,
-    get_telescope_database,
-)
+# GPDISC note: the V43 "Astrophysics-Aware Reasoning" modules
+# (observational_likelihood, physical_process_library, ism_knowledge_base,
+# astrophysical_causal_discovery, astrophysical_theory_synthesis,
+# multiwavelength_reconciliation, observational_strategy, cross_survey_fusion)
+# were astronomy-era code removed in the 2026-09-04 ASTRA-lineage purge.
 
 
 # V42 GPQA: Test-Time Search

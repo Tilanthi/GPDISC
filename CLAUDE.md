@@ -41,6 +41,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **All patient records from the MEDIDISC era were purged** from this repository (archived outside the repo, then removed). The `patients/` directory and `gpdisc_core/data/` are empty skeletons awaiting fresh data.
 - **The package rename is complete** (2026-09-03): `medidisc_core` → `gpdisc_core`, factory `create_medidisc_system()` → `create_gpdisc_system()`, with all imports, paths, configs, and docs updated. Import via `from gpdisc_core import create_gpdisc_system`.
 - **Hallucination audit FIXED** (2026-09-04): the outside-consultant audit (`docs/superpowers/specs/2026-09-03-hallucination-audit.md`) found 23+ errors (legal facts, citations, clinical thresholds, collisions, typos) plus 8 routing gaps and 4 missing areas. ALL are fixed and locked by tests — every correction ships with both-direction probes (the genuine case still detected, the benign near-miss still benign). Key additions: alcohol-interaction table (`prescribing_safety.ALCOHOL_INTERACTIONS`), methotrexate warning-card urgent rule, ST-elevation emergency rule, `advanced_cancer_supportive` corpus entry (corpus now 273), pre-travel/prevention/alcohol-interaction front-door routes, urgent-rule advice now always rendered (never silently replaced by tier text).
+- **ASTRA-lineage purge** (2026-09-04): the astronomy-specific code inherited from the ASTRA era was removed from the tracked tree (68 files: astro reasoning modules, ISM/multiwavelength/observational machinery, astro databases and paper library, SPH/stellar/interstellar self-teaching, v100 simulations, relativistic/quantum/nuclear physics, MNRAS-era docs and their tests). The generic BIODISC-era machinery (`reasoning/`, `causal/`, `self_teaching/`, `capabilities/`, `simulation/`, biophysics) is retained as the scientific foundation; `gpdisc_core/README.md` documents the split. Verified after the purge: import sweep 535 modules 0 failures, 24-suite battery 609 passed, comprehensive test green.
 
 ### Naming Convention
 
@@ -693,7 +694,7 @@ gpdisc_core/
 │   └── state/              # System state
 ├── capabilities/            # Advanced reasoning capabilities
 ├── causal/                 # Causal reasoning and inference
-├── physics/                # Physics engine (preserved from BIODISC)
+├── physics/                # Biophysics engine (generic BIODISC-era machinery preserved)
 └── dashboard/              # Medical consultation dashboard
     └── server.py           # Dashboard server (port 8790)
 ```
@@ -822,8 +823,8 @@ All medical decisions should be made in consultation with qualified healthcare p
 
 ## Code Statistics
 
-- **Total Python Files**: 596
-- **Directory Size**: ~300 MB
+- **Total Python Files**: 543
+- **Tracked Tree**: 610 files; `gpdisc_core` package ~30 MB
 - **Primary Medical Domains**: 5 (Cardiology, Epilepsy, General Practice, Orthopedics, Pharmacology — UK-framed)
 - **Legacy Specialty Domains**: 29 (US-framed, MEDIDISC-era — background knowledge, prefer the front door)
 - **Biology Domains**: 10 (preserved for scientific foundation)

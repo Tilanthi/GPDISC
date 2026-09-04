@@ -1,7 +1,7 @@
 """
 Cross-domain meta-learning for rapid domain adaptation
 
-Enables STAN-XI-ASTRO to rapidly adapt to new astronomical domains
+Enables rapid adaptation to new domains
 using few-shot learning and knowledge transfer from existing domains.
 
 Extends existing V50 meta-learning with domain transfer capabilities.

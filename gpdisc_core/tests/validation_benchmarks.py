@@ -1,5 +1,5 @@
 """
-Validation benchmarks for STAN-XI-ASTRO enhancements
+Validation benchmarks for V4 enhancements
 
 Tests:
 - Domain adaptation performance
@@ -44,7 +44,7 @@ class BenchmarkResult:
 
 class ValidationSuite:
     """
-    Validation suite for STAN-XI-ASTRO enhancements
+    Validation suite for V4 enhancements
 
     Comprehensive testing of new capabilities.
     """

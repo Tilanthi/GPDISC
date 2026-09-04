@@ -1,5 +1,5 @@
 """
-True MAML implementation for STAN-XI-ASTRO meta-learning
+True MAML implementation for meta-learning
 
 Implements:
 - Multi-step inner loop adaptation

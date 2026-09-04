@@ -180,7 +180,7 @@ except ImportError:
     default_summary_statistics = None
 
 # =============================================================================
-# Memory Systems (Merged from both gpdisc_core and astra_core_v4)
+# Memory Systems
 # =============================================================================
 try:
     from .memory import (

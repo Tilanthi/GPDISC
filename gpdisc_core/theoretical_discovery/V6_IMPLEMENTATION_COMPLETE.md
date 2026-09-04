@@ -1,3 +1,8 @@
+<!-- GPDISC note (2026-09-04): this document is retained from the
+BIODISC/ASTRA era and describes the surviving theoretical_discovery module. Path
+references to `astra_core/...` are historical; the code now lives in
+`gpdisc_core/`. -->
+
 # V6.0 Theoretical Discovery System - Implementation Complete
 
 **Status**: ✅ FULLY OPERATIONAL

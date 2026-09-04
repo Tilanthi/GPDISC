@@ -1,5 +1,5 @@
 """
-Physical analogical reasoning engine for STAN-XI-ASTRO
+Physical analogical reasoning engine
 
 Applies analogical reasoning to novel physical phenomena.
 Enables transfer of understanding from known to novel phenomena.

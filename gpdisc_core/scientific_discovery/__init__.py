@@ -1,76 +1,37 @@
 """
-STAN Scientific Discovery Module
-================================
+GPDISC Scientific Discovery Module
+==================================
 
-Comprehensive scientific discovery system for autonomous research in astronomy
-and astrophysics. Integrates literature mining, data analysis, theoretical
-modeling, and autonomous experiment design.
+Generic scientific-discovery machinery retained from the BIODISC/ASTRA
+era: feasibility checking for proposed experiments, literature
+synthesis stubs, and the theoretical-physics solver stubs used by the
+simulation-based inference layer.
+
+GPDISC note (2026-09-04): the astronomy-specific modules —
+astro_databases (Vizier/SIMBAD/ADS), data_repositories
+(ALMA/NASA/ESO/CADC), advanced_analysis (galaxy classification,
+photo-z, SED fitting) and the paper library — were removed in the
+ASTRA-lineage purge.
 
 Modules:
 --------
-- research_papers: PDF processing, citation networks, literature mining
-- astro_databases: Access to Vizier, SIMBAD, ADS, and other catalogs
-- data_repositories: Access to ALMA, NASA, ESO, CADC, arXiv datasets
-- advanced_analysis: ML photometry, galaxy classification, phot-z
-- theoretical_physics: MHD solvers, plasma physics, radiation-hydro
-- discovery_orchestrator: Central autonomous discovery coordinator
+- feasibility_checker: experiment feasibility, resource, and safety limits
+- literature_synthesis: multi-paper synthesis (stub)
+- theoretical_physics: MHD/plasma solver stubs (used by simulation_based_inference)
 
-Version: 1.0.0-Discovery
-Date: 2025-12-27
+Version: 1.1.0-Discovery
 """
 
-# =============================================================================
-# Research Paper Processing
-# =============================================================================
-
-# =============================================================================
-# Astronomical Database Access
-# =============================================================================
-from .astro_databases import (
-    AstroDatabaseConnector,
-    VizierClient,
-    SIMBADClient,
-    ADSClient,
-    CatalogQuery,
-    SourceInfo,
-    query_catalog,
-    cross_match_catalogs,
+from .feasibility_checker import (
+    FeasibilityAssessor,
+    ResourceEstimator,
+    SafetyValidator,
 )
-
-# =============================================================================
-# Data Repository Access
-# =============================================================================
-from .data_repositories import (
-    DataRepositoryManager,
-    ALMAArchive,
-    NASAArchive,
-    ESOArchive,
-    CADCArchive,
-    ArxivClient,
-    DatasetDownloader,
-    download_observation,
-    query_archive,
+from .literature_synthesis import (
+    LiteratureSynthesizer,
+    HypothesisExtractor,
+    FindingAggregator,
 )
-
-# =============================================================================
-# Advanced Data Analysis
-# =============================================================================
-from .advanced_analysis import (
-    AdvancedAnalyzer,
-    GalaxyClassifier,
-    PhotometricRedshiftEstimator,
-    SEDFitter,
-    SourceExtractor,
-    LineIdentifier,
-    classify_galaxy,
-    estimate_photoz,
-    fit_sed,
-    identify_lines,
-)
-
-# =============================================================================
-# Theoretical Physics
-# =============================================================================
 from .theoretical_physics import (
     TheoreticalPhysicsEngine,
     MHDSolver,
@@ -83,50 +44,13 @@ from .theoretical_physics import (
     run_radiation_hydro,
 )
 
-# =============================================================================
-# Discovery Orchestrator (Main Entry Point)
-# =============================================================================
-
 __all__ = [
-    # Research Papers
-    'CitationGraph',
-    'extract_paper_metadata',
-    'build_citation_network',
-
-    # Astro Databases
-    'AstroDatabaseConnector',
-    'VizierClient',
-    'SIMBADClient',
-    'ADSClient',
-    'CatalogQuery',
-    'SourceInfo',
-    'query_catalog',
-    'cross_match_catalogs',
-
-    # Data Repositories
-    'DataRepositoryManager',
-    'ALMAArchive',
-    'NASAArchive',
-    'ESOArchive',
-    'CADCArchive',
-    'ArxivClient',
-    'DatasetDownloader',
-    'download_observation',
-    'query_archive',
-
-    # Advanced Analysis
-    'AdvancedAnalyzer',
-    'GalaxyClassifier',
-    'PhotometricRedshiftEstimator',
-    'SEDFitter',
-    'SourceExtractor',
-    'LineIdentifier',
-    'classify_galaxy',
-    'estimate_photoz',
-    'fit_sed',
-    'identify_lines',
-
-    # Theoretical Physics
+    'FeasibilityAssessor',
+    'ResourceEstimator',
+    'SafetyValidator',
+    'LiteratureSynthesizer',
+    'HypothesisExtractor',
+    'FindingAggregator',
     'TheoreticalPhysicsEngine',
     'MHDSolver',
     'PlasmaPhysicsModule',
@@ -136,56 +60,6 @@ __all__ = [
     'MagneticReconnection',
     'solve_mhd',
     'run_radiation_hydro',
-
-    # Discovery Orchestrator
-    'ScientificDiscoveryOrchestrator',
-    'DiscoveryTask',
-    'DiscoveryResult',
-    'Hypothesis',
-    'ExperimentProposal',
-    'LiteratureReview',
-    'create_discovery_system',
-    'autonomous_discovery',
-    'review_literature',
-    'propose_experiment',
 ]
 
-__version__ = '1.0.0-Discovery'
-
-
-
-def autocorrelation_detect(data: np.ndarray, max_lag: int = None) -> Dict[str, Any]:
-    """Detect patterns using autocorrelation analysis."""
-    import numpy as np
-    if max_lag is None:
-        max_lag = len(data) // 4
-    autocorr = np.correlate(data, data, mode='full')
-    autocorr = autocorr[len(autocorr)//2:]
-    autocorr = autocorr / autocorr[0]
-    return {'autocorrelation': autocorr[:max_lag], 'peaks': []}
-
-
-
-def utility_function_27(*args, **kwargs):
-    """Utility function 27."""
-    return None
-
-
-
-def autocorrelation_detect(data: np.ndarray, max_lag: int = None) -> Dict[str, Any]:
-    """Detect patterns using autocorrelation analysis."""
-    import numpy as np
-    if max_lag is None:
-        max_lag = len(data) // 4
-    autocorr = np.correlate(data, data, mode='full')
-    autocorr = autocorr[len(autocorr)//2:]
-    autocorr = autocorr / autocorr[0]
-    return {'autocorrelation': autocorr[:max_lag], 'peaks': []}
-
-
-
-def utility_function_7(*args, **kwargs):
-    """Utility function 7."""
-    return None
-
-
+__version__ = '1.1.0-Discovery'

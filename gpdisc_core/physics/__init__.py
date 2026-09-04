@@ -534,22 +534,10 @@ except ImportError:
     Phenomenon = None
     logger.warning("PhysicalAnalogicalReasoner not available")
 
-# V47+ New physics modules
-try:
-    from .relativistic_physics import RelativisticPhysics
-except ImportError:
-    RelativisticPhysics = None
-    logger.warning("RelativisticPhysics not available")
-
-try:
-    from .quantum_mechanics import QuantumMechanics
-except ImportError:
-    QuantumMechanics = None
-    logger.warning("QuantumMechanics not available")
-
-# GPDISC NOTE: NuclearAstrophysics removed - not applicable to biology
-# For biological nuclear processes (like nucleoid organization), see relevant modules
-NuclearAstrophysics = None
+# GPDISC NOTE (2026-09-04 ASTRA-lineage purge): the astronomy-era physics
+# modules — relativistic_physics, quantum_mechanics, nuclear_astro — were
+# removed with the ASTRA lineage. Biophysics keeps the modules that serve
+# the life sciences; the rest of the package is unchanged.
 
 
 # Export all public classes
@@ -564,8 +552,4 @@ __all__ = [
     'PhysicalAnalogicalReasoner',
     'PhysicalAnalogy',
     'Phenomenon',
-    # V47+ exports
-    'RelativisticPhysics',
-    'QuantumMechanics',
-    # NuclearAstrophysics removed - not applicable to biology
 ]

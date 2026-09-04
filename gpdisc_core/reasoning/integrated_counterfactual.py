@@ -201,30 +201,10 @@ class IntegratedCounterfactualSystem:
         Returns:
             Result with counterfactual analysis
         """
-        # Import the filament counterfactual analyzer
-        # In production, this would be more general
-        try:
-            # Try absolute import first
-            try:
-                from gpdisc_core.reasoning.filament_counterfactual_simple import FilamentCounterfactualAnalyzer
-            except ImportError:
-                # Fall back to relative import
-                from .filament_counterfactual_simple import FilamentCounterfactualAnalyzer
-            analyzer = FilamentCounterfactualAnalyzer()
-            answer = analyzer.analyze_counterfactual(query)
-
-            return {
-                'answer': answer,
-                'query_type': 'counterfactual',
-                'classification': classification,
-                'confidence': classification.confidence,
-                'requires_standard_processing': False,
-                'capabilities_used': ['counterfactual_reasoning', 'causal_analysis',
-                                      'hypothesis_generation', 'observational_design']
-            }
-        except ImportError:
-            # Fallback: Generate basic counterfactual analysis
-            return self._generate_basic_counterfactual(query, classification)
+        # GPDISC note (2026-09-04 ASTRA-lineage purge): the astronomy-era
+        # filament_counterfactual_simple analyzer was removed; every
+        # counterfactual query now takes the general basic-analysis path.
+        return self._generate_basic_counterfactual(query, classification)
 
     def _generate_basic_counterfactual(self, query: str,
                                        classification: QueryClassification) -> Dict[str, Any]:
@@ -347,10 +327,8 @@ if __name__ == "__main__":
 
     # Test queries
     test_queries = [
-        "What is the temperature of the ISM?",
-        "What would make filaments not have a characteristic width?",
-        "Calculate the Jeans mass for a cloud with n=1e4 cm^-3",
-        "What conditions would eliminate the 0.1 pc scale?"
+        "What would happen if this variable had a different value?",
+        "What conditions would change the observed outcome?",
     ]
 
     for query in test_queries:

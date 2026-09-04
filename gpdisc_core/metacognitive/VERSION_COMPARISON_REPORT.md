@@ -1,3 +1,8 @@
+<!-- GPDISC note (2026-09-04): this document is retained from the
+BIODISC/ASTRA era and describes the surviving metacognitive module. Path
+references to `astra_core/...` are historical; the code now lives in
+`gpdisc_core/`. -->
+
 # BIODISC Meta-Cognitive System - Version Comparison Report
 
 ## Executive Summary

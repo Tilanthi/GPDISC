@@ -1,5 +1,5 @@
 """
-STAR-Learn: Self-Teaching Autonomous Recursive Learner for STAN_IX_ASTRO
+STAR-Learn: Self-Teaching Autonomous Recursive Learner
 
 A comprehensive autonomous self-teaching architecture that enables STAN to:
 1. Generate its own training problems
@@ -32,12 +32,9 @@ V2.5 MAJOR Enhancements (AGI Capabilities):
 - MetaLearningSystem: Learn to learn, few-shot adaptation
 - ConsciousnessSimulator: Metacognitive awareness and theory of mind
 
-V3.0 Astronomy Specialization (MAJOR STEP FORWARD):
-- AstronomyCausalDiscoverySystem: Gas dynamics, filament formation, radiative transfer
-- SPH Simulation: Smoothed Particle Hydrodynamics for gas dynamics and star formation
-- InterstellarChemistryNetwork: Molecular reaction networks and deuterium fractionation
-- StellarPhysics & HII Regions: Stellar evolution, ionization, feedback
-- MultiWavelengthFusion: Radio, mm, sub-mm, IR data combination and analysis
+V3.0 Astronomy Specialization: removed in the 2026-09-04 ASTRA-lineage purge
+(interstellar_chemistry, sph_simulation, star_learn, stellar_physics,
+multi_wavelength_fusion were astronomy-era modules)
 
 Version: 3.0.0
 Date: 2026-03-16

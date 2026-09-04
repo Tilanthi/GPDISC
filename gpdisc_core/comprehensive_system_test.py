@@ -59,13 +59,9 @@ class ComprehensiveSystemTest:
 
             # Physics
             ("Unified Physics", "gpdisc_core.physics", "UnifiedPhysicsEngine"),
-            ("Relativistic Physics", "gpdisc_core.physics.relativistic_physics", "RelativisticPhysics"),
-            ("Quantum Mechanics", "gpdisc_core.physics.quantum_mechanics", "QuantumMechanics"),
-            ("Nuclear Astrophysics", "gpdisc_core.physics.nuclear_astro", "NuclearAstrophysics"),
 
             # Causal & Advanced Reasoning (actual file names)
             ("Causal Discovery", "gpdisc_core.reasoning.causal_discovery", None),
-            ("Astrophysical Causal", "gpdisc_core.reasoning.astrophysical_causal_discovery", None),
             ("V50 Causal Engine", "gpdisc_core.reasoning.v50_causal_engine", None),
             ("V70 Universal Causal", "gpdisc_core.reasoning.v70_universal_causal", None),
             ("Swarm Reasoning", "gpdisc_core.reasoning.swarm_reasoning", None),
@@ -206,8 +202,8 @@ class ComprehensiveSystemTest:
 
     def _test_causal_discovery(self) -> bool:
         try:
-            from gpdisc_core.reasoning.causal_discovery import PCAlgorithm
-            return PCAlgorithm is not None
+            from gpdisc_core.reasoning.causal_discovery import CausalGraph
+            return CausalGraph is not None
         except:
             return False
 
@@ -315,7 +311,7 @@ class ComprehensiveSystemTest:
             print("GPDISC is ready with full integration of:")
             print("  - 10 Biology Domain Modules")
             print("  - Memory Systems (MORK, Graph, Working, Episodic)")
-            print("  - Physics Engine (Unified, Relativistic, Quantum, Nuclear)")
+            print("  - Physics Engine (Unified Biophysics)")
             print("  - Causal Discovery & Advanced Reasoning")
             print("  - V4 Metacognitive Capabilities")
             print("  - Unified Orchestrator")
