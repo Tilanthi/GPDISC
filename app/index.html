@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPDISC — Private Consultation</title>
+<style>
+  :root {
+    --ink: #1a2333; --muted: #5c6b82; --line: #dde4ee; --paper: #f6f8fc;
+    --card: #ffffff; --accent: #0f4c81;
+    --emergency: #b3261e; --emergency-bg: #fdeceb;
+    --urgent: #9a6700; --urgent-bg: #fff3d6;
+    --routine: #1c6e4a; --routine-bg: #e8f5ee;
+    --selfcare: #4a5b6e; --selfcare-bg: #eef2f7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--paper); color: var(--ink); min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  header {
+    width: 100%; background: var(--card); border-bottom: 1px solid var(--line);
+    padding: 14px 22px; display: flex; align-items: center; gap: 14px;
+    position: sticky; top: 0; z-index: 2;
+  }
+  .logo {
+    width: 34px; height: 34px; border-radius: 9px; background: var(--accent);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px; letter-spacing: .5px;
+  }
+  header h1 { font-size: 17px; font-weight: 650; }
+  header .sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  header .spacer { flex: 1; }
+  .pill {
+    font-size: 11px; color: var(--routine); background: var(--routine-bg);
+    border: 1px solid #cfe7da; padding: 3px 10px; border-radius: 999px;
+  }
+  main { width: 100%; max-width: 880px; padding: 26px 18px 60px; }
+
+  .ask {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px; box-shadow: 0 1px 3px rgba(16,32,64,.05);
+  }
+  textarea {
+    width: 100%; min-height: 92px; resize: vertical; border: none; outline: none;
+    font: inherit; font-size: 15px; color: var(--ink); background: transparent;
+  }
+  .ask .bar { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .hint { font-size: 12px; color: var(--muted); flex: 1; }
+  button.primary {
+    background: var(--accent); color: #fff; border: none; border-radius: 9px;
+    padding: 9px 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  }
+  button.primary:disabled { opacity: .55; cursor: default; }
+  button.quit {
+    background: none; border: 1px solid var(--line); color: var(--muted);
+    border-radius: 8px; padding: 6px 12px; font-size: 12px; cursor: pointer;
+  }
+
+  .thinking { color: var(--muted); font-size: 13px; padding: 8px 2px; }
+
+  .record {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    margin-top: 18px; overflow: hidden; box-shadow: 0 1px 3px rgba(16,32,64,.05);
+  }
+  .record .head {
+    padding: 14px 18px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  }
+  .record .head .complaint { font-size: 14px; color: var(--ink); font-weight: 600; flex: 1; min-width: 200px; }
+  .badge { font-size: 11px; font-weight: 700; letter-spacing: .8px; padding: 4px 11px; border-radius: 999px; text-transform: uppercase; }
+  .badge.emergency { color: var(--emergency); background: var(--emergency-bg); border: 1px solid #ecc8c5; }
+  .badge.urgent { color: var(--urgent); background: var(--urgent-bg); border: 1px solid #ead9a8; }
+  .badge.routine { color: var(--routine); background: var(--routine-bg); border: 1px solid #cfe7da; }
+  .badge.self_care { color: var(--selfcare); background: var(--selfcare-bg); border: 1px solid #d5dde7; }
+  .record .body { padding: 6px 18px 16px; }
+
+  details { border-bottom: 1px solid var(--line); padding: 10px 0; }
+  details:last-child { border-bottom: none; }
+  summary { cursor: pointer; font-size: 12px; font-weight: 700; color: var(--accent);
+    letter-spacing: .6px; text-transform: uppercase; }
+  summary::marker { color: var(--muted); }
+  .block { padding: 10px 0 4px; font-size: 14px; line-height: 1.55; white-space: pre-wrap; }
+  .diffrow { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+  .diffrow:last-child { border-bottom: none; }
+  .diffrow .score { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 52px; }
+  .diffrow .name { font-weight: 600; }
+  .diffrow .reasons { color: var(--muted); font-size: 12.5px; }
+  .safety { background: var(--urgent-bg); border: 1px solid #ead9a8; border-radius: 10px;
+    padding: 10px 14px; font-size: 14px; line-height: 1.5; }
+  .emergencynet { background: var(--emergency-bg); border: 1px solid #ecc8c5; border-radius: 10px;
+    padding: 10px 14px; font-size: 14px; line-height: 1.5; }
+  .foot { padding: 10px 0 2px; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+  .err { color: var(--emergency); font-size: 14px; padding: 10px 2px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">GP</div>
+  <div>
+    <h1>GPDISC</h1>
+    <div class="sub">Private GP consultation &middot; second opinion</div>
+  </div>
+  <div class="spacer"></div>
+  <span class="pill" id="status">local engine</span>
+  <button class="quit" id="quit" title="Stop the GPDISC app">Quit app</button>
+</header>
+
+<main>
+  <div class="ask">
+    <textarea id="q" placeholder="Describe the presentation in your own words — e.g. “66 year old man, chest pain for 40 minutes, sweating” or “is it safe to take paracetamol alongside warfarin?”" autofocus></textarea>
+    <div class="bar">
+      <span class="hint">Answers are generated on this machine only. Nothing is sent anywhere.<br>Not a replacement for professional care — in an emergency call 999.</span>
+      <button class="primary" id="ask">Consult</button>
+    </div>
+  </div>
+  <div class="thinking" id="thinking" hidden>Consulting…</div>
+  <div id="results"></div>
+</main>
+
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const history = [];          // in-memory only: gone when the tab closes
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g,
+    c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function badge(level) {
+  const cls = {emergency:"emergency", urgent:"urgent", routine:"routine",
+               self_care:"self_care"}[level] || "self_care";
+  return `<span class="badge ${cls}">${esc(level || "unknown")}</span>`;
+}
+
+function render(rec) {
+  const diffs = (rec.ranked_differential || []).map(d => `
+    <div class="diffrow">
+      <span class="score">${(d.score ?? 0).toFixed ? d.score.toFixed(2) : esc(d.score)}</span>
+      <span><span class="name">${esc(d.name)}</span>
+      ${d.reasons && d.reasons.length ? `<div class="reasons">${esc(d.reasons.join(" · "))}</div>` : ""}</span>
+    </div>`).join("");
+
+  const dang = (rec.dangerous_alternatives || []).map(d => `
+    <div class="diffrow"><span class="score">must not miss</span>
+      <span class="name">${esc(d.name)}</span></div>`).join("");
+
+  const qs = (rec.discriminating_questions || []).map(q => `<li>${esc(q)}</li>`).join("");
+  const ix = (rec.investigations || []).map(i => `<li>${esc(i)}</li>`).join("");
+
+  const netCls = rec.escalation === "emergency" ? "emergencynet" : "safety";
+
+  return `
+  <div class="record">
+    <div class="head">
+      <span class="complaint">${esc(rec.presenting_complaint)}</span>
+      ${badge(rec.escalation)}
+      ${rec.validation_passed === false ? '<span class="badge urgent">validation flagged</span>' : ""}
+    </div>
+    <div class="body">
+      ${rec.escalation === "emergency" ? `<div class="${netCls}"><b>This presentation is an emergency.</b> Do not wait — call 999 now.</div><br>` : ""}
+      ${diffs ? `<details open><summary>Differential</summary><div class="block">${diffs}</div></details>` : ""}
+      ${dang ? `<details open><summary>Must not miss</summary><div class="block">${dang}</div></details>` : ""}
+      ${rec.treatment ? `<details open><summary>Advice &amp; treatment</summary><div class="block">${esc(rec.treatment)}</div></details>` : ""}
+      ${rec.referral ? `<details open><summary>Referral / disposition</summary><div class="block">${esc(rec.referral)}</div></details>` : ""}
+      ${rec.safety_net ? `<details open><summary>Safety net</summary><div class="block ${netCls}">${esc(rec.safety_net)}</div></details>` : ""}
+      ${qs ? `<details><summary>Ask next</summary><div class="block"><ul>${qs}</ul></div></details>` : ""}
+      ${ix ? `<details><summary>Investigations</summary><div class="block"><ul>${ix}</ul></div></details>` : ""}
+      ${rec.uncertainty ? `<details><summary>Uncertainty</summary><div class="block">${esc(rec.uncertainty)}</div></details>` : ""}
+      ${rec.ruleset ? `<details><summary>Ruleset</summary><div class="block">${esc(rec.ruleset)}</div></details>` : ""}
+      <details><summary>Full consultation record</summary><div class="block">${esc(rec.summary)}</div></details>
+      <div class="foot">GPDISC provides second-opinion consultation and is not a replacement
+      for professional medical care.${rec.validation_passed === false ? " The consistency validator flagged this record — treat with extra caution." : ""}</div>
+    </div>
+  </div>`;
+}
+
+async function consult() {
+  const text = $("q").value.trim();
+  if (!text) return;
+  $("ask").disabled = true; $("thinking").hidden = false;
+  try {
+    const r = await fetch("/api/consult", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({presentation: text}),
+    });
+    const data = await r.json();
+    if (data.error) {
+      $("results").insertAdjacentHTML("afterbegin",
+        `<div class="record"><div class="body"><div class="err">${esc(data.error)}</div></div></div>`);
+    } else {
+      $("results").insertAdjacentHTML("afterbegin", render(data));
+      history.unshift({q: text, at: new Date().toISOString()});
+    }
+  } catch (e) {
+    $("results").insertAdjacentHTML("afterbegin",
+      `<div class="record"><div class="body"><div class="err">Cannot reach the local engine — is the GPDISC app still running? (${esc(e)})</div></div></div>`);
+  } finally {
+    $("ask").disabled = false; $("thinking").hidden = true; $("q").value = ""; $("q").focus();
+  }
+}
+
+$("ask").addEventListener("click", consult);
+$("q").addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === "Enter") consult();
+});
+$("quit").addEventListener("click", async () => {
+  try { await fetch("/api/quit", {method: "POST"}); } catch {}
+  document.body.innerHTML = '<div style="font-family:-apple-system,sans-serif;padding:60px;text-align:center;color:#5c6b82">GPDISC app stopped. You can close this tab.</div>';
+});
+fetch("/api/status").then(r => r.json()).then(s => {
+  $("status").textContent = `local engine · ${s.conditions} conditions`;
+}).catch(() => {});
+</script>
+</body>
+</html>
