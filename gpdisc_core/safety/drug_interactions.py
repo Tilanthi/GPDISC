@@ -298,6 +298,46 @@ class DrugInteractionDatabase:
             management="Frequent INR monitoring, adjust warfarin dose as needed"
         )
 
+        # Warfarin + Paracetamol
+        # 2026-09-04: added after a live question ("Is it safe to take
+        # paracetamol alongside warfarin?") returned a false all-clear
+        # because the pair had no row. Occasional short courses ARE
+        # acceptable - paracetamol stays the preferred analgesic on
+        # warfarin - but regular use raises the INR, and the answer must
+        # say both halves.
+        interactions["warfarin_paracetamol"] = DrugInteraction(
+            drug1="Warfarin",
+            drug2="Paracetamol",
+            severity=InteractionSeverity.MODERATE,
+            evidence=InteractionEvidence.PROBABLE,
+            description="Regular paracetamol increases INR - bleeding risk",
+            mechanism=("Not fully established; sustained paracetamol "
+                       "(esp. >=2g/day) enhances warfarin's anticoagulant "
+                       "effect - possible NAPQI effect on vitamin "
+                       "K-dependent factor synthesis"),
+            clinical_effects=[
+                "Increased INR with regular use",
+                "Bleeding risk (bruising, haematuria, melaena)",
+                "Unstable anticoagulation"
+            ],
+            recommendations=[
+                "Paracetamol remains the PREFERRED analgesic on warfarin "
+                "- NSAIDs and aspirin are the ones to avoid",
+                "Occasional short courses (1-2 days, standard dose) are "
+                "acceptable without extra monitoring",
+                "If regular use is needed (especially >=2g/day for "
+                "several days): check INR after a few days",
+                "Educate on bleeding signs (bruising, blood in urine, "
+                "black stools, prolonged bleeding)",
+                "Maximum 4g/day; reduce in elderly, low body weight, or "
+                "liver disease"
+            ],
+            references=["BNF 75", "Stockley's Drug Interactions"],
+            onset="delayed",
+            management=("Continue paracetamol if needed; add an INR check "
+                        "after several days of regular co-administration")
+        )
+
         # Statins + Macrolides
         interactions["statin_macrolide"] = DrugInteraction(
             drug1="Statins (simvastatin, atorvastatin)",
@@ -562,6 +602,11 @@ class DrugInteractionChecker:
             },
             # Warfarin
             "warfarin": {"warfarin", "coumadin"},
+            # Paracetamol (includes compounds that contain it)
+            "paracetamol": {
+                "paracetamol", "acetaminophen", "tylenol", "panadol",
+                "co-codamol", "co-dydramol", "solpadeine"
+            },
             # DOACs
             "doacs": {
                 "apixaban", "rivaroxaban", "edoxaban", "dabigatran"
@@ -634,7 +679,9 @@ class DrugInteractionChecker:
         normalized = self._normalize_drug_name(drug_name)
 
         for category, drugs in self.drug_mappings.items():
-            if normalized in drugs:
+            # normalize the set entries too: "co-codamol" in the set must
+            # match the normalized lookup name "co codamol"
+            if normalized in {self._normalize_drug_name(d) for d in drugs}:
                 return category
 
         return None
@@ -821,13 +868,18 @@ class DrugInteractionChecker:
             lines.append("📋 See detailed interaction list below")
 
         else:
-            lines.append("✅ NO DRUG INTERACTIONS DETECTED")
+            # 2026-09-04 honesty fix: "no row in this table" must never
+            # read as "all combinations appear safe" - the paracetamol +
+            # warfarin live question exposed exactly that false all-clear
+            # before its row was added. State the table's size and defer.
+            n_pairs = len(self.database.interactions)
+            lines.append(f"NO KNOWN INTERACTIONS in the local table "
+                         f"({n_pairs} evidence-based pairs)")
             lines.append("")
             lines.append(f"Checked {len(result.medications_checked)} medication(s)")
-            lines.append("All combinations appear safe based on current knowledge")
-            lines.append("")
-            lines.append("Note: This cannot detect all possible interactions")
-            lines.append("Always consult pharmacist or BNF for comprehensive checking")
+            lines.append("The local table is LIMITED - absence of a row here "
+                         "is not evidence that a combination is safe")
+            lines.append("Confirm with the BNF or a pharmacist before combining")
 
         return "\n".join(lines)
 

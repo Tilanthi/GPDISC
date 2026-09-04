@@ -102,6 +102,30 @@ _DRUG_WORD = re.compile(
     r"amoxicillin|clarithromycin|antibiot\w*|\btablets?\b|\bmedicine\b|"
     r"\bmedication\b", re.I)
 
+# "Is it safe to take X with Y?" intent (drug-drug interaction route).
+# Deliberately narrow: question phrasings only. A statement like "I'm on
+# warfarin and paracetamol and I've had black stools" contains no
+# question intent and must fall through to the symptom flow.
+_INTERACTION_INTENT = re.compile(
+    r"is it safe|safe to (?:take|combine|use|mix)|can (?:i|we|you) take|"
+    r"may i take|\btogether\b|\balongside\b|while taking|combining|"
+    r"take .+ (?:with|and|plus) .+", re.I)
+
+
+def _named_drugs_in(text: str, checker) -> List[tuple]:
+    """Return [(category, name)] for every mapped drug named in the text,
+    one entry per category (first name found). Uses the interaction
+    checker's own mappings so the route and the checker agree on what
+    counts as a drug."""
+    low = text.lower()
+    found = []
+    for category, names in checker.drug_mappings.items():
+        for name in names:
+            if re.search(r"(?<![a-z])" + re.escape(name) + r"(?![a-z])", low):
+                found.append((category, name))
+                break
+    return found
+
 HONESTY_STATEMENT = ("I don't have enough knowledge to assess this "
                      "presentation — describe more or see a clinician.")
 
@@ -190,6 +214,16 @@ class ConsultationPipeline:
         self.safety = safety or SafetyLayer()
         self.syndromes = syndromes or SyndromeEngine()
         self.validator = validator or ClinicalValidator()
+        self._checker = None  # lazy DrugInteractionChecker
+
+    def _interaction_checker(self):
+        """Lazy singleton for the drug-interaction route (2026-09-04):
+        built on first use so importing this module never pays for the
+        interaction tables, and repeated consultations share one."""
+        if self._checker is None:
+            from ..safety.drug_interactions import DrugInteractionChecker
+            self._checker = DrugInteractionChecker()
+        return self._checker
 
     def _finalize(self, rec: ConsultationRecord,
                   context: Optional[Dict] = None) -> ConsultationRecord:
@@ -448,6 +482,55 @@ class ConsultationPipeline:
                 "antibiotics — stop drinking and seek advice.")
             rec.referral = "Community pharmacist for the specific product."
             return self._finalize(rec, context)
+
+        # "Is it safe to take X with Y?" routes to the interaction
+        # checker (2026-09-04 live-question finding): the front door
+        # answered "I don't have enough knowledge" while a checker
+        # existed in the package — and the checker's then-missing
+        # paracetamol+warfarin row read as a false all-clear. Needs
+        # question intent AND >=2 named drugs in the presentation; a
+        # symptom story that merely mentions drugs never routes here,
+        # and safety always wins (routine level only).
+        if assessment.level == EscalationLevel.ROUTINE and \
+                _INTERACTION_INTENT.search(presentation):
+            checker = self._interaction_checker()
+            found = _named_drugs_in(presentation, checker)
+            if len(found) >= 2:
+                names = [n for _, n in found]
+                check = self._interaction_checker().check_patient_medication_list(
+                    names)
+                rec.problem_representation = (
+                    f"Drug-interaction question "
+                    f"({' + '.join(names[:2])}"
+                    + (f" +{len(names) - 2} more" if len(names) > 2 else "")
+                    + ").")
+                if check.has_interactions:
+                    parts = []
+                    for inter in check.interactions:
+                        parts.append(
+                            f"{inter.severity.value.upper()}: {inter.drug1} "
+                            f"+ {inter.drug2} — {inter.description}")
+                        parts.extend(
+                            f"  - {r}" for r in inter.recommendations[:3])
+                    rec.treatment = "\n".join(parts)
+                else:
+                    rec.treatment = (
+                        f"No known interaction for {' + '.join(names)} in "
+                        "the local table — absence of a row is not "
+                        "evidence of safety. Confirm with the BNF or a "
+                        "pharmacist; do not guess from a similar-sounding "
+                        "drug.")
+                rec.uncertainty = (
+                    "Interaction guidance only — the underlying condition "
+                    "being treated is a separate question.")
+                rec.safety_net = (
+                    "Bleeding, bruising, dizziness or new symptoms while "
+                    "on the combination — describe them as symptoms, not "
+                    "as an interaction question.")
+                rec.referral = (
+                    "Community pharmacist for the specific products; "
+                    "anticoagulation clinic where warfarin is involved.")
+                return self._finalize(rec, context)
 
         diff: DifferentialResult = self.engine.build_differential(presentation, context)
         rec.problem_representation = (

@@ -174,3 +174,58 @@ class TestMissingAreasCorpus:
         rec = pipe.run(
             "I have stage four ckd and I'm tired and itchy all over", {})
         assert "kidney" in rec.ranked_differential[0]["name"].lower()
+
+
+class TestDrugInteractionRouting:
+    """The 2026-09-04 live question: 'Is it safe to take paracetamol
+    alongside warfarin?' reached no specialist pathway ('I don't have
+    enough knowledge') while an interaction checker existed in the
+    package. Interaction questions now route to it - safety always
+    wins, and symptom stories that merely mention drugs never route
+    here."""
+
+    def test_exact_live_phrasing_routes_to_checker(self):
+        rec = pipe.run(
+            "Is it safe to take paracetamol alongside warfarin?", {})
+        assert rec.escalation == "routine"
+        assert "interaction" in rec.problem_representation.lower()
+        assert "INR" in rec.treatment
+
+    def test_with_variant_and_reverse_order_also_route(self):
+        for q in ("can I take warfarin with paracetamol?",
+                  "is it safe to combine ibuprofen and warfarin?"):
+            rec = pipe.run(q, {})
+            assert "interaction" in rec.problem_representation.lower(), q
+
+    def test_severe_pair_gets_its_severity_named(self):
+        rec = pipe.run("is it safe to combine ibuprofen and warfarin?", {})
+        assert "SEVERE" in rec.treatment or "severe" in rec.treatment.lower()
+
+    def test_mapped_pair_with_no_row_gets_honest_answer(self):
+        # both drugs are in the checker's mappings; no row exists for the
+        # pair — the answer must defer, never read as an all-clear
+        rec = pipe.run("can I take paracetamol with sertraline?", {})
+        assert rec.escalation == "routine"
+        text = rec.treatment
+        assert "BNF" in text or "pharmacist" in text
+        assert "appear safe" not in text
+
+    def test_unmapped_drug_question_never_claims_safety(self):
+        # cetirizine is outside the mapping table: the route cannot fire,
+        # but whatever the fallback flow answers must never claim the
+        # combination is safe
+        rec = pipe.run("can I take cetirizine with amlodipine?", {})
+        assert rec.escalation == "routine"
+        assert "appear safe" not in (rec.treatment or "")
+
+    def test_symptom_story_mentioning_drugs_is_not_an_interaction_check(self):
+        rec = pipe.run(
+            "I'm on warfarin and paracetamol and I've had black stools "
+            "for two days", {})
+        assert "interaction question" not in \
+            rec.problem_representation.lower()
+
+    def test_single_drug_question_is_not_an_interaction_check(self):
+        rec = pipe.run("can I take paracetamol for my back pain?", {})
+        assert "interaction question" not in \
+            rec.problem_representation.lower()

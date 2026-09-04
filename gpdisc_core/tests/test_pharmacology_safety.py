@@ -45,3 +45,63 @@ def test_check_patient_medications_runs():
         ["warfarin", "aspirin"]
     )
     assert result is not None
+
+
+class TestParacetamolWarfarinInteraction:
+    """Live-question finding (2026-09-04): 'Is it safe to take paracetamol
+    alongside warfarin?' returned 'NO DRUG INTERACTIONS DETECTED' because the
+    pair had no row in the table - absence of data was reported as absence of
+    interaction. The row now exists; these locks pin both directions (the
+    genuine pair flagged, benign pairs still clean, and the no-row answer
+    honest about the table's limits)."""
+
+    def test_pair_flagged_both_orders(self):
+        c = DrugInteractionChecker()
+        for a, b in [("paracetamol", "warfarin"), ("warfarin", "paracetamol")]:
+            hit = c.check_interaction(a, b)
+            assert hit is not None, f"{a} + {b} returned no interaction"
+            assert hit.severity.value == "moderate"
+            assert "INR" in hit.description
+
+    def test_brand_and_us_aliases_also_match(self):
+        c = DrugInteractionChecker()
+        # acetaminophen (US) and coumadin (brand) must reach the same row
+        assert c.check_interaction("acetaminophen", "coumadin") is not None
+
+    def test_benign_pair_stays_clean(self):
+        c = DrugInteractionChecker()
+        assert c.check_interaction("paracetamol", "amlodipine") is None
+        assert c.check_interaction("amlodipine", "paracetamol") is None
+
+    def test_recommendations_carry_the_Practical_rules(self):
+        c = DrugInteractionChecker()
+        hit = c.check_interaction("paracetamol", "warfarin")
+        joined = " ".join(hit.recommendations)
+        assert "PREFERRED" in joined          # paracetamol stays first choice
+        assert "INR" in joined                # monitoring instruction present
+        assert "NSAID" in joined or "nsaid" in joined.lower()
+
+    def test_medication_list_check_surfaces_the_pair(self):
+        result = pharmacology.check_patient_medications(
+            ["warfarin", "paracetamol"])
+        assert result.has_interactions
+        assert any("INR" in i.description for i in result.interactions)
+
+    def test_domain_flags_paracetamol_warfarin(self):
+        domain = pharmacology.PharmacologyDomain()
+        r = domain.process_query("Can I take paracetamol with warfarin?")
+        text = r["answer"] if isinstance(r, dict) else r.answer
+        assert "NO DRUG INTERACTIONS DETECTED" not in text
+        assert "paracetamol + warfarin" in text.lower() or \
+            "warfarin + paracetamol" in text.lower() or \
+            "moderate" in text.lower()
+
+    def test_no_row_answer_is_honest_about_the_tables_limits(self):
+        """A pair absent from the table must never read as an all-clear."""
+        domain = pharmacology.PharmacologyDomain()
+        r = domain.process_query("Can I take cetirizine with amlodipine?")
+        text = r["answer"] if isinstance(r, dict) else r.answer
+        assert "All combinations appear safe" not in text
+        assert "appear safe" not in text
+        # and it must defer to a comprehensive source
+        assert "BNF" in text or "pharmacist" in text
